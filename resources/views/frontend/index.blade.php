@@ -11,6 +11,9 @@
 <!--=====================================-->
 <!--=           Main Banner End         =-->
 <!--=====================================-->
+
+
+
 <section class="process-wrap-layout1 section-padding-md bg-color-light position-relative">
     <div class="container">
         <div class="section-heading heading-dark heading-layout1 has-animation">
@@ -40,7 +43,8 @@
                             <div class="translate-right-75 transition-150 opacity-animation transition-delay-100">
                                 <div class="d-flex align-items-sm-center">
                                     <div class="item-icon dodger-blue">
-                                        <i class="flaticon-list"></i>
+                                        <!-- <i class="flaticon-envelope"></i> -->
+                                        <img src="media/premium.png" alt="Process">
                                     </div>
                                     <div class="item-content">
                                         <h3 class="item-title">Exclusivity</h3>
@@ -57,13 +61,14 @@
                             <div class="translate-left-75 transition-150 opacity-animation transition-delay-1000">
                                 <div class="d-flex align-items-sm-center flex-xl-row-reverse">
                                     <div class="item-icon sunset-orange">
-                                        <i class="flaticon-research"></i>
+                                        <!-- <i class="flaticon-research"></i> -->
+                                        <img src="media/target.png" alt="Process">
                                     </div>
                                     <div class="item-content">
                                         <h3 class="item-title">Goal </h3>
                                         <p>We want to help real estate agents grow there business.
 
-</p>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +81,8 @@
                             <div class="translate-right-75 transition-150 opacity-animation transition-delay-2000">
                                 <div class="d-flex align-items-sm-center">
                                     <div class="item-icon california">
-                                        <i class="flaticon-list"></i>
+                                        <!-- <i class="flaticon-list"></i> -->
+                                        <img src="media/agent.png" alt="Process">
                                     </div>
                                     <div class="item-content">
                                         <h3 class="item-title">Credible Agents</h3>
@@ -198,8 +204,8 @@
                 </div>
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="progress-box-layout1">
-                        <h2 class="counting-text counter" data-num="15420">15420</h2>
-                        <div class="item-label">Days Of Work</div>
+                        <h2 class="counting-text counter" data-num="15420">420</h2>
+                        <div class="item-label">Gold Agents</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 col-12">
@@ -216,6 +222,7 @@
 <!--=    Progress Section Area End      =-->
 <!--=====================================-->
 <!--=====================================-->
+
 <section id="team-wrap-layout1" class="section-padding-md">
     <div class="container">
         <div class="section-heading heading-dark

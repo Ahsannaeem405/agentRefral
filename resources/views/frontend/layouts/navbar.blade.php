@@ -63,8 +63,13 @@
                                         </a>
                                     </div>
                                 </div>
+                               
                                 <div class="col-lg-7 d-flex justify-content-end possition-static">
                                     <nav id="dropdown" class="template-main-menu">
+                                         <!-- <div class='mobile-menu-nav-back d-lg-none'>
+                                    <a class='logo-mobile' href='index.html'>
+                                        <img src='media/logo-mobile.png' alt='logo' class='img-fluid'/></a>
+                                    </div> -->
                                         <ul>
                                             <li class="position-static d-none d-lg-block">
                                                 <a href="{{route('index')}}">Home</a>

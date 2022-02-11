@@ -22,12 +22,12 @@
                     <div class="footer-widgets">
                         <h3 class="footer-widget-heading">Important Link</h3>
                         <ul class="footer-menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About Us </a></li>
-                            <li><a href="#">Contact us </a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Login </a></li>
-                            <li><a href="#">Register</a></li>
+                            <li><a href="{{route('index')}}">Home</a></li>
+                            <li><a href="{{route('about-us')}}">About Us </a></li>
+                            <li><a href="{{route('contact-us')}}">Contact us </a></li>
+                            <li><a href="{{route('faqs')}}">FAQs</a></li>
+                            <li><a href="{{route('login')}}">Login </a></li>
+                            <li><a href="{{route('register')}}">Register</a></li>
                       
                         </ul>
                     </div>

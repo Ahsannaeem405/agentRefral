@@ -235,70 +235,20 @@
                         </div>
                         <div class="translate-bottom-75 opacity-animation
 																														transition-150 transition-delay-1300">
-                            <p>Grursus mal suada faci lisis Lorem ipsum
-                                dolarorit more a ametion that consectetur elit.
-                                Vesti at bulum nec odio aea the dumm ipsumm ipsum
-                                that dolocons rsus mal suada and fadolorit.</p>
+                            <p>If we show our clients – investors - the state and the potential of the neighborhood in which 
+                                they’d like their property to be located,
+                                 we’re allowing them to gauge the real value of the real estate they’ll be acquiring.</p>
+                                 <p>
+                                 Their clients are upfront, and the video isn’t too serious – there are
+                                  enough funny and lighthearted moments to really give us the impression of our project.
+                                 </p>
                         </div>
-                        <div class="translate-bottom-75 opacity-animation
-																														transition-150 transition-delay-1600">
-                            <ul class="list-item">
-                                <li>Web Design &amp; Development</li>
-                                <li>Online Support</li>
-                                <li>Best Leadership Ideas</li>
-                                <li>Expert Team</li>
-                                <li>Offerdable Price</li>
-                                <li>Quick Access</li>
-                                <li>Pixel Perfect</li>
-                                <li>Creativity and Clarity.</li>
-                            </ul>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="history-wrap-layout1 has-animation">
-    <div class="container">
-        <div class="section-heading heading-dark heading-layout4">
-            <div class="heading-sub-title">Our Story</div>
-            <h2 class="heading-main-title">The Story Summit Refferals </h2>
-        </div>
-        <ul class="history-inner-layout1">
-            <li class="history-box-layout1">
-                <div class="item-year">2013</div>
-                <div class="item-content">
-                    <h3>Established</h3>
-                    <p>Grursus mal suada faci lisis Lorem ipsum more dolarorit
-                        ametion consectetur elit. </p>
-                </div>
-            </li>
-            <li class="history-box-layout1">
-                <div class="item-year">2015</div>
-                <div class="item-content">
-                    <h3>Office Founded</h3>
-                    <p>Grursus mal suada faci lisis Lorem ipsum more dolarorit
-                        ametion consectetur elit. </p>
-                </div>
-            </li>
-            <li class="history-box-layout1">
-                <div class="item-year">2017</div>
-                <div class="item-content">
-                    <h3>Big Restructuring..</h3>
-                    <p>Grursus mal suada faci lisis Lorem ipsum more dolarorit
-                        ametion consectetur elit. </p>
-                </div>
-            </li>
-            <li class="history-box-layout1">
-                <div class="item-year">2018</div>
-                <div class="item-content">
-                    <h3>We Have Opened Two Offices</h3>
-                    <p>Grursus mal suada faci lisis Lorem ipsum more dolarorit
-                        ametion consectetur elit. </p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
+
 @endsection

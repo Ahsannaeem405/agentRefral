@@ -47,16 +47,7 @@
                                     <h1 class="item-main-title">For Brokers <br> By Brokers </h1>
                                 </div>
                                
-                                <div class="translate-bottom-75 opacity-animation transition-150 transition-delay-2100">
-                                  <h4 style="color:white">Popoular Tags</h4>
-                                </div>
-                                <div class="translate-bottom-75 opacity-animation transition-150 transition-delay-2400">
-                                    <div class="banner-btns">
-                                        <a href="service-layout1.html" class="item-btn btn-ghost btn-light">Washington </a>
-                                        <a href="service-layout1.html" class="item-btn btn-ghost btn-light">California </a>
-                                        <a href="service-layout1.html" class="item-btn btn-ghost btn-light">Florida </a>
-                                    </div>
-                                </div>
+                        
                             </div>
                         </div>
                     </div>
