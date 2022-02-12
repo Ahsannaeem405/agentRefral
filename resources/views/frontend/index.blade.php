@@ -17,7 +17,7 @@
 <section class="process-wrap-layout1 section-padding-md bg-color-light position-relative">
     <div class="container">
         <div class="section-heading heading-dark heading-layout1 has-animation">
-            <h2 class="heading-main-title">Why Chosse Us</h2>
+            <h2 class="heading-main-title">Why Chose Us</h2>
         </div>
     </div>
     <div class="container-fluid">
@@ -199,7 +199,7 @@
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="progress-box-layout1">
                         <h2 class="counting-text counter" data-num="1240">1240</h2>
-                        <div class="item-label">Reffrals</div>
+                        <div class="item-label">Referrals</div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 col-12">

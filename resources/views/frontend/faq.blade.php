@@ -64,57 +64,131 @@
 		<div class="row">
 			<div class="col-lg-8 order-lg-2">
 				<h2 class="inner-section-heading">How our site works. </h2>
-				<div class="faq-box">
+				<div class="faq-box " id="first-question">
 					<div id="accordion">
 						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How to create an account?</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Register Yoourself</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>You just Need to visit the website and create your account its easy and so simple.</p>
+									<p>You simply go the main page of the website and get your self registerd by entring your some bsic information</p>
+								</div>
+							</div>
+						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">admin Approval?</a>
+							</div>
+							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>After registring yourself as a agent you will be verfied after the admin approval.</p>
+								</div>
+							</div>
+						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">after verification?</a>
+							</div>
+							<div id="collapse3" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>After admin verification you will easily avail all the agent features. </p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="faq-box" id="second-question" style="display: none;">
-					<div id="accordion">
-						<div class="card single-item" >
+				<div id="accordion">
+						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How Our tier Plan Works ?</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How amny Tiers ??</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>It depends how much people you have invited on your own. then company will decide your tier on over all basis </p>
+									<p>There are three tiers , Gold Bronze and Silver </p>
 								</div>
 							</div>
 						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Upgrading tier process ?</a>
+							</div>
+							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>You will be awarded with tiers on the basis of your invition process. more people you will invite more tiers you will be awarded and upgraded. </p>
+								</div>
+							</div>
+						</div>
+						
+						
+					
 					</div>
 				</div>
 				<div class="faq-box" id="third-question" style="display: none;">
-					<div id="accordion">
-						<div class="card single-item" >
+				<div id="accordion">
+						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How reffered client get in touch with agent?</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">is it easy to find an agent with help of this site?</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>Agent will get in touch with client as soon as possible and provide thw service as per need</p>
+									<p>Yes you can easily find agent in your own city to be served. This is the main advantage and benifit of this site.</p>
 								</div>
 							</div>
 						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">what is the process ?</a>
+							</div>
+							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>Our agent will supervise the client. it will be his duty to assign an agent of the client city as soon as possible.</p>
+								</div>
+							</div>
+						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">we can trust reffered agent?</a>
+							</div>
+							<div id="collapse3" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>He will be our trusted and verified agent. he will assist you in your real estate matters. </p>
+								</div>
+							</div>
+						</div>
+					
 					</div>
 				</div>
 				<div class="faq-box" id="fourth-question" style="display: none;">
-					<div id="accordion">
-						<div class="card single-item" >
+				<div id="accordion">
+						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How many tiers?</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Tier Information</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>Company award their agents three tiers Gold Bronze and Silver on their performance bassis.</p>
+									<p>There are three tiers , Gold , silver and bronze.</p>
+								</div>
+							</div>
+						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">How i can get these tiers ?</a>
+							</div>
+							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>Its all up to your work. it depends how much people do you invite. then you will be awarded on the bassis of your referrals/</p>
+								</div>
+							</div>
+						</div>
+						<div class="card single-item">
+							<div class="card-header item-nav">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">what is the higest tier?</a>
+							</div>
+							<div id="collapse3" class="collapse item-content-wrap" data-parent="#accordion">
+								<div class="card-body item-content">
+									<p>Gold id the highest tier according the terms of our company.</p>
 								</div>
 							</div>
 						</div>
@@ -128,12 +202,12 @@
 					</div>
 					<div class="widget-article">
 						<ul class="list-item">
-					
+
 							<li><a id="question" href="#">How to Create an Account</a></li>
 							<li><a id="question2" href="#">How Our tier Plan Works ?</a></li>
 							<li><a id="question3" href="#">How reffered client get in touch with agent?</a></li>
 							<li><a id="question4" href="#">How many tiers?</a></li>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -145,17 +219,39 @@
 
 <script>
 	$(document).ready(function() {
+		$("#question").click(function() {
+			$('#first-question').css('display', 'block');
+			$('#second-question').css('display', 'none');
+			$('#third-question').css('display', 'none');
+			$('#fourth-question').css('display', 'none');
+			$('#fifth-question').css('display', 'none');
+		});
 
 		$("#question2").click(function() {
+			$('#first-question').css('display', 'none');
 			$('#second-question').css('display', 'block');
+			$('#third-question').css('display', 'none');
+			$('#fourth-question').css('display', 'none');
+			$('#fifth-question').css('display', 'none');
 		});
 		$("#question3").click(function() {
+			$('#first-question').css('display', 'none');
 			$('#third-question').css('display', 'block');
+			$('#second-question').css('display', 'none');
+			$('#fourth-question').css('display', 'none');
+			$('#fifth-question').css('display', 'none');
 		});
 		$("#question4").click(function() {
+			$('#first-question').css('display', 'none');
+			$('#third-question').css('display', 'none');
+			$('#second-question').css('display', 'none');
 			$('#fourth-question').css('display', 'block');
+			$('#fifth-question').css('display', 'none');
 		});
 		$("#question5").click(function() {
+			$('#third-question').css('display', 'none');
+			$('#second-question').css('display', 'none');
+			$('#fourth-question').css('display', 'none');
 			$('#fifth-question').css('display', 'block');
 		});
 	});

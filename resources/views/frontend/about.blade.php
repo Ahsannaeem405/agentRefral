@@ -109,7 +109,8 @@
                     <div class="content-holder has-animation">
                         <div class="translate-bottom-75 opacity-animation
 																					transition-150 transition-delay-1000">
-                            <h2 class="item-title">Exculsive Real Estate Agency</h2>
+                            <h2 class="item-title">
+Exclusive Real Estate Agency</h2>
                         </div>
                         <div class="translate-bottom-75 opacity-animation
 																					transition-150 transition-delay-1300">
@@ -145,7 +146,7 @@
 																							transition-150 transition-delay-2200">
                                     <div class="progress-box-layout4">
                                         <h2 class="counting-text counter" data-num="15420">15420</h2>
-                                        <div class="item-label">Refferals</div>
+                                        <div class="item-label">Referrals</div>
                                     </div>
                                 </div>
                             </div>

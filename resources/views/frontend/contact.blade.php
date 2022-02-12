@@ -117,26 +117,32 @@
 									<div class="row">
 										<div class="col-md-6 form-group">
 											<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1200">
-												<input type="text" placeholder="Name" class="form-control" name="name" data-error="Name field is required" required>
-												<div class="help-block with-errors"></div>
+											<label for="exampleInputEmail1">Name</label>
+												<input type="text" placeholder="Name" class="form-control" name="name" >
+											
 											</div>
 										</div>
 										<div class="col-md-6 form-group">
+										
 											<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1400">
-												<input type="email" placeholder="Email" class="form-control" name="email" data-error="Email field is required" required>
-												<div class="help-block with-errors"></div>
+											<label for="exampleInputEmail1">Email</label>
+												<input type="email" placeholder="Email" class="form-control" name="email" >
+											
 											</div>
 										</div>
 										<div class="col-12 form-group">
+
 											<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1600">
-												<input type="text" placeholder="Subject" class="form-control" name="subject" data-error="Subject field is required" required>
-												<div class="help-block with-errors"></div>
+											<label for="exampleInputEmail1">Subject</label>
+												<input type="text" placeholder="Subject" class="form-control" name="subject">
+												
 											</div>
 										</div>
 										<div class="col-12 form-group">
 											<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1800">
-												<textarea placeholder="Comment" class="textarea form-control" name="message" id="form-message" rows="7" cols="20" data-error="Message field is required" required></textarea>
-												<div class="help-block with-errors"></div>
+											<label for="exampleInputEmail1">Comment</label>
+												<textarea placeholder="Comment" class="textarea form-control" name="message" id="form-message" rows="7" cols="20"></textarea>
+												
 											</div>
 										</div>
 										<div class="col-12 form-group mb-0">
@@ -145,7 +151,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-response"></div>
+								
 								</form>
 							</div>
 						</div>
