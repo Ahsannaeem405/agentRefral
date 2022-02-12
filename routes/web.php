@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/test', 'index');
-
-
-
-
+//user site 
 Route::view('/', 'frontend.index')->name('index');
 Route::view('/about', 'frontend.about')->name('about-us');
 Route::view('/contact', 'frontend.contact')->name('contact-us');
@@ -25,3 +21,6 @@ Route::view('/faq', 'frontend.faq')->name('faqs');
 Route::view('/faqs', 'frontend.faqs')->name('faqs1');
 Route::view('/login', 'frontend.login')->name('login');
 Route::view('/register', 'frontend.register')->name('register');
+
+//admin panel 
+Route::view('/dashboard', 'dashboard.index')->name('dashboard');

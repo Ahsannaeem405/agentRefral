@@ -90,7 +90,7 @@ body{
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 order-lg-1 compress-left-side d-flex align-items-center banner-text" style="margin-top: -160px;">
+            <div class="col-lg-7 order-lg-1 compress-left-side d-flex align-items-center banner-text" >
                 <div class="main-banner-box-layout1">
                     <div class="translate-bottom-75 opacity-animation transition-150 transition-delay-1500">
                         <div class="item-sub-title">We are looking for One real estate agent per city.</div>
