@@ -23,4 +23,4 @@ Route::view('/login', 'frontend.login')->name('login');
 Route::view('/register', 'frontend.register')->name('register');
 
 //admin panel 
-Route::view('/dashboard', 'dashboard.index')->name('dashboard');
+Route::view('/dash', 'backend.index')->name('layout');
