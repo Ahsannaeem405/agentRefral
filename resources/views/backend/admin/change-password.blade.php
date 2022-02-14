@@ -1,4 +1,4 @@
-admin.@extends('backend.admin.main')
+@extends('backend.admin.main')
 @include('backend.admin.layouts.head')
 @include('backend.admin.layouts.topbar')
 @include('backend.admin.layouts.sidebar')
@@ -87,7 +87,7 @@ admin.@extends('backend.admin.main')
 
 				<div class="ui-block-title">
 					<a href="33-YourAccount-Notifications.html" class="h6 title">Notifications</a>
-					<a href="#" class="items-round-little bg-primary">8</a>
+					<a href="#" class="items-round-little bg-primary">1</a>
 				</div>
 				<div class="ui-block-title">
 					<a href="34-YourAccount-ChatMessages.html" class="h6 title">Chat / Messages</a>

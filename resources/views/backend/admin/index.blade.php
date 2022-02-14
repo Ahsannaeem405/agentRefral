@@ -98,18 +98,18 @@
                         <div class="inline-items p-0 d-flex justify-content-between mt-3">
                             <div class="d-flex">
                                 <div class="author-thumb" style="">
-                                    <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
+                                    <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
                                 </div>
-                                <div class="notification-event">
-                                    <a href="#" class="h6 notification-friend">Francine Smith</a>
-                                    <span class="chat-message-item">8 Friends in Common</span>
+                                <div class="notification-event d-flex align-items-center">
+                                    <a href="#" class="h6 notification-friend">John Doe</a>
+                                    <span class="chat-message-item"></span>
                                 </div>
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">8 Friends in Common</span>
+                                <span class="chat-message-item">Torento</span>
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">8 Friends in Common</span>
+                                <span class="chat-message-item">Gold</span>
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
                                 <button type="button" class="btn btn-success">Send Referrals</button>
