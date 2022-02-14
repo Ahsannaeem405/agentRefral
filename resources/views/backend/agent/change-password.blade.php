@@ -1,7 +1,7 @@
-admin.@extends('backend.admin.main')
-@include('backend.admin.layouts.head')
-@include('backend.admin.layouts.topbar')
-@include('backend.admin.layouts.sidebar')
+@extends('backend.agent.main')
+@include('backend.agent.layouts.head')
+@include('backend.agent.layouts.topbar')
+@include('backend.agent.layouts.sidebar')
 @section('content')
 <div class="main-header">
     <div class="content-bg-wrap bg-group"></div>
@@ -76,7 +76,7 @@ admin.@extends('backend.admin.main')
 									</li>
 									
 									<li>
-										<a href="{{route('changepassword')}}">Change Password</a>
+										<a href="{{route('changepassword1')}}">Change Password</a>
 									</li>
 								</ul>
 							</div>

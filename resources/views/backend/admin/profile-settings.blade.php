@@ -76,7 +76,7 @@
 									</li>
 									
 									<li>
-										<a href="{{route('changepassword')}}">Change Password</a>
+										<a href="{{route('changepassword1')}}">Change Password</a>
 									</li>
 								</ul>
 							</div>

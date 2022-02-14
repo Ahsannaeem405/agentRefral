@@ -30,6 +30,13 @@
 						</svg>
 					</a>
 				</li>
+				<li>
+					<a href="{{route('settings1')}}">
+						<svg class="olymp-badge-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+							<use xlink:href="#olymp-badge-icon"></use>
+						</svg>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -64,6 +71,14 @@
 				</li>
 				<li>
 					<a href="{{route('referrals1')}}">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+							<use xlink:href="#olymp-happy-faces-icon"></use>
+						</svg>
+						<span class="left-menu-title">Referrals</span>
+					</a>
+				</li>
+				<li>
+					<a href="{{route('settings1')}}">
 						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
 							<use xlink:href="#olymp-happy-faces-icon"></use>
 						</svg>

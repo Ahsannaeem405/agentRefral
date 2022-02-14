@@ -122,6 +122,14 @@
 						<span class="left-menu-title">Cities</span>
 					</a>
 				</li>
+				<li>
+					<a href="{{route('settings')}}">
+						<svg class="olymp-badge-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">
+							<use xlink:href="#olymp-badge-icon"></use>
+						</svg>
+						<span class="left-menu-title">Settings</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>

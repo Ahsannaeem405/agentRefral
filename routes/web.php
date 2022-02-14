@@ -35,5 +35,7 @@ Route::view('/dash1', 'backend.admin.index1')->name('layout');
 // Agent panel routes 
 Route::view('/dash1', 'backend.agent.index')->name('index1');
 Route::view('/referrals1', 'backend.agent.referrals')->name('referrals1');
+Route::view('/settings1', 'backend.agent.profile-settings')->name('settings1');
+Route::view('/change-password1', 'backend.agent.change-password')->name('changepassword1');
 
 
