@@ -24,3 +24,18 @@
 <!-- SVG icons loader -->
 <script src="{{asset('dashboard/js/svg-loader.js')}}"></script>
 <!-- /SVG icons loader -->
+
+<!-- charts links -->
+
+<!-- JS-libs and init for charts -->
+<script src="{{asset('dashboard/js/libs/moment.min.js')}}"></script>
+<script src="{{asset('dashboard/js/libs/jquery.appear.min.js')}}"></script>
+<script src="{{asset('dashboard/js/libs/Chart.min.js')}}"></script>
+<script src="{{asset('dashboard/js/libs/chartjs-plugin-deferred.min.js')}}"></script>
+<script src="{{asset('dashboard/js/libs/circle-progress.min.js')}}"></script>
+<script src="{{asset('dashboard/js/libs/loader.min.js')}}"></script>
+<script src="{{asset('dashboard/js/libs/run-chart.min.js')}}"></script>
+
+
+
+

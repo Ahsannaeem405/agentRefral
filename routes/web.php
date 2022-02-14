@@ -22,5 +22,18 @@ Route::view('/faqs', 'frontend.faqs')->name('faqs1');
 Route::view('/login', 'frontend.login')->name('login');
 Route::view('/register', 'frontend.register')->name('register');
 
-//admin panel 
-Route::view('/dash', 'backend.index')->name('layout');
+// admin panel routes 
+Route::view('/dash', 'backend.admin.index')->name('index');
+Route::view('/referrals', 'backend.admin.sent-refferals')->name('referrals');
+Route::view('/settings', 'backend.admin.profile-settings')->name('settings');
+Route::view('/change-password', 'backend.admin.change-password')->name('changepassword');
+Route::view('/agents', 'backend.admin.total-agents')->name('agents');
+Route::view('/users', 'backend.admin.total-users')->name('users');
+Route::view('/cities', 'backend.admin.cities')->name('cities');
+Route::view('/dash1', 'backend.admin.index1')->name('layout');
+
+// Agent panel routes 
+Route::view('/dash1', 'backend.agent.index')->name('index1');
+Route::view('/referrals1', 'backend.agent.referrals')->name('referrals1');
+
+

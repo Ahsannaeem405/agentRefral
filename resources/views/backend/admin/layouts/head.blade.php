@@ -16,10 +16,7 @@
 
 	<!-- Main Styles CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.min.css')}}">
-
-	<script src="{{asset('dashboard/unpkg.com/webp-hero%400.0.0-dev.27/dist-cjs/polyfills.js')}}"></script>
-	<script src="{{asset('dashboard/unpkg.com/webp-hero%400.0.0-dev.27/dist-cjs/webp-hero.bundle.js')}}"></script>
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 
 
 </head>

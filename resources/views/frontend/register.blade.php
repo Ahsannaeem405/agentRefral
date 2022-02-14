@@ -116,7 +116,9 @@
 
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn">
+						<a href="{{route('index1')}}">
 						Register
+						</a>
 					</button>
 				</div>
 

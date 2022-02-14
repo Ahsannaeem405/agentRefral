@@ -84,7 +84,7 @@
 
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn">
-					<a href={{route('layout')}}>
+					<a href={{route('index')}}>
 					Login
 					</a>
 					</button>

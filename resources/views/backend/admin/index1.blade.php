@@ -63,7 +63,7 @@
 			</div>
 		</div>
 
-		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12" >
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-content">
 					<ul class="statistics-list-count">
@@ -85,67 +85,67 @@
 	</div>
 </div>
 <div class="pt-5">
-    <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3">
-        <div class="ui-block">
-            <div class="ui-block-title">
-                <h6 class="title">Total Agents</h6>
-                <a href="#" class="more"><svg class="olymp-three-dots-icon">
-                        <use xlink:href="#olymp-three-dots-icon"></use>
-                    </svg></a>
-            </div>
+	<div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3">
+		<div class="ui-block">
+			<div class="ui-block-title">
+				<h6 class="title">Total Agents</h6>
+				<a href="#" class="more"><svg class="olymp-three-dots-icon">
+						<use xlink:href="#olymp-three-dots-icon"></use>
+					</svg></a>
+			</div>
 
-            <!-- W-Action -->
+			<!-- W-Action -->
 
-          
-            <ul class="widget w-friend-pages-added notification-list friend-requests">
-                <li class="inline-items p-0">
-                    <div class="author-thumb">
-                        <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
-                    </div>
-                    <div class="notification-event">
-                        <a href="#" class="h6 notification-friend">Francine Smith</a>
-                        <span class="chat-message-item">8 Friends in Common</span>
-                    </div>
-                   
-                    <div class="notification-event" style="margin-left: 170px;">
-                        <span class="chat-message-item">8 Friends in Common</span>
-                    </div>
-                    <div class="notification-event" style="margin-left: 170px;">
-                        <span class="chat-message-item">8 Friends in Common</span>
-                    </div>
-                    <div class="notification-event" style="margin-left: 170px;">
-                    <button type="button" class="btn btn-success mt-3">Send Referrals</button>
-                    </div>
-                </li>
-                <li class="inline-items p-0">
-                    <div class="author-thumb">
-                        <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
-                    </div>
-                    <div class="notification-event">
-                        <a href="#" class="h6 notification-friend">Francine Smith</a>
-                        <span class="chat-message-item">8 Friends in Common</span>
-                    </div>
-                   
-                    <div class="notification-event" style="margin-left: 170px;">
-                        <span class="chat-message-item">8 Friends in Common</span>
-                    </div>
-                    <div class="notification-event" style="margin-left: 170px;">
-                        <span class="chat-message-item">8 Friends in Common</span>
-                    </div>
-                    <div class="notification-event" style="margin-left: 170px;">
-                    <button type="button" class="btn btn-success mt-3">Send Referrals</button>
-                    </div>
-                </li>
-            </ul>
-          
-          
 
-            <!-- ... end W-Action -->
-        </div>
+			<ul class="widget w-friend-pages-added notification-list friend-requests">
+				<li class="inline-items p-0">
+					<div class="author-thumb">
+						<img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
+					</div>
+					<div class="notification-event">
+						<a href="#" class="h6 notification-friend">Francine Smith</a>
+						<span class="chat-message-item">8 Friends in Common</span>
+					</div>
+
+					<div class="notification-event" style="margin-left: 170px;">
+						<span class="chat-message-item">8 Friends in Common</span>
+					</div>
+					<div class="notification-event" style="margin-left: 170px;">
+						<span class="chat-message-item">8 Friends in Common</span>
+					</div>
+					<div class="notification-event" style="margin-left: 170px;">
+						<button type="button" class="btn btn-success mt-3">Send Referrals</button>
+					</div>
+				</li>
+				<li class="inline-items p-0">
+					<div class="author-thumb">
+						<img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
+					</div>
+					<div class="notification-event">
+						<a href="#" class="h6 notification-friend">Francine Smith</a>
+						<span class="chat-message-item">8 Friends in Common</span>
+					</div>
+
+					<div class="notification-event" style="margin-left: 170px;">
+						<span class="chat-message-item">8 Friends in Common</span>
+					</div>
+					<div class="notification-event" style="margin-left: 170px;">
+						<span class="chat-message-item">8 Friends in Common</span>
+					</div>
+					<div class="notification-event" style="margin-left: 170px;">
+						<button type="button" class="btn btn-success mt-3">Send Referrals</button>
+					</div>
+				</li>
+			</ul>
 
 
 
-    </div>
+			<!-- ... end W-Action -->
+		</div>
+
+
+
+	</div>
 </div>
 <div class="container">
 	<div class="row">
