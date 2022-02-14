@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //user site 
-Route::view('/', 'frontend.index')->name('index');
+Route::view('/', 'frontend.index')->name('index2');
 Route::view('/about', 'frontend.about')->name('about-us');
 Route::view('/contact', 'frontend.contact')->name('contact-us');
 Route::view('/faq', 'frontend.faq')->name('faqs');

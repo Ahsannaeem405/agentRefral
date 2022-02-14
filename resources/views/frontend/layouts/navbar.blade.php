@@ -72,7 +72,7 @@
                                     </div> -->
                                         <ul>
                                             <li class="position-static d-none d-lg-block">
-                                                <a href="{{route('index')}}">Home</a>
+                                                <a href="{{route('index2')}}">Home</a>
                                             </li>
                                     
                                             <li>
