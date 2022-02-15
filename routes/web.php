@@ -46,17 +46,24 @@ Route::view('/users', 'backend.admin.total-users')->name('users');
 Route::get('/agents', [admin::class, 'agents'])->name('agents');
 Route::get('/cities', [admin::class, 'cities'])->name('cities');
 Route::post('/add/cities', [admin::class, 'add_city']);
+Route::post('/cities/update/{id}', [admin::class, 'update_city']);
+Route::get('/cities/delete/{id}', [admin::class, 'delete_city']);
+
+
 Route::get('/approve/agents/{id}', [admin::class, 'approve']);
 Route::get('/reject/agents/{id}', [admin::class, 'reject']);
 Route::post('/update/{id}', [admin::class, 'update']);
-
+});
 
 
 
 Route::view('/dash1', 'backend.admin.index1')->name('layout');
 
 // Agent panel routes 
-Route::view('/dash1', 'backend.agent.index')->name('index1');
+
+Route::prefix('/user')->middleware(['auth','user'])->group(function (){
+
+Route::view('/index', 'backend.agent.index')->name('index1');
 Route::view('/referrals1', 'backend.agent.referrals')->name('referrals1');
 Route::view('/settings1', 'backend.agent.profile-settings')->name('settings1');
 Route::view('/change-password1', 'backend.agent.change-password')->name('changepassword1');
@@ -65,6 +72,8 @@ Route::view('/network', 'backend.agent.network')->name('network');
 
 
 });
+
+
 
 
 Auth::routes();

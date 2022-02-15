@@ -43,7 +43,7 @@ class admin extends Controller
         $waiting_user= User::where('role','2')->whereNull('status')->get();
         $user= User::where('role','2')->whereNotNull('status')->get();
         $citiy = cites::all();
-       
+
        return view('backend.admin.total-agents' ,compact('user','waiting_user','citiy'));
 
     }
@@ -82,6 +82,32 @@ class admin extends Controller
         return back()->with('success', 'Agent Update Successfully.');
 
     }
+    public function update_city(Request $request,$id)
+    {
+
+        
+
+        $user=cites::find($id);
+        $user->name=$request->input('city');
+       
+        $user->save();
+        return back()->with('success', 'City Update Successfully.');
+
+    }
+    public function delete_city(Request $request,$id)
+    {
+
+        
+
+        $user=cites::find($id);
+       
+       
+        $user->delete();
+        return back()->with('success', 'City Delete Successfully.');
+
+    }
+    
+    
     
     
     

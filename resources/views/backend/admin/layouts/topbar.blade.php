@@ -5,7 +5,7 @@
 
 	<div class="header-content-wrapper">
 		<div class="control-block">
-			<div class="control-icon more has-items">
+			{{-- <div class="control-icon more has-items">
 				<svg class="olymp-thunder-icon">
 					<use xlink:href="#olymp-thunder-icon"></use>
 				</svg>
@@ -51,7 +51,7 @@
 					</div>
 
 				</div>
-			</div>
+			</div> --}}
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">

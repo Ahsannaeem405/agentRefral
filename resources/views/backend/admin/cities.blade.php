@@ -92,10 +92,34 @@
                                 </div>
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
+                                <button data-toggle="modal" data-target="#exampleModaledit{{$m}}" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
+                                <a href="{{url('admins/cities/delete/' .$row_user->id)}}">
+                                <button type="button" class="btn btn-danger">Delete</button></a>
                             </div>
                         </div>
+                        <div class="modal fade" id="exampleModaledit{{$m}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Ctiy</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="POST" action="{{ url('admins/cities/update/' .$row_user->id) }}">
+                                  @csrf
+            
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" value="{{$row_user->name}}">
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach   
                       
                     </div>
