@@ -21,6 +21,16 @@
 
 <div class="container">
 <div class="">
+
+   
+   @if (session()->has('success'))
+
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+    @endif
+
+
         <!-- <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3"> -->
         <div class="col">
             <div class="ui-block">
@@ -47,15 +57,17 @@
                                     <h5 class="modal-title" id="exampleModalLabel">Add Ctiy</h5>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form method="POST" action="{{ url('admins/add/cities') }}">
+                                  @csrf
+            
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">City</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city">
                                         </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-success">Save</button>
                                     </form>
                                 </div>
                             </div>
@@ -67,14 +79,16 @@
                 <!-- W-Action -->
                 <div class="widget w-friend-pages-added notification-list friend-requests">
                     <div class="container">
-                    
+                    @php $m=0; @endphp
+                    @foreach($user as $row_user)
+                     @php $m++ @endphp
                         <div class="inline-items p-0 d-flex justify-content-between mt-3">
                             <div class="d-flex">
 
                                 <div class="notification-event d-flex align-items-center">
                                     <!-- <a href="#" class="h6 notification-friend">Francine Smith</a> -->
-                                    <span class="chat-message-item" style="margin-right: 5px;"><b>1</b> </span>
-                                    <span class="chat-message-item">Lahore </span>
+                                    <span class="chat-message-item" style="margin-right: 5px;font-size:20px;">{{$m}} </span>
+                                    <span class="chat-message-item" style="font-size:20px;">{{$row_user->name}} </span>
                                 </div>
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
@@ -82,34 +96,7 @@
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </div>
                         </div>
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend">Francine Smith</a> -->
-                                    <span class="chat-message-item" style="margin-right: 5px;"><b>2</b> </span>
-                                    <span class="chat-message-item">Islamabad </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                        </div>
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend">Francine Smith</a> -->
-                                    <span class="chat-message-item" style="margin-right: 5px;"><b>3</b> </span>
-                                    <span class="chat-message-item">Islamabad </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                        </div>
+                    @endforeach   
                       
                     </div>
                 </div>

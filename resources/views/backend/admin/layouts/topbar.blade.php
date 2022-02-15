@@ -26,7 +26,7 @@
 									<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 								</div>
 								<div class="notification-event">
-									<div><a href="#" class="h6 notification-friend">John Doe</a> reffered someone to an agent<a href="#" class="notification-link">profile status</a>.</div>
+									<div><a href="#" class="h6 notification-friend"></a> </div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 								</div>
 								<span class="notification-icon">
@@ -76,22 +76,29 @@
 								</li>
 
 								<li>
-									<a href="#">
-										<svg class="olymp-logout-icon">
+									<a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <svg class="olymp-logout-icon">
 											<use xlink:href="#olymp-logout-icon"></use>
 										</svg>
+                                        {{ __('Logout') }}
+                                    </a>
 
-										<span>Log Out</span>
-									</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+									
+
 								</li>
 							</ul>
 						</div>
 
 					</div>
 				</div>
-				<a href="{{route('index')}}" class="author-name fn">
+				<a href="" class="author-name fn">
 					<div class="author-title">
-						John Doe <svg class="olymp-dropdown-arrow-icon">
+						{{Auth::user()->first_name}} <svg class="olymp-dropdown-arrow-icon">
 							<use xlink:href="#olymp-dropdown-arrow-icon"></use>
 						</svg>
 					</div>
