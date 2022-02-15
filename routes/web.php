@@ -42,7 +42,7 @@ Route::get('/cities', [admin::class, 'cities'])->name('cities');
 Route::post('/add/cities', [admin::class, 'add_city']);
 
 
-Route::view('/dash1', 'backend.admin.index1')->name('layout');
+// Route::view('/dash1', 'backend.admin.index1')->name('layout');
 
 // Agent panel routes 
 Route::view('/dash1', 'backend.agent.index')->name('index1');

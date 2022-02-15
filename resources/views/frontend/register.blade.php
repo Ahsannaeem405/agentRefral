@@ -111,16 +111,12 @@
                     </span>
                 @enderror
 
-				<div class="wrap-input100" >
-					
-
-                                
+				<div class="wrap-input100" >     
 					<input class="input100  @error('password') is-invalid @enderror" name="password" required  type="password"  placeholder="Password">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-lock" aria-hidden="true"></i>
 					</span>
-					
 				</div>
 				@error('password')
 	                <span class="invalid-feedback" role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
