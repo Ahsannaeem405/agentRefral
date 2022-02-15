@@ -36,6 +36,8 @@ Route::view('/settings', 'backend.admin.profile-settings')->name('settings');
 Route::view('/change-password', 'backend.admin.change-password')->name('changepassword');
 Route::view('/agents', 'backend.admin.total-agents')->name('agents');
 Route::view('/users', 'backend.admin.total-users')->name('users');
+#
+
 Route::get('/cities', [admin::class, 'cities'])->name('cities');
 Route::post('/add/cities', [admin::class, 'add_city']);
 
