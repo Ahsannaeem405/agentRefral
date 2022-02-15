@@ -86,11 +86,11 @@
                                               
                                             </li>
                                             <li>
-                                                <a href="{{route('login')}}">Login</a>
+                                                <a href="{{url('log_in')}}">Login</a>
                                               
                                             </li>
                                             <li>
-                                                <a href="{{route('register')}}"><span>Register</span></a>
+                                                <a href="{{url('get/register')}}"><span>Register</span></a>
                                             </li>
                                         </ul>
                                     </nav>

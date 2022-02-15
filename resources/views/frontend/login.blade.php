@@ -61,32 +61,45 @@
 			<div class="login100-pic js-tilt" data-tilt>
 				<img src="images/img-01.png" alt="IMG">
 			</div>
-			<form class="login100-form validate-form">
+			<form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
+                        @csrf
+			
 				<span class="login100-form-title">
 				      Login
 				</span>
 
 				<div class="wrap-input100" >
-					<input class="input100" type="text" name="email" placeholder="Email">
+					
+					 <input type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Email">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-envelope" aria-hidden="true"></i>
 					</span>
 				</div>
+				@error('email')
+                    <span class="invalid-feedback"  role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
 				<div class="wrap-input100">
-					<input class="input100" type="password" name="pass" placeholder="Password">
+					<input   type="password" class="input100 @error('password') is-invalid @enderror" name="password" required type="password"  placeholder="Password">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-lock" aria-hidden="true"></i>
 					</span>
 				</div>
+				@error('password')
+                    <span class="invalid-feedback"  role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn">
-					<a href={{route('index')}}>
+					<button class="login100-form-btn" type="submit">
+					
 					Login
-					</a>
+					
 					</button>
 				</div>
 

@@ -61,45 +61,74 @@
 			<div class="login100-pic js-tilt" data-tilt>
 				<img src="images/img-01.png" alt="IMG">
 			</div>
-			<form class="login100-form validate-form">
+			<form method="POST" action="{{ route('register') }}" class="login100-form validate-form">
+                @csrf
+			
 				<span class="login100-form-title">
 				      Register
 				</span>
 
 				<div class="wrap-input100" >
-					<input class="input100" type="text" name="email" placeholder="First Name">
+					<input class="input100  @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" placeholder="First Name">
+					
+
+                                
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 					
                         <i class="fa fa-user-tie"></i>
                     
 					</span>
+					
 				</div>
+				@error('first_name')
+                    <span class="invalid-feedback"  role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
 				<div class="wrap-input100" >
-					<input class="input100" type="password" name="pass" placeholder="Last Name">
+					<input class="input100 @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" placeholder="Last Name">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
                     <i class="fa fa-user-tie"></i>
 					</span>
 				</div>
                 <div class="wrap-input100">
-					<input class="input100" type="text" name="email" placeholder="Email">
+
+
+                                
+					<input class="input100  @error('email') is-invalid @enderror" type="email" name="email" value="{{ old('email') }}" required  placeholder="Email">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-envelope" aria-hidden="true"></i>
 					</span>
+
 				</div>
+				@error('email')
+                    <span class="invalid-feedback" role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
 				<div class="wrap-input100" >
-					<input class="input100" type="password" name="pass" placeholder="Password">
+					
+
+                                
+					<input class="input100  @error('password') is-invalid @enderror" name="password" required  type="password"  placeholder="Password">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-lock" aria-hidden="true"></i>
 					</span>
+					
 				</div>
+				@error('password')
+	                <span class="invalid-feedback" role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
+	                    <strong>{{ $message }}</strong>
+	                </span>
+	            @enderror
                 <div class="wrap-input100">
-					<input class="input100" type="text" name="email" placeholder="Confirm Password">
+					<input class="input100" type="password" name="password_confirmation" required placeholder="Confirm Password">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
                     <i class="fa fa-lock" aria-hidden="true"></i>
@@ -107,7 +136,7 @@
 				</div>
 
 				<div class="wrap-input100">
-					<input class="input100" type="password" name="pass" placeholder="City">
+					<input class="input100" type="text" name="city" placeholder="City">
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
                     <i class="fa fa-city" aria-hidden="true"></i>
@@ -115,10 +144,10 @@
 				</div>
 
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn">
-						<a href="{{route('index1')}}">
+					<button class="login100-form-btn" type="submit" >
+						
 						Register
-						</a>
+						
 					</button>
 				</div>
 
