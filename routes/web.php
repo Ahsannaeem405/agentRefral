@@ -23,7 +23,14 @@ Route::view('/contact', 'frontend.contact')->name('contact-us');
 Route::view('/faq', 'frontend.faq')->name('faqs');
 Route::view('/faqs', 'frontend.faqs')->name('faqs1');
 Route::view('/log_in', 'frontend.login')->name('login');
-Route::view('/get/register', 'frontend.register');
+
+
+Route::get('/get/register', function() {
+
+    return view('frontend.register', [
+            'citiy' => App\Models\cites::all()
+        ]);
+});
 
 
 
@@ -34,12 +41,16 @@ Route::view('/index', 'backend.admin.index')->name('index');
 Route::view('/referrals', 'backend.admin.sent-refferals')->name('referrals');
 Route::view('/settings', 'backend.admin.profile-settings')->name('settings');
 Route::view('/change-password', 'backend.admin.change-password')->name('changepassword');
-Route::view('/agents', 'backend.admin.total-agents')->name('agents');
 Route::view('/users', 'backend.admin.total-users')->name('users');
-#
 
+Route::get('/agents', [admin::class, 'agents'])->name('agents');
 Route::get('/cities', [admin::class, 'cities'])->name('cities');
 Route::post('/add/cities', [admin::class, 'add_city']);
+Route::get('/approve/agents/{id}', [admin::class, 'approve']);
+Route::get('/reject/agents/{id}', [admin::class, 'reject']);
+Route::post('/update/{id}', [admin::class, 'update']);
+
+
 
 
 Route::view('/dash1', 'backend.admin.index1')->name('layout');

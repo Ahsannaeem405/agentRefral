@@ -136,7 +136,13 @@
 				</div>
 
 				<div class="wrap-input100">
-					<input class="input100" type="text" name="city" placeholder="City">
+					
+					<select name="city" class="input100"  required>
+					  <option value="">Select City</option>
+					  @foreach($citiy as $citiy)
+					  <option value="{{$citiy->id}}">{{$citiy->name}}</option>
+					  @endforeach
+					</select>
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
                     <i class="fa fa-city" aria-hidden="true"></i>

@@ -44,4 +44,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+     public function get_city()
+    {
+        return $this->belongsTo('App\Models\cites','city','id');
+    }
 }
