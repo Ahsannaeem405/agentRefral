@@ -20,7 +20,7 @@
 </div>
 
 <div class="container">
-<div class="">
+    <div class="">
         <!-- <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3"> -->
         <div class="col">
             <div class="ui-block">
@@ -34,7 +34,7 @@
 
                     <div class="ui-block-title d-flex align-items-end flex-column border-bottom">
                         <a data-toggle="modal" data-target="#exampleModal">
-                        <i class="fas fa-plus" style="font-size: 20px;color:#2f94e2"></i>
+                            <i class="fas fa-plus" style="font-size: 20px;color:#2f94e2"></i>
                         </a>
                     </div>
                     <!-- Button trigger modal -->
@@ -67,7 +67,7 @@
                 <!-- W-Action -->
                 <div class="widget w-friend-pages-added notification-list friend-requests">
                     <div class="container">
-                    
+
                         <div class="inline-items p-0 d-flex justify-content-between mt-3">
                             <div class="d-flex">
 
@@ -110,7 +110,7 @@
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </div>
                         </div>
-                      
+
                     </div>
                 </div>
                 <!-- ... end W-Action -->
@@ -121,10 +121,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		var webpMachine = new webpHero.WebpMachine()
-		webpMachine.polyfillDocument()
-	});
-</script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var webpMachine = new webpHero.WebpMachine()
+            webpMachine.polyfillDocument()
+        });
+    </script>
 </div>
 @endsection
