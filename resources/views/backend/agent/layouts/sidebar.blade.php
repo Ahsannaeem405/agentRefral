@@ -78,11 +78,19 @@
 					</a>
 				</li>
 				<li>
+					<a href="{{route('network')}}">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+							<use xlink:href="#olymp-happy-faces-icon"></use>
+						</svg>
+						<span class="left-menu-title">My Network</span>
+					</a>
+				</li>
+				<li>
 					<a href="{{route('settings1')}}">
 						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
 							<use xlink:href="#olymp-happy-faces-icon"></use>
 						</svg>
-						<span class="left-menu-title">Referrals</span>
+						<span class="left-menu-title">Settings</span>
 					</a>
 				</li>
 			</ul>
