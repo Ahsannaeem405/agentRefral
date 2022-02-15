@@ -32,8 +32,7 @@ class LoginController extends Controller
         {
             return 'admins/index';
         }
-        // else if(Auth::user()->role=='2' && Auth::user()->status=='approve')
-        else if(Auth::user()->role=='2')
+        else if(Auth::user()->role=='2' && Auth::user()->status=='approve')
         {
             return 'user/index';
         }
@@ -56,4 +55,3 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 }
-

@@ -50,7 +50,7 @@ class Kernel extends HttpKernel
         ],
         'user'=> [
           
-            \App\Http\Middleware\user::class,
+            \App\Http\Middleware\login::class,
         ],
     ];
 
