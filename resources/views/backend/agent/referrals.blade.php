@@ -275,12 +275,30 @@
                                         <div class="row">
                                             <p>Select a client From Your Database or Create a new client</p>
                                             <div class="col d-flex align-items-center">
-                                                <input type="radio" class="w-25"><span>Select from database</span>
+                                                <input type="radio" name="answer" class="w-25 from-database"><span>Select from database</span>
                                             </div>
+
                                             <div class="col d-flex align-items-center">
-                                                <input type="radio" class="w-25"><span>Create a new New Contact</span>
+                                                <input type="radio" name="answer" class="w-25 new-contact"><span>Create a new New Contact</span>
                                             </div>
+
                                         </div>
+                                        <select class="database" style=" margin-top: 7px;
+    padding: 0px;
+    margin-left: 50px;
+    width: 127px;
+    height: 32px; display:none">
+                                            <option> Talha </option>
+                                            <option> Rehman </option>
+                                            <option> Sufyan </option>
+                                        </select>
+                                     <div class="container">
+                                     <div class="row d-flex justify-content-end contact d-none" style="display:none">
+                                            <input type="text"  placeholder="Name" style="margin-top: 10px;height: 26px;">
+                                            <input type="text"  placeholder="Email" style="margin-top: 10px;height: 26px;">
+                                            <input type="text"  placeholder="Phone Number " style="margin-top: 10px;height: 26px;">
+                                        </div>
+                                     </div>
                                         <div class="mt-5 text-end">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                             <button type="button" class="btn btn-primary">Send</button>
@@ -299,7 +317,18 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<script>
+    $(document).ready(function() {
+        $(".from-database").click(function() {
+            $('.database').show();
+            $('.contact').addClass("d-none");
+        });
+        $(".new-contact").click(function() {
+            $('.database').hide();
+            $('.contact').removeClass("d-none");
+        });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var webpMachine = new webpHero.WebpMachine()

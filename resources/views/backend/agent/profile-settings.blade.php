@@ -41,18 +41,18 @@
 					
 					<!-- Personal Information Form  -->
 					
-					<form>
+					<form method="post" action="{{ url('user/personal-information')}}">
+						@csrf
 						<div class="row">
-					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">First Name</label>
-									<input class="form-control" placeholder="" type="text" value="James">
+									<input class="form-control" placeholder="" name="first_name" type="text" value="{{Auth()->user()->first_name}}">
 								</div>
 					
 								<div class="form-group label-floating">
 									<label class="control-label">Your Email</label>
-									<input class="form-control" placeholder="" type="email" value="jspiegel@yourmail.com">
+									<input class="form-control" placeholder=""name="email"  type="email" value="{{Auth()->user()->email}}">
 								</div>
 					
 							
@@ -61,12 +61,8 @@
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">Last Name</label>
-									<input class="form-control" placeholder="" type="text" value="Spiegel">
+									<input class="form-control" placeholder="" name="last_name"  type="text" value="{{Auth()->user()->last_name}}">
 								</div>
-					
-							
-					
-					
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">Your Phone Number</label>
 									<input class="form-control" placeholder="" type="text">
@@ -94,9 +90,9 @@
 							<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your City</label>
-									<select class="form-select">
-										<option value="SF">San Francisco</option>
-										<option value="NY">New York</option>
+									<select class="form-select" name="city" >
+									<option value="{{Auth()->user()->city}}">{{Auth()->user()->city}}</option>
+										
 									</select>
 								</div>
 							</div>
@@ -118,7 +114,7 @@
 								<button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<button class="btn btn-primary btn-lg full-width">Save all Changes</button>
+								<button type="submit" class="btn btn-primary btn-lg full-width">Save all Changes</button>
 							</div>
 					
 						</div>
