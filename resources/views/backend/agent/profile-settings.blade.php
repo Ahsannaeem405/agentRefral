@@ -1006,6 +1006,7 @@
 					
 					<form method="post" action="{{ url('user/personal-information')}}">
 						@csrf
+						<input class="form-control" placeholder="" name="agent_id" type="hidden" value="{{Auth()->user()->id}}">
 						<div class="row">
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
