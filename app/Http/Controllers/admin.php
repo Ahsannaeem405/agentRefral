@@ -37,9 +37,7 @@ class admin extends Controller
     }
     public function agents()
     {
-
-        
-
+      
         $waiting_user= User::where('role','2')->whereNull('status')->get();
         $user= User::where('role','2')->whereNotNull('status')->get();
         $citiy = cites::all();

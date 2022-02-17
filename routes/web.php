@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\usercontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,7 +66,7 @@ Route::post('/update/{id}', [admin::class, 'update']);
 Route::prefix('/user')->middleware(['auth','user'])->group(function (){
 
 Route::view('/index', 'backend.agent.index')->name('index1');
-Route::view('/referrals1', 'backend.agent.referrals')->name('referrals1');
+Route::get('/referrals1', [usercontroller::class, 'referrals'])->name('referrals1');
 Route::view('/settings1', 'backend.agent.profile-settings')->name('settings1');
 Route::view('/change-password1', 'backend.agent.change-password')->name('changepassword1');
 Route::view('/network', 'backend.agent.network')->name('network');

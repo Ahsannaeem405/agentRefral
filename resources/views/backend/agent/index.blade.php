@@ -1,7 +1,4 @@
 @extends('backend.agent.main')
-@include('backend.agent.layouts.head')
-@include('backend.agent.layouts.topbar')
-@include('backend.agent.layouts.sidebar')
 @section('content')
 @include('backend.agent.include.main-header')
 <div class="container">
