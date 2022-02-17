@@ -49,19 +49,10 @@
                                 <th class="location">
                                     PLACE
                                 </th>
-
-                               
-                               
-
-                                
-
                                 <th class="add-event">
-
                                 </th>
                             </tr>
-
                             </thead>
-
                             <tbody>
                                 @php $l=0;  @endphp
                             @foreach($user as $row_user)

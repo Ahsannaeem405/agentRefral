@@ -56,10 +56,10 @@
                                 <div class="col-lg-2 d-flex justify-content-start">
                                     <div class="temp-logo text-center">
                                         <a href="index.html" class="default-logo">
-                                            <img src="media/dark.png" alt="logo" class="img-fluid" style="height:80px!important">
+                                            <img src="{{asset('media/dark.png')}}" alt="logo" class="img-fluid" style="height:80px!important">
                                         </a>
                                         <a href="index.html" class="sticky-logo">
-                                            <img src="media/light.png" alt="logo" class="img-fluid" style="height:80px!important">
+                                            <img src="{{asset('media/light.png')}}" alt="logo" class="img-fluid" style="height:80px!important">
                                         </a>
                                     </div>
                                 </div>

@@ -31,7 +31,7 @@
                             </svg>
                         </li>
                         <li class="animated-figure">
-                            <img src="media/building.gif" alt="Process">
+                            <img src="{{asset('media/building.gif')}}" alt="Process">
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@
                                 <div class="d-flex align-items-sm-center">
                                     <div class="item-icon dodger-blue">
                                         <!-- <i class="flaticon-envelope"></i> -->
-                                        <img src="media/premium.png" alt="Process">
+                                        <img src="{{asset('media/premium.png')}}" alt="Process">
                                     </div>
                                     <div class="item-content">
                                         <h3 class="item-title">Exclusivity</h3>
@@ -62,7 +62,7 @@
                                 <div class="d-flex align-items-sm-center flex-xl-row-reverse">
                                     <div class="item-icon sunset-orange">
                                         <!-- <i class="flaticon-research"></i> -->
-                                        <img src="media/target.png" alt="Process">
+                                        <img src="{{asset('media/target.png')}}" alt="Process">
                                     </div>
                                     <div class="item-content">
                                         <h3 class="item-title">Goal </h3>
@@ -234,6 +234,7 @@
         <div class="row has-animation rc-carousel
 																										nav-control-layout4 col-full-width" data-options='{"
 																										trigger_start" : 991,"trigger_end" : 0}' data-loop="true" data-items="30" data-margin="10" data-autoplay="false" data-autoplay-timeout="5000" data-smart-speed="700" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="1" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false" data-r-extra-large="3" data-r-extra-large-nav="true" data-r-extra-large-dots="false">
+            @foreach ($users as $user)
             <div class="col-md-4">
                 <div class="translate-bottom-75 opacity-animation
 																												transition-150 transition-delay-100">
@@ -241,7 +242,11 @@
                         <div class="maks-item animted-bg-wrap">
                             <span class="animted-bg"></span>
                             <div class="item-figure">
+                                @if($user->profile_image)
                                 <img src="media/team/team1.jpg" alt="Team">
+                                @else
+                                <img src="media/team/team12.jpg" alt="Team">
+                                @endif
                             </div>
                             <ul class="social-items">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -251,58 +256,14 @@
                             </ul>
                         </div>
                         <div class="item-content">
-                            <h3 class="item-title"><a href="#">Michael Jackson</a></h3>
+                            <h3 class="item-title"><a href="#">{{$user->first_name}} {{$user->last_name}}</a></h3>
                             <!-- <div class="sub-title">Gold Tier Holder </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="translate-bottom-75 opacity-animation
-																												transition-150 transition-delay-600">
-                    <div class="team-box-layout1">
-                        <div class="maks-item animted-bg-wrap">
-                            <span class="animted-bg"></span>
-                            <div class="item-figure">
-                                <img src="media/team/team2.jpg" alt="Team">
-                            </div>
-                            <ul class="social-items">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item-content">
-                            <h3 class="item-title"><a href="#">Michael Jackson</a></h3>
-                            <!-- <div class="sub-title">Silver Tier Holder </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="translate-bottom-75 opacity-animation
-																												transition-150 transition-delay-1100">
-                    <div class="team-box-layout1">
-                        <div class="maks-item animted-bg-wrap">
-                            <span class="animted-bg"></span>
-                            <div class="item-figure">
-                                <img src="media/team/team3.jpg" alt="Team">
-                            </div>
-                            <ul class="social-items">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item-content">
-                            <h3 class="item-title"><a href="#">Michael Jackson</a></h3>
-                            <!-- <div class="sub-title">Bronze tier Holder </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+@endforeach
         </div>
     </div>
 </section>
