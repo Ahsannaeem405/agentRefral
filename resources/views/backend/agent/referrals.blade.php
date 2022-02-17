@@ -57,7 +57,7 @@
                                 @php $l=0;  @endphp
                             @foreach($user as $row_user)
 
-                             @php $l++;  @endphp
+                             @php $l++  @endphp
                             <tr class="event-item">
                                 <td class="author">
                                     <div class="event-author inline-items">
@@ -87,16 +87,18 @@
                                 
                                 
                                 <td class="add-event">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
+                                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
                                 </td>
                             </tr>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="exampleModal{{$l}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel{{$l}}">Referral Request</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Referral Request</h5>
                                     </div>
                                     <div class="modal-body">
+                                    <form method="POST" action="{{ url('user/add/referral') }}">
+                                        @csrf    
                                         <div class="row">
                                             {{-- <div class="col-12 d-flex justify-content-between">
                                                 <p>Select an in-network agent to send a referral to </p>
@@ -126,56 +128,90 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <form>
+                                            <input type="hidden" name="reciver_id" value="{{$row_user->id}}">
+                                           
                                                 <div class="form-group">
                                                     <label for="formControlRange">Referral Fee</label>
                                                     <div style="display: flex;">
-                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
-                                                     <output>24</output><span>%</span></div>
+                                                         <input id="rangeInput" type="range" min="0" value="24" max="99" oninput="amount.value=rangeInput.value" />
+                                                         <input id="amount" type="text" value="24" min="0" name="profit" max="99" oninput="rangeInput.value=amount.value" readonly style="width: 62px;border: none;">
+                                                         <span style="margin-top: 4%;margin-left: -6%;">%</span>
+                                                   </div>
                                                 </div>
-                                            </form>
+                                            
                                         </div>
                                         <div>
-                                            <form>
+                                            
                                                 
                                                 <div class="form-group">
                                                     <label for="formControlRange">Acceptence Deadline</label>
-                                                    <div style="display: flex;">
-                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
-                                                     <output>24</output><span>h</span></div>
+                                                     <div style="display: flex;">
+                                                         <input id="rangeInput2" type="range" min="0" value="24" max="99" oninput="amount2.value=rangeInput2.value" />
+                                                         <input id="amount2"  name="timeout" type="text" value="24" min="0" max="99" oninput="rangeInput2.value=amount2.value" readonly style="width: 62px;border: none;">
+                                                         <span style="margin-top: 4%;margin-left: -6%;">h</span>
+                                                   </div>
                                                 </div>
-                                            </form>
+                                           
                                         </div>
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col">
                                                     <label for="">Min </label>
-                                                    <input type="text" placeholder="Min Range">
+                                                    <input type="number" name="min" placeholder="Min Range">
                                                 </div>
                                                 <div class="col">
                                                     <label for="">Max </label>
-                                                    <input type="text" placeholder="Max Range">
+                                                    <input type="number" name="max" placeholder="Max Range">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="mt-3">
                                             <label for="">Notes</label>
-                                            <input type="text" placeholder="Write a Message">
+                                            <input type="text" placeholder="Write a Message" name="notes">
                                         </div>
                                         <p>0/3000</p>
                                         <div class="row">
                                             <p>Select a client From Your Database or Create a new client</p>
                                             <div class="col d-flex align-items-center">
-                                                <input type="radio" class="w-25"><span>Select from database</span>
+                                                <input type="radio" name="contact" class="w-25 from-database" value="1"><span>Select from database</span>
                                             </div>
                                             <div class="col d-flex align-items-center">
-                                                <input type="radio" class="w-25"><span>Create a new New Contact</span>
+                                                <input type="radio" name="contact" class="w-25 new-contact" value="2"><span>Create a new New Contact</span>
                                             </div>
+
                                         </div>
+                                    <div class="mt-3">                                        
+                                        <select class="database" style=" margin-top: 7px;
+                                            
+                                             display:none">
+                                            <option> Talha </option>
+                                            <option> Rehman </option>
+                                            <option> Sufyan </option>
+                                        </select>
+                                     </div>
+                                     <div class="container">
+                                     <div class="row d-flex justify-content-end contact d-none" style="display:none">
+                                            <div class="mt-3">
+                                                <label for="">Name</label>
+                                                <input type="text" placeholder="Write a Name" name="name">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="">Email</label>
+                                                <input type="text" placeholder="Write a Email" name="email">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="">Phone</label>
+                                                <input type="text" placeholder="Write a Phone" name="phone">
+                                            </div>
+
+                                            
+                                        </div>
+                                     </div>
                                         <div class="mt-5 text-end">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-primary">Send</button>
+                                            <button type="submit" class="btn btn-primary">Send</button>
                                         </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>
@@ -189,115 +225,8 @@
                     <div class="container">
 
                         
-                        <!-- model code -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Referral Request</h5>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            {{-- <div class="col-12 d-flex justify-content-between">
-                                                <p>Select an in-network agent to send a referral to </p>
-                                                <button class="btn btn-success" style="height: 33px;">Find Agent</button>
-                                            </div>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Select Agent</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select> --}}
-                                        </div>
-                                        <div class="container mt-3">
-                                            <div class="d-flex">
-                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
-                                                    Buyer
-                                                </button>
-                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
-                                                    Seller
-                                                </button>
-                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
-                                                    Tenant
-                                                </button>
-                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
-                                                    Landlord
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="formControlRange">Referral Fee</label>
-                                                    <div style="display: flex;">
-                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
-                                                     <output>24</output><span>%</span></div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div>
-                                            <form>
-                                                
-                                                <div class="form-group">
-                                                    <label for="formControlRange">Acceptence Deadline</label>
-                                                    <div style="display: flex;">
-                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
-                                                     <output>24</output><span>h</span></div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <label for="">Min </label>
-                                                    <input type="text" placeholder="Min Range">
-                                                </div>
-                                                <div class="col">
-                                                    <label for="">Max </label>
-                                                    <input type="text" placeholder="Max Range">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-3">
-                                            <label for="">Notes</label>
-                                            <input type="text" placeholder="Write a Message">
-                                        </div>
-                                        <p>0/3000</p>
-                                        <div class="row">
-                                            <p>Select a client From Your Database or Create a new client</p>
-                                            <div class="col d-flex align-items-center">
-                                                <input type="radio" name="answer" class="w-25 from-database"><span>Select from database</span>
-                                            </div>
-
-                                            <div class="col d-flex align-items-center">
-                                                <input type="radio" name="answer" class="w-25 new-contact"><span>Create a new New Contact</span>
-                                            </div>
-
-                                        </div>
-                                        <select class="database" style=" margin-top: 7px;
-    padding: 0px;
-    margin-left: 50px;
-    width: 127px;
-    height: 32px; display:none">
-                                            <option> Talha </option>
-                                            <option> Rehman </option>
-                                            <option> Sufyan </option>
-                                        </select>
-                                     <div class="container">
-                                     <div class="row d-flex justify-content-end contact d-none" style="display:none">
-                                            <input type="text"  placeholder="Name" style="margin-top: 10px;height: 26px;">
-                                            <input type="text"  placeholder="Email" style="margin-top: 10px;height: 26px;">
-                                            <input type="text"  placeholder="Phone Number " style="margin-top: 10px;height: 26px;">
-                                        </div>
-                                     </div>
-                                        <div class="mt-5 text-end">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-primary">Send</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                     
                     </div>
                 </div>
             </div>
@@ -308,9 +237,12 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <script>
     $(document).ready(function() {
+       
         $(".from-database").click(function() {
+            
             $('.database').show();
             $('.contact').addClass("d-none");
         });
@@ -319,12 +251,7 @@
             $('.contact').removeClass("d-none");
         });
     });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var webpMachine = new webpHero.WebpMachine()
-        webpMachine.polyfillDocument()
-    });
+   
 </script>
 </div>
 @endsection

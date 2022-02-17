@@ -41,6 +41,7 @@
             </div>
             <div class="container bg-white mt-3">
                 <div class="row">
+                    @foreach($send as $row_sender)
                     <div class="d-flex justify-content-between pt-5">
                         <div>
                             <p>
@@ -50,7 +51,7 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-                                Greely Co, USA
+                                {{$row_sender->get_city->name}}
                             </p>
                         </div>
                         <div>
@@ -73,9 +74,9 @@
                             <img loading="lazy" class="" src="{{asset('dashboard/img/user.jpg')}}" alt="friends" width="1087" height="148" style="height:34px;width:34px;border-radius:15px">
                             </div>
                            <div style="margin-left:10px">
-                           <p class="m-0"><b> Brittany Rusa</b></p>
+                           <p class="m-0"><b> {{$row_sender->refer_user->first_name}}</b></p>
                             <p class="m-0">
-                                referral Partner
+                                Referral Partner
                             </p>
                            </div>
 
@@ -110,8 +111,17 @@
                                             Referral fee
                                         </b>
                                     </p>
+                                    @php 
+                                         $days=\Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $row_sender->created_at);
+                                  
+                                             $today=\Carbon\Carbon::now();
+                                             $diff_in_days = $today->diffInDays($days);
+                                             // $a=30;
+                                             // $b=39;
+                                             //dd($b%$a);
+                                    @endphp
                                     <p class="m-0">
-                                        25%
+                                     {{$row_sender->profit}}
                                     </p>
                                 </div>
                                 <div class="col-6 col-md-6">
@@ -121,7 +131,7 @@
                                         </b>
                                     </p>
                                     <p class="m-0">
-                                      !m 18d Ago
+                                     {{$diff_in_days}} days Ago
                                     </p>
                                 </div>
                             </div>
@@ -139,7 +149,7 @@
                                 <div class="mb-3">
                                     <p class="m-0">
                                         <b>
-                                            Saria rose
+                                            {{$row_sender->clint_user->name}}
                                         </b>
                                     </p>
                                     <p class="m-0">
@@ -153,7 +163,7 @@
                                         </b>
                                     </p>
                                     <p class="m-0">
-                                        (970) 388 2584
+                                        {{$row_sender->clint_user->phone}}
                                     </p>
                                 </div>
                                 <div class="mb-3">
@@ -163,7 +173,7 @@
                                         </b>
                                     </p>
                                     <p class="m-0">
-                                        iamerris@icloud.com
+                                        {{$row_sender->clint_user->email}}
                                     </p>
                                 </div>
                             </div>
@@ -171,7 +181,7 @@
                                 <div class="col col-md-6">
                                     <p class="m-0">
                                         <b>
-                                            Pre-Approved
+                                            Status
                                         </b>
                                     </p>
                                  
@@ -203,6 +213,7 @@
                         <button class="btn btn-success d-flex align-items-center" style="margin-right: 42px;height:32px">Send Update</button>
 
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
