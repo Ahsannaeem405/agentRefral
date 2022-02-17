@@ -83,11 +83,25 @@
                 @enderror
 
 				<div class="wrap-input100">
-					<input   type="password" class="input100 @error('password') is-invalid @enderror" name="password" required type="password"  placeholder="Password">
+					<input   type="password" class="input100 @error('password') is-invalid @enderror" name="password" required type="password"  placeholder="Password" id="password-field" >
 					<span class="focus-input100"></span>
 					<span class="symbol-input100">
 						<i class="fa fa-lock" aria-hidden="true"></i>
 					</span>
+					 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" style="font-size: 15px;
+					    display: -webkit-box;
+					    display: -webkit-flex;
+					    display: -moz-box;
+					    display: -ms-flexbox;
+					    
+					    align-items: center;
+					    position: absolute;
+					    border-radius: 25px;
+					    bottom: 0;
+					    left: 86%;
+					   
+					    width: 100%;
+					    height: 100%;"></span>
 				</div>
 				@error('password')
                     <span class="invalid-feedback"  role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
@@ -122,10 +136,16 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	$('.js-tilt').tilt({
-		scale: 1.1
-	})
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(".toggle-password").click(function() {
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
 </script>
 @endsection

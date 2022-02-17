@@ -1,7 +1,5 @@
 @extends('backend.agent.main')
-@include('backend.agent.layouts.head')
-@include('backend.agent.layouts.topbar')
-@include('backend.agent.layouts.sidebar')
+
 @section('content')
 <div class="main-header">
     <div class="content-bg-wrap bg-group"></div>
@@ -32,38 +30,84 @@
                     </svg></a>
                 </div>
                 <!-- W-Action -->
-                <div class="widget w-friend-pages-added notification-list friend-requests">
-                    <div class="container">
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-                                <div class="author-thumb" style="">
-                                    <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
-                                </div>
-                                <div class="notification-event d-flex align-items-center">
-                                    <a href="#" class="h6 notification-friend">John doe </a>
-                                    <!-- <span class="chat-message-item">8 Friends in Common</span> -->
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">Gold</span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">Torento</span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Send Referrals</button>
-                            </div>
-                        </div>
-                        <!-- model code -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="ui-block">
+
+
+                        <table class="event-item-table event-item-table-fixed-width">
+
+                            <thead>
+
+                            <tr>
+
+                                <th class="author">
+                                    Name
+                                </th>
+                                <th class="author">
+                                    Email
+                                </th>
+
+                                <th class="location">
+                                    PLACE
+                                </th>
+
+                               
+                               
+
+                                
+
+                                <th class="add-event">
+
+                                </th>
+                            </tr>
+
+                            </thead>
+
+                            <tbody>
+                                @php $l=0;  @endphp
+                            @foreach($user as $row_user)
+
+                             @php $l++  @endphp
+                            <tr class="event-item">
+                                <td class="author">
+                                    <div class="event-author inline-items">
+                                        <div class="author-thumb">
+                                            <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
+                                        </div>
+                                        <div class="author-date">
+                                            {{$row_user->first_name}}</a> 
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="location">
+                                    <div class="place inline-items">
+                                        
+                                        {{$row_user->email}}
+                                    </div>
+                                </td>
+                                <td class="location">
+                                    <div class="place inline-items">
+                                        <svg class="olymp-add-a-place-icon">
+                                            <use xlink:href="#olymp-add-a-place-icon"></use>
+                                        </svg>
+                                        <span>{{$row_user->get_city->name}}</span>
+                                    </div>
+                                </td>
+                               
+                                
+                                
+                                <td class="add-event">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
+                                </td>
+                            </tr>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Referral Request</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel{{$l}}">Referral Request</h5>
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
-                                            <div class="col-12 d-flex justify-content-between">
+                                            {{-- <div class="col-12 d-flex justify-content-between">
                                                 <p>Select an in-network agent to send a referral to </p>
                                                 <button class="btn btn-success" style="height: 33px;">Find Agent</button>
                                             </div>
@@ -72,7 +116,7 @@
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                                 <option value="3">Three</option>
-                                            </select>
+                                            </select> --}}
                                         </div>
                                         <div class="container mt-3">
                                             <div class="d-flex">
@@ -94,15 +138,120 @@
                                             <form>
                                                 <div class="form-group">
                                                     <label for="formControlRange">Referral Fee</label>
-                                                    <input type="range" class="form-control-range" id="formControlRange">
+                                                    <div style="display: flex;">
+                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+                                                     <output>24</output><span>%</span></div>
                                                 </div>
                                             </form>
                                         </div>
                                         <div>
                                             <form>
+                                                
                                                 <div class="form-group">
                                                     <label for="formControlRange">Acceptence Deadline</label>
-                                                    <input type="range" class="form-control-range" id="formControlRange">
+                                                    <div style="display: flex;">
+                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+                                                     <output>24</output><span>h</span></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="">Min </label>
+                                                    <input type="text" placeholder="Min Range">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="">Max </label>
+                                                    <input type="text" placeholder="Max Range">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <label for="">Notes</label>
+                                            <input type="text" placeholder="Write a Message">
+                                        </div>
+                                        <p>0/3000</p>
+                                        <div class="row">
+                                            <p>Select a client From Your Database or Create a new client</p>
+                                            <div class="col d-flex align-items-center">
+                                                <input type="radio" class="w-25"><span>Select from database</span>
+                                            </div>
+                                            <div class="col d-flex align-items-center">
+                                                <input type="radio" class="w-25"><span>Create a new New Contact</span>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5 text-end">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
+                <div class="widget w-friend-pages-added notification-list friend-requests">
+                    <div class="container">
+
+                        
+                        <!-- model code -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Referral Request</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            {{-- <div class="col-12 d-flex justify-content-between">
+                                                <p>Select an in-network agent to send a referral to </p>
+                                                <button class="btn btn-success" style="height: 33px;">Find Agent</button>
+                                            </div>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Agent</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select> --}}
+                                        </div>
+                                        <div class="container mt-3">
+                                            <div class="d-flex">
+                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
+                                                    Buyer
+                                                </button>
+                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
+                                                    Seller
+                                                </button>
+                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
+                                                    Tenant
+                                                </button>
+                                                <button class="btn btn-success" style="width: 100px;margin-right:2px">
+                                                    Landlord
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="formControlRange">Referral Fee</label>
+                                                    <div style="display: flex;">
+                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+                                                     <output>24</output><span>%</span></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div>
+                                            <form>
+                                                
+                                                <div class="form-group">
+                                                    <label for="formControlRange">Acceptence Deadline</label>
+                                                    <div style="display: flex;">
+                                                    <input type="range" class="form-control-range" id="formControlRange"  value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+                                                     <output>24</output><span>h</span></div>
                                                 </div>
                                             </form>
                                         </div>
