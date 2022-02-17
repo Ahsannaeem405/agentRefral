@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin;
+use App\Http\Controllers\agentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +55,7 @@ Route::get('/cities/delete/{id}', [admin::class, 'delete_city']);
 Route::get('/approve/agents/{id}', [admin::class, 'approve']);
 Route::get('/reject/agents/{id}', [admin::class, 'reject']);
 Route::post('/update/{id}', [admin::class, 'update']);
+
 });
 
 
@@ -68,6 +71,8 @@ Route::view('/referrals1', 'backend.agent.referrals')->name('referrals1');
 Route::view('/settings1', 'backend.agent.profile-settings')->name('settings1');
 Route::view('/change-password1', 'backend.agent.change-password')->name('changepassword1');
 Route::view('/network', 'backend.agent.network')->name('network');
+
+Route::post('/personal-information', [agentController::class, 'update_information']);
 
 
 

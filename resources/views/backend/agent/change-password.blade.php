@@ -72,7 +72,7 @@
 							<div class="accordion-body">
 								<ul class="your-profile-menu">
 									<li>
-										<a href="{{route('settings')}}">Personal Information</a>
+										<a href="{{route('settings1')}}">Personal Information</a>
 									</li>
 									
 									<li>
@@ -1070,11 +1070,11 @@
 								<div class="accordion-body">
 									<ul class="your-profile-menu">
 										<li>
-											<a href="{{route('settings')}}">Personal Information</a>
+											<a href="{{route('settings1')}}">Personal Information</a>
 										</li>
 										
 										<li>
-											<a href="{{route('changepassword')}}">Change Password</a>
+											<a href="{{route('changepassword1')}}">Change Password</a>
 										</li>
 									
 									</ul>
