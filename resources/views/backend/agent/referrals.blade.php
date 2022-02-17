@@ -66,7 +66,7 @@
                                 @php $l=0;  @endphp
                             @foreach($user as $row_user)
 
-                             @php $l++  @endphp
+                             @php $l++;  @endphp
                             <tr class="event-item">
                                 <td class="author">
                                     <div class="event-author inline-items">

@@ -5,6 +5,11 @@ use App\Http\Controllers\admin;
 use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\agentController;
 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
