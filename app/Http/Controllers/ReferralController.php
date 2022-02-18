@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 use App\Models\referral_user;
 use App\Models\referral;
+
 
 
 use Auth;
@@ -14,8 +16,14 @@ use Auth;
 class ReferralController extends Controller
 {
     
+    
     public function add_referral(Request $request)
     {
+
+        // dd($request->input('refer_id'));
+        // dd($request);
+        $notification= Notification::all();
+     dd($notification);
        
         if($request->contact==2)
         {
@@ -47,6 +55,15 @@ class ReferralController extends Controller
             $refral->save();
 
 
+            $sender_id=$request->input('sender_id');
+            $reciver_id=$request->input('reciver_id');
+            $status=0;
+            $notification= new Notification();
+            $notification->sender_id=$sender_id;
+            $notification->reciver_id=$reciver_id;
+            $notification->referral_id=$request->input('refer_id');
+            $notification->status=$status;
+            $notification->save();
         
 
         

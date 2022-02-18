@@ -117,8 +117,9 @@
                                 <span class="chat-message-item">{{$row_user->email}}</span>
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
-
-                                <span class="chat-message-item">{{$row_user->get_city->name}} </span>
+                            @if($row_user->get_city !=null)
+                            <span class="chat-message-item">{{$row_user->get_city->name}} </span>
+                                @endif
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
 
