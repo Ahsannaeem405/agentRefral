@@ -51,12 +51,13 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-                                {{$row_sender->get_city->name}}
+
+                                {{$row_sender->refer_user->get_city->name}}
                             </p>
                         </div>
                         <div>
                             <button class="btn btn-primary" style="border-radius:10px;height:35px;background-color:#3a91fd;border:none">
-                                Seller
+                                {{$row_sender->type}}
                             </button>
                         </div>
                     </div>
@@ -82,28 +83,7 @@
 
                         </div>
                         <div class="container-fluid p-0">
-                            <div class="row mt-4 ">
-                                <div class="col-6 col-md-6">
-                                    <p class="m-0">
-                                        <b>
-                                            Referral fee
-                                        </b>
-                                    </p>
-                                    <p class="m-0">
-                                        25%
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-6">
-                                    <p class="m-0">
-                                        <b>
-                                            Time Frame
-                                        </b>
-                                    </p>
-                                    <p class="m-0">
-                                        1m 17d Ago
-                                    </p>
-                                </div>
-                            </div>
+                            
                             <div class="row mt-4 ">
                                 <div class="col-6 col-md-6">
                                     <p class="m-0">
@@ -121,7 +101,7 @@
                                              //dd($b%$a);
                                     @endphp
                                     <p class="m-0">
-                                     {{$row_sender->profit}}
+                                     {{$row_sender->profit}}%
                                     </p>
                                 </div>
                                 <div class="col-6 col-md-6">
@@ -131,7 +111,14 @@
                                         </b>
                                     </p>
                                     <p class="m-0">
-                                     {{$diff_in_days}} days Ago
+                                        @if($diff_in_days!=0)
+                                        {{$diff_in_days}} days Ago
+                                        @else
+                                        Today
+                                        @endif 
+
+
+                                     
                                     </p>
                                 </div>
                             </div>
@@ -187,32 +174,13 @@
                                  
                                     <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
                                 </div>
-                                <div class="col col-md-6">
-                                    <p class="m-0">
-                                        <b>
-                                            Pre-Qualified
-                                        </b>
-                                    </p>
-                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
 
                     <hr style="margin-top: 20px;">
-                    <div class="d-flex justify-content-between mt-3 ">
-
-                        <div class="">
-                            <p class="m-0">
-                                <b>Pipeline Phase</b>
-                            </p>
-                            <p class="m-0">
-                           None
-                            </p>
-                        </div>
-                        <button class="btn btn-success d-flex align-items-center" style="margin-right: 42px;height:32px">Send Update</button>
-
-                    </div>
+                    
                     @endforeach
                 </div>
             </div>
@@ -238,8 +206,150 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-3">
-                <p style="margin: 0;padding:10px">You have not recived any referral yet </p>
+            <div class="container bg-white mt-3">
+                <div class="row">
+                @foreach($reciver as $row_sender)
+                    <div class="d-flex justify-content-between pt-5">
+                        <div>
+                            <p>
+                            <i class="fa fa-upload"></i>
+                                <b style="margin-left: 20px;">
+                                    Referred Location
+                                </b>
+                            </p>
+                            <p style="margin-left: 40px; margin-top:-7px">
+
+                                {{$row_sender->refer_user2->get_city->name}}
+                            </p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" style="border-radius:10px;height:35px;background-color:#3a91fd;border:none">
+                                {{$row_sender->type}}
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-6">
+
+                        <div style="">
+                            <h4 class="text-center">
+                                <b> Personal information</b>
+                            </h4>
+                        </div>
+                       
+                        <div class="d-flex mt-4">
+                            <div>
+                            <img loading="lazy" class="" src="{{asset('dashboard/img/user.jpg')}}" alt="friends" width="1087" height="148" style="height:34px;width:34px;border-radius:15px">
+                            </div>
+                           <div style="margin-left:10px">
+                           <p class="m-0"><b> {{$row_sender->refer_user2->first_name}}</b></p>
+                            <p class="m-0">
+                                Referral Partner
+                            </p>
+                           </div>
+
+                        </div>
+                        <div class="container-fluid p-0">
+                            
+                            <div class="row mt-4 ">
+                                <div class="col-6 col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Referral fee
+                                        </b>
+                                    </p>
+                                    @php 
+                                         $days=\Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $row_sender->created_at);
+                                  
+                                             $today=\Carbon\Carbon::now();
+                                             $diff_in_days = $today->diffInDays($days);
+                                             // $a=30;
+                                             // $b=39;
+                                             //dd($b%$a);
+                                    @endphp
+                                    <p class="m-0">
+                                     {{$row_sender->profit}}%
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Sent
+                                        </b>
+                                    </p>
+                                    <p class="m-0">
+                                        @if($diff_in_days!=0)
+                                        {{$diff_in_days}} days Ago
+                                        @else
+                                        Today
+                                        @endif 
+
+
+                                     
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="">
+                            <h4 class="text-center">
+                                <b> Notes and Updates</b>
+                            </h4>
+                        </div>
+                        <div class="container-fluid p-0">
+                            <div class="row mt-4 ">
+                                <div class="mb-3">
+                                    <p class="m-0">
+                                        <b>
+                                            {{$row_sender->clint_user->name}}
+                                        </b>
+                                    </p>
+                                    <p class="m-0">
+                                        Client name
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="m-0">
+                                        <b>
+                                            Phoen Number
+                                        </b>
+                                    </p>
+                                    <p class="m-0">
+                                        {{$row_sender->clint_user->phone}}
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="m-0">
+                                        <b>
+                                            Email
+                                        </b>
+                                    </p>
+                                    <p class="m-0">
+                                        {{$row_sender->clint_user->email}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Status
+                                        </b>
+                                    </p>
+                                 
+                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: 20px;">
+                    
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

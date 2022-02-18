@@ -1,45 +1,4 @@
-@extends('backend.agent.main')
-
-@section('content')
-<meta name="csrf-token" content="{{ csrf_token() }}" /> 
-
-
-<div class="main-header">
-
-    <div class="content-bg-wrap bg-group"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
-                <div class="main-header-content mt-5">
-                    <h1>Send Referrals </h1>
-                    <p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
-                        new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <img loading="lazy" class="img-bottom" src="{{asset('dashboard/img/group-bottom.html')}}" alt="friends" width="1087" height="148">
-</div>
-
-
-<div class="container">
-    <div class="">
-        <div class="col">
-            <div class="ui-block">
-                <div class="m-3">                                        
-                    <select class="loction" name="refer_id" style="width: 200px; margin-top: 7px;">
-                        @foreach($citiy as $row_citiy)
-                            <option value="{{$row_citiy->id}}">{{$row_citiy->name}} </option>
-                        @endforeach
-                                                    
-                    </select>
-                </div>
-            </div>
-        </div>    
-        <!-- <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3"> -->
-        <div class="col">
-            <div class="ui-block ui-block2">
-                <div class="ui-block-title">
+<div class="ui-block-title">
                     <h6 class="title">Referrals </h6>
                     <!-- <a href="#" class="more"><svg class="olymp-three-dots-icon"> -->
                     <use xlink:href="#olymp-three-dots-icon"></use>
@@ -256,20 +215,9 @@
                         </table>
 
                 </div>
-                <div class="widget w-friend-pages-added notification-list friend-requests">
-                    <div class="container">
 
-                        
-                        
-                     
-                    </div>
-                </div>
-            </div>
-            <!-- ... end W-Action -->
-        </div>
-    </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -295,29 +243,10 @@
              $(".btyn_value").val(data);
            
         });
-        $(document).on('change', '.loction', function(){
-              var id=$('.loction').val();
-              var csrf = document.querySelector('meta[name="csrf-token"]').content;
-                
-                $.ajax({
-
-                  type:'post',
-                  url:'{{URL::to('/user/loc_referrals')}}',
-                  data:{'id':id,'_token': csrf},
-                  success:function(datas){
-                  
-                    $(".ui-block2").empty();
-                     $(".ui-block2").append(datas);
-                  
-                  
-                  },
-                });
-
-
-            });
-        
+               
     });
    
+
+
+   
 </script>
-</div>
-@endsection

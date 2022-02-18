@@ -30,11 +30,13 @@ class ReferralController extends Controller
 
         }
         else{
-           $referral_user_id=1;
+           $referral_user_id=$request->input('refer_id');
         }
             $refral            = new referral;
             $refral->sender_id = Auth::user()->id;
+            
             $refral->reciver_id= $request->input('reciver_id');
+            $refral->type= $request->input('type');
             $refral->profit    = $request->input('profit');
             $refral->timeout   = $request->input('timeout');
             $refral->max       = $request->input('max');
