@@ -76,28 +76,39 @@
 				<div class="ui-block-content">
 
 					
-					<!-- Change Password Form -->
-					
-					<form>
+					@if (session()->has('success'))
+						<div class="alert alert-success">
+							{{ session()->get('success') }}
+						</div>
+						@endif
+						@if (session()->has('error'))
+						<div class="alert alert-danger">
+							{{ session()->get('error') }}
+						</div>
+						@endif
+						<form method="post" action="{{ url('user/change-password')}}" enctype="multipart/form-data">
+							@csrf
 						<div class="row">
-					
+													<input class="form-control" name="agent_id" placeholder="" type="hidden" value="{{Auth()->user()->id}}">
+
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">Confirm Current Password</label>
-									<input class="form-control" placeholder="" type="password" value="Olympus-2017">
+									<input class="form-control" placeholder="" type="password" value="" name="current_password" Required>
+
 								</div>
 							</div>
 					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">Your New Password</label>
-									<input class="form-control" placeholder="" type="password">
+									<input class="form-control" placeholder="" id="password" type="password" name="password" onkeyup='check();' Required>
 								</div>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">Confirm New Password</label>
-									<input class="form-control" placeholder="" type="password">
+									<input class="form-control" placeholder="" id="new-password" type="password" name="new-password" onkeyup='check();' Required>
 								</div>
 							</div>
 					
