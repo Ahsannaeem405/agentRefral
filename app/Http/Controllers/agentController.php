@@ -53,11 +53,9 @@ class agentController extends Controller
     }
 
     public function index(){
-        $user=User::orderBy('id', 'desc')->take(3)->get();
+        $users=User::orderBy('id', 'desc')->take(3)->get();
     
-        return view("frontend.index")->with('users',$user);
+        return view("frontend.index" ,compact('users'));
     }
-
-   
-
+    
 }
