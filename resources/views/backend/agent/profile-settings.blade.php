@@ -70,24 +70,8 @@
 								</div>
 							</div>
 					
-							<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-								<div class="form-group label-floating is-select">
-									<label class="control-label">Your Country</label>
-									<select class="form-select">
-										<option value="US">United States</option>
-										<option value="AU">Australia</option>
-									</select>
-								</div>
-							</div>
-							<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-								<div class="form-group label-floating is-select">
-									<label class="control-label">Your State / Province</label>
-									<select class="form-select">
-										<option value="CA">California</option>
-										<option value="TE">Texas</option>
-									</select>
-								</div>
-							</div>
+							
+							
 							<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your City</label>
@@ -101,11 +85,23 @@
 								
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Gender</label>
-									<select class="form-select">
+									<select class="form-select" name="gender">
 										<option value="MA">Male</option>
 										<option value="FE">Female</option>
 									</select>
 								</div>
+					
+								
+							</div>
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+
+								
+								<div class="form-group label-floating is-select">
+									<input class="form-control" placeholder="" type="file" name="profile_image">
+									
+									
+								</div>
+
 					
 								
 							</div>
