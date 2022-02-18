@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin;
 use App\Http\Controllers\usercontroller;
 use App\Http\Controllers\agentController;
+use Illuminate\Support\Facades\Auth;
+use app\Models\User;
+use App\Models\cites;
 use App\Http\Controllers\ReferralController;
 
 
@@ -27,7 +30,7 @@ use App\Http\Controllers\ReferralController;
 Route::view('/error', 'error');
 
 
-Route::view('/', 'frontend.index')->name('index2');
+Route::get('/', [agentController::class, 'index'])->name('index2');
 Route::view('/about', 'frontend.about')->name('about-us');
 Route::view('/contact', 'frontend.contact')->name('contact-us');
 Route::view('/faq', 'frontend.faq')->name('faqs');
