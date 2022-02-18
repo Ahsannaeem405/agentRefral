@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -54,8 +55,12 @@ class agentController extends Controller
 
     public function index(){
         $users=User::orderBy('id', 'desc')->take(3)->get();
-    
-        return view("frontend.index" ,compact('users'));
+        return view("frontend.index" ,compact('users',''));
     }
     
+    public function accept_or_reject($id,$status){
+
+
+    }
+
 }

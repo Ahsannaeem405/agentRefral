@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notification extends Model
 {
+
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User','reciver_id','id');
+    }
 }

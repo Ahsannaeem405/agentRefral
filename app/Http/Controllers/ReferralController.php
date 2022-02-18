@@ -20,10 +20,8 @@ class ReferralController extends Controller
     public function add_referral(Request $request)
     {
 
-        // dd($request->input('refer_id'));
-        // dd($request);
-        $notification= Notification::all();
-     dd($notification);
+      $notifications=Notification::all();
+      dd($notifications);
        
         if($request->contact==2)
         {
@@ -82,4 +80,6 @@ class ReferralController extends Controller
         $reciver=referral::where('reciver_id',Auth::user()->id)->get();
         return view('backend.agent.network',compact('send','reciver'));
     }
+
+   
 }

@@ -1,3 +1,9 @@
+@php
+$user=Auth()->user()->id;
+$notifications=App\Models\Notification::where('reciver_id',$user)->where('status',0)->get();
+
+@endphp
+
 <header class="header" id="site-header">
 	<div class="page-title">
 		<h6>Dashboard</h6>
@@ -8,13 +14,7 @@
 			<div class="header-content-wrapper">
 
 
-
-
 				<div class="control-block">
-
-
-
-
 					<div class="control-icon more has-items">
 						<svg class="olymp-thunder-icon">
 							<use xlink:href="#olymp-thunder-icon"></use>
@@ -31,12 +31,13 @@
 
 							<div class="mCustomScrollbar" data-mcs-theme="dark">
 								<ul class="notification-list">
+									@foreach($notifications as $notification)
 									<li>
 										<div class="author-thumb">
 											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
 										</div>
 										<div class="notification-event">
-											<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
+									<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a> has Sent you a referral .</div>
 											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 										</div>
 										<span class="notification-icon">
@@ -53,6 +54,7 @@
 											</svg>
 										</div>
 									</li>
+									@endforeach
 								</ul>
 							</div>
 

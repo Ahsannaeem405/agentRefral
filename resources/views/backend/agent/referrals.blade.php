@@ -97,7 +97,9 @@
                                         <svg class="olymp-add-a-place-icon">
                                             <use xlink:href="#olymp-add-a-place-icon"></use>
                                         </svg>
-                                        <span>{{$row_user->get_city->name}}</span>
+                                     
+                                        <span>Lahore </span>
+                                       
                                     </div>
                                 </td>
 

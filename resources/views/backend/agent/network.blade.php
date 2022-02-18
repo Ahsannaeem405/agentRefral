@@ -174,6 +174,7 @@
                                  
                                     <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
                                 </div>
+                                
                                
                             </div>
                         </div>
@@ -335,11 +336,23 @@
                                 <div class="col col-md-6">
                                     <p class="m-0">
                                         <b>
-                                            Status
+                                          <a href="#">
+                                          Reject
+                                          </a>
                                         </b>
                                     </p>
                                  
                                     <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
+                                </div>
+                                <div class="col col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                        
+                                          <a href="{{route('user.status',['id'=>1,'status'=>$post->title])}}">Accept</a>
+                                        </b>
+                                    </p>
+                                 
+                                    <p class="m-0"><i class="fa fa-check"></i> Yes</p>
                                 </div>
                                
                             </div>

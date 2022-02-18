@@ -76,6 +76,7 @@ Route::post('/update/{id}', [admin::class, 'update']);
 
 Route::prefix('/user')->middleware(['auth','user'])->group(function (){
 Route::view('/index', 'backend.agent.index')->name('index1');
+// Route::view('/index',[usercontroller::class, 'notifications'])->name('index1');
 Route::get('/referrals1', [usercontroller::class, 'referrals'])->name('referrals1');
 Route::post('add/referral', [ReferralController::class, 'add_referral']);
 
@@ -85,6 +86,7 @@ Route::get('/network', [ReferralController::class, 'network'])->name('network');
 
 Route::post('/personal-information', [agentController::class, 'update_information']);
 Route::post('/change-password', [agentController::class, 'change_password']);
+Route::get('/acceptorreject', [agentController::class, 'accept_or_reject'])->name('user.status');
 
 
 
