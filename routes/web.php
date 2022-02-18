@@ -86,7 +86,7 @@ Route::get('/network', [ReferralController::class, 'network'])->name('network');
 
 Route::post('/personal-information', [agentController::class, 'update_information']);
 Route::post('/change-password', [agentController::class, 'change_password']);
-Route::get('/acceptorreject', [agentController::class, 'accept_or_reject'])->name('user.status');
+Route::get('/acceptorreject/{id}/{status}', [agentController::class, 'accept_or_reject'])->name('user.status');
 
 
 

@@ -17,7 +17,8 @@ class CreateNotificationsTable extends Migration
             $table->id();
             $table->text('sender_id')->nullable();
             $table->text('reciver_id')->nullable();
-            $table->text('referral_id')->nullable();
+            $table->string('referral_id')->nullable();
+
             $table->timestamps();
         });
     }

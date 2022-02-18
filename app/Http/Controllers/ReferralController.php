@@ -21,7 +21,7 @@ class ReferralController extends Controller
     {
 
       $notifications=Notification::all();
-      dd($notifications);
+    //   dd($notifications);
        
         if($request->contact==2)
         {
@@ -38,6 +38,8 @@ class ReferralController extends Controller
         else{
            $referral_user_id=$request->input('refer_id');
         }
+
+
             $refral            = new referral;
             $refral->sender_id = Auth::user()->id;
             
@@ -52,15 +54,18 @@ class ReferralController extends Controller
             
             $refral->save();
 
-
             $sender_id=$request->input('sender_id');
             $reciver_id=$request->input('reciver_id');
             $status=0;
+
             $notification= new Notification();
             $notification->sender_id=$sender_id;
             $notification->reciver_id=$reciver_id;
-            $notification->referral_id=$request->input('refer_id');
+            $notification->referral_id=$refral->id;
             $notification->status=$status;
+            // $notification->referal_id= $refral->id;
+
+           
             $notification->save();
         
 

@@ -1,6 +1,7 @@
 @php
 $user=Auth()->user()->id;
-$notifications=App\Models\Notification::where('reciver_id',$user)->where('status',0)->get();
+$notifications=App\Models\Notification::where('reciver_id',$user)->get();
+$notifications1=App\Models\Notification::where('sender_id',$user)->get();
 
 @endphp
 
@@ -37,7 +38,17 @@ $notifications=App\Models\Notification::where('reciver_id',$user)->where('status
 											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
 										</div>
 										<div class="notification-event">
-									<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a> has Sent you a referral .</div>
+									<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a>
+									@if($notification->status == 0)
+									has Sent you a referral .
+									@elseif($notification->status == 1)
+									has Rejected your  referral .
+
+									@else
+									has Accepted your  referral .
+									@endif
+								
+								</div>
 											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 										</div>
 										<span class="notification-icon">

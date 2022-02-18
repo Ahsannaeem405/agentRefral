@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notification;
+use App\Models\referral;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -10,15 +11,14 @@ use Illuminate\Support\Facades\Hash;
 
 class agentController extends Controller
 {
-     public function update_information(Request $request)
+    public function update_information(Request $request)
     {
-        if($request->hasFile('profile_image'))
-        {
+        if ($request->hasFile('profile_image')) {
             $file = $request->profile_image;
-            $imageName =  time() . '.'.$file->getClientOriginalExtension();
+            $imageName =  time() . '.' . $file->getClientOriginalExtension();
             $imagePath = $file->move(public_path('dashboard/img/agent'), $imageName);
         }
-       
+
         $agent_id = $request->agent_id;
         $user = User::find($agent_id);
         $user->first_name = $request->input('first_name');
@@ -34,14 +34,14 @@ class agentController extends Controller
 
     public function change_password(Request $request)
     {
-        
+
         // $validator=$this->validate($request, [
-           
+
         //     'password' => 'required|confirmed|min:6',
         // ]);
-      
-       
-        $user=User::find($request->agent_id);
+
+
+        $user = User::find($request->agent_id);
         if (!Hash::check($request->current_password, $user->password)) {
             return back()->with('error', 'Current password does not match!');
         }
@@ -50,17 +50,37 @@ class agentController extends Controller
         $user->save();
 
         return back()->with('success', 'Password successfully changed!');
-
     }
 
-    public function index(){
-        $users=User::orderBy('id', 'desc')->take(3)->get();
-        return view("frontend.index" ,compact('users',''));
-    }
-    
-    public function accept_or_reject($id,$status){
-
-
+    public function index()
+    {
+        $users = User::orderBy('id', 'desc')->take(3)->get();
+        return view("frontend.index", compact('users', ''));
     }
 
+    public function accept_or_reject($id, $status)
+    {
+
+        $data = referral::find($id);
+        $data->status = $status;
+        $data->save();
+
+        $noti = Notification::where('referral_id', $id)->first();
+      
+        if( $status == 'rejected')
+        {
+        //    dd($id);
+            $noti->status = 1;
+        }
+        else
+        {  
+            $noti->status = 2;
+
+        }
+       
+        $noti->save();
+        return back()->with('success', 'Updated Sucessfully');
+        // dd($data);
+        // dd($id);
+    }
 }

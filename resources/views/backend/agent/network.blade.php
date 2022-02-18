@@ -336,9 +336,7 @@
                                 <div class="col col-md-6">
                                     <p class="m-0">
                                         <b>
-                                          <a href="#">
-                                          Reject
-                                          </a>
+                                        <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}">Reject</a>
                                         </b>
                                     </p>
                                  
@@ -348,7 +346,7 @@
                                     <p class="m-0">
                                         <b>
                                         
-                                          <a href="{{route('user.status',['id'=>1,'status'=>$post->title])}}">Accept</a>
+                                          <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'accepted'])}}">Accept</a>
                                         </b>
                                     </p>
                                  
