@@ -5,7 +5,7 @@
         <div class="animation-preloader">
             <div class="tlp-spinner"></div>
             
-            <img src="{{asset('media/light.png')}}" alt="Preloader">
+            <img src="media/light.png" alt="Preloader">
         </div>
     </div>
     <div id="wrapper" class="wrapper">

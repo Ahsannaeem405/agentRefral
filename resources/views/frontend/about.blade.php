@@ -104,13 +104,13 @@
                     </ul>
                 </div>
             </div>
-                                        <div class="col-xl-6 col-12 compress-right-side">
-                                            <div class="about-box-layout7">
-                                                <div class="content-holder has-animation">
-                                                    <div class="translate-bottom-75 opacity-animation
-                                                                                                                transition-150 transition-delay-1000">
-                                                        <h2 class="item-title">
-                                                            Exclusive Real Estate Agency</h2>
+            <div class="col-xl-6 col-12 compress-right-side">
+                <div class="about-box-layout7">
+                    <div class="content-holder has-animation">
+                        <div class="translate-bottom-75 opacity-animation
+																					transition-150 transition-delay-1000">
+                            <h2 class="item-title">
+Exclusive Real Estate Agency</h2>
                         </div>
                         <div class="translate-bottom-75 opacity-animation
 																					transition-150 transition-delay-1300">

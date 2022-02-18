@@ -16,6 +16,10 @@ class referral extends Model
     {
         return $this->belongsTo('App\Models\User','reciver_id','id');
     }
+    public function refer_user2()
+    {
+        return $this->belongsTo('App\Models\User','sender_id','id');
+    }
     public function clint_user()
     {
         return $this->belongsTo('App\Models\referral_user','referral_user_id','id');
