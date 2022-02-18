@@ -1,7 +1,7 @@
 @extends('backend.agent.main')
 
 @section('content')
-<meta name="csrf-token" content="{{ csrf_token() }}" /> 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
 <div class="main-header">
@@ -26,16 +26,16 @@
     <div class="">
         <div class="col">
             <div class="ui-block">
-                <div class="m-3">                                        
+                <div class="m-3">
                     <select class="loction" name="refer_id" style="width: 200px; margin-top: 7px;">
                         @foreach($citiy as $row_citiy)
-                            <option value="{{$row_citiy->id}}">{{$row_citiy->name}} </option>
+                        <option value="{{$row_citiy->id}}">{{$row_citiy->name}} </option>
                         @endforeach
-                                                    
+
                     </select>
                 </div>
             </div>
-        </div>    
+        </div>
         <!-- <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3"> -->
         <div class="col">
             <div class="ui-block ui-block2">
@@ -49,9 +49,9 @@
                 <div class="ui-block">
 
 
-                        <table class="event-item-table event-item-table-fixed-width">
+                    <table class="event-item-table event-item-table-fixed-width">
 
-                            <thead>
+                        <thead>
 
                             <tr>
 
@@ -65,65 +65,58 @@
                                 <th class="location">
                                     PLACE
                                 </th>
-
-                               
-                               
-
-                                
-
                                 <th class="add-event">
 
                                 </th>
                             </tr>
-
-                            </thead>
-
-                            <tbody>
-                            @php $l=0;  @endphp
+                        </thead>
+                        <tbody>
+                            @php $l=0; @endphp
                             @foreach($user as $row_user)
 
-                             @php $l++  @endphp
-                                <tr class="event-item">
-                                    <td class="author">
-                                        <div class="event-author inline-items">
-                                            <div class="author-thumb">
-                                                <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
-                                            </div>
-                                            <div class="author-date">
-                                                {{$row_user->first_name}}</a> 
-                                            </div>
+                            @php $l++ @endphp
+                            <tr class="event-item">
+                                <td class="author">
+                                    <div class="event-author inline-items">
+                                        <div class="author-thumb">
+                                            <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
                                         </div>
-                                    </td>
-                                    <td class="location">
-                                        <div class="place inline-items">
-                                            
-                                            {{$row_user->email}}
+                                        <div class="author-date">
+                                            {{$row_user->first_name}}</a>
                                         </div>
-                                    </td>
-                                    <td class="location">
-                                        <div class="place inline-items">
-                                            <svg class="olymp-add-a-place-icon">
-                                                <use xlink:href="#olymp-add-a-place-icon"></use>
-                                            </svg>
-                                            <span>{{$row_user->get_city->name}}</span>
+                                    </div>
+                                </td>
+                                <td class="location">
+                                    <div class="place inline-items">
+
+                                        {{$row_user->email}}
+                                    </div>
+                                </td>
+                                <td class="location">
+                                    <div class="place inline-items">
+                                        <svg class="olymp-add-a-place-icon">
+                                            <use xlink:href="#olymp-add-a-place-icon"></use>
+                                        </svg>
+                                        <span>{{$row_user->get_city->name}}</span>
+                                    </div>
+                                </td>
+
+
+
+                                <td class="add-event">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
+                                </td>
+                            </tr>
+                            <div class="modal fade" id="exampleModal{{$l}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Referral Request</h5>
                                         </div>
-                                    </td>
-                                   
-                                    
-                                    
-                                    <td class="add-event">
-                                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
-                                    </td>
-                                </tr>
-                                <div class="modal fade" id="exampleModal{{$l}}" tabindex="-1"           role="dialog" aria-labelledby="exampleModalLabel"           aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Referral Request</h5>
-                                            </div>
-                                            <div class="modal-body">
+                                        <div class="modal-body">
                                             <form method="POST" action="{{ url('user/add/referral') }}">
-                                                @csrf    
+                                                @csrf
+                                                <input type="hidden" value="{{Auth()->user()->id}}" name="sender_id">
                                                 <div class="row">
                                                     {{-- <div class="col-12 d-flex justify-content-between">
                                                         <p>Select an in-network agent to send a referral to </p>
@@ -137,16 +130,16 @@
                                                     </select> --}}
                                                 </div>
                                                 <style type="text/css">
-                                                    .active{
-                                                        color: #000!important;
-                                                        background-color: #08ddc1!important;
-                                                        border-color: #08ddc1!important;
+                                                    .active {
+                                                        color: #000 !important;
+                                                        background-color: #08ddc1 !important;
+                                                        border-color: #08ddc1 !important;
 
                                                     }
                                                 </style>
                                                 <div class="container mt-3">
                                                     <div class="d-flex">
-                                                        <button  type="button" class="btn btyn active" style="width: 100px;margin-right:2px;background-color:#fff;border-color:gray;color: #515365;" val="Buyer">
+                                                        <button type="button" class="btn btyn active" style="width: 100px;margin-right:2px;background-color:#fff;border-color:gray;color: #515365;" val="Buyer">
                                                             Buyer
                                                         </button>
                                                         <button type="button" class="btn  btyn" style="width: 100px;margin-right:2px;background-color:#fff;border-color:gray;color: #515365;" val="Seller">
@@ -161,31 +154,31 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                     <input type="hidden" class="btyn_value" name="type" value="Buyer">
+                                                    <input type="hidden" class="btyn_value" name="type" value="Buyer">
                                                     <input type="hidden" name="reciver_id" value="{{$row_user->id}}">
-                                                   
-                                                        <div class="form-group">
-                                                            <label for="formControlRange">Referral Fee</label>
-                                                            <div style="display: flex;">
-                                                                 <input id="rangeInput" type="range" min="0" value="24" max="99" oninput="amount.value=rangeInput.value" />
-                                                                 <input id="amount" type="text" value="24" min="0" name="profit" max="99" oninput="rangeInput.value=amount.value" readonly style="width: 62px;border: none;">
-                                                                 <span style="margin-top: 4%;margin-left: -6%;">%</span>
-                                                           </div>
+
+                                                    <div class="form-group">
+                                                        <label for="formControlRange">Referral Fee</label>
+                                                        <div style="display: flex;">
+                                                            <input id="rangeInput" type="range" min="0" value="24" max="99" oninput="amount.value=rangeInput.value" />
+                                                            <input id="amount" type="text" value="24" min="0" name="profit" max="99" oninput="rangeInput.value=amount.value" readonly style="width: 62px;border: none;">
+                                                            <span style="margin-top: 4%;margin-left: -6%;">%</span>
                                                         </div>
-                                                    
+                                                    </div>
+
                                                 </div>
                                                 <div>
-                                                    
-                                                        
-                                                        <div class="form-group">
-                                                            <label for="formControlRange">Acceptence Deadline</label>
-                                                             <div style="display: flex;">
-                                                                 <input id="rangeInput2" type="range" min="0" value="24" max="99" oninput="amount2.value=rangeInput2.value" />
-                                                                 <input id="amount2"  name="timeout" type="text" value="24" min="0" max="99" oninput="rangeInput2.value=amount2.value" readonly style="width: 62px;border: none;">
-                                                                 <span style="margin-top: 4%;margin-left: -6%;">h</span>
-                                                           </div>
+
+
+                                                    <div class="form-group">
+                                                        <label for="formControlRange">Acceptence Deadline</label>
+                                                        <div style="display: flex;">
+                                                            <input id="rangeInput2" type="range" min="0" value="24" max="99" oninput="amount2.value=rangeInput2.value" />
+                                                            <input id="amount2" name="timeout" type="text" value="24" min="0" max="99" oninput="rangeInput2.value=amount2.value" readonly style="width: 62px;border: none;">
+                                                            <span style="margin-top: 4%;margin-left: -6%;">h</span>
                                                         </div>
-                                                   
+                                                    </div>
+
                                                 </div>
                                                 <div class="container">
                                                     <div class="row">
@@ -214,54 +207,54 @@
                                                     </div>
 
                                                 </div>
-                                            <div class="mt-3">                                        
-                                                <select class="database" name="refer_id" style=" margin-top: 7px;
+                                                <div class="mt-3">
+                                                    <select class="database" name="refer_id" style=" margin-top: 7px;
                                                     
                                                      display:none">
-                                                    @foreach($ref_user as $row_ref_user)
-                                                    <option value="{{$row_ref_user->id}}">{{$row_ref_user->name}} </option>
-                                                    @endforeach
-                                                    
-                                                </select>
-                                             </div>
-                                             <div class="container">
-                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
-                                                    <div class="mt-3">
-                                                        <label for="">Name</label>
-                                                        <input type="text" placeholder="Write a Name" name="name">
-                                                    </div>
-                                                    <div class="mt-3">
-                                                        <label for="">Email</label>
-                                                        <input type="text" placeholder="Write a Email" name="email">
-                                                    </div>
-                                                    <div class="mt-3">
-                                                        <label for="">Phone</label>
-                                                        <input type="text" placeholder="Write a Phone" name="phone">
-                                                    </div>
+                                                        @foreach($ref_user as $row_ref_user)
+                                                        <option value="{{$row_ref_user->id}}">{{$row_ref_user->name}} </option>
+                                                        @endforeach
 
-                                                    
+                                                    </select>
                                                 </div>
-                                             </div>
+                                                <div class="container">
+                                                    <div class="row d-flex justify-content-end contact d-none" style="display:none">
+                                                        <div class="mt-3">
+                                                            <label for="">Name</label>
+                                                            <input type="text" placeholder="Write a Name" name="name">
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <label for="">Email</label>
+                                                            <input type="text" placeholder="Write a Email" name="email">
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <label for="">Phone</label>
+                                                            <input type="text" placeholder="Write a Phone" name="phone">
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
                                                 <div class="mt-5 text-end">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                                     <button type="submit" class="btn btn-primary">Send</button>
                                                 </div>
                                             </form>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             @endforeach
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
 
                 </div>
                 <div class="widget w-friend-pages-added notification-list friend-requests">
                     <div class="container">
 
-                        
-                        
-                     
+
+
+
                     </div>
                 </div>
             </div>
@@ -277,9 +270,9 @@
 
 <script>
     $(document).ready(function() {
-       
+
         $(".from-database").click(function() {
-            
+
             $('.database').show();
             $('.contact').addClass("d-none");
         });
@@ -288,36 +281,38 @@
             $('.contact').removeClass("d-none");
         });
         $(".btyn").click(function() {
-            
-            var data=$(this).attr('val');
-            $( ".btyn" ).removeClass( "active" )
-             $(this).addClass("active");
-             $(".btyn_value").val(data);
-           
+
+            var data = $(this).attr('val');
+            $(".btyn").removeClass("active")
+            $(this).addClass("active");
+            $(".btyn_value").val(data);
+
         });
-        $(document).on('change', '.loction', function(){
-              var id=$('.loction').val();
-              var csrf = document.querySelector('meta[name="csrf-token"]').content;
-                
-                $.ajax({
+        $(document).on('change', '.loction', function() {
+            var id = $('.loction').val();
+            var csrf = document.querySelector('meta[name="csrf-token"]').content;
 
-                  type:'post',
-                  url:'{{URL::to('/user/loc_referrals')}}',
-                  data:{'id':id,'_token': csrf},
-                  success:function(datas){
-                  
+            $.ajax({
+
+                type: 'post',
+                url: '{{URL::to(' / user / loc_referrals ')}}',
+                data: {
+                    'id': id,
+                    '_token': csrf
+                },
+                success: function(datas) {
+
                     $(".ui-block2").empty();
-                     $(".ui-block2").append(datas);
-                  
-                  
-                  },
-                });
+                    $(".ui-block2").append(datas);
 
 
+                },
             });
-        
+
+
+        });
+
     });
-   
 </script>
 </div>
 @endsection

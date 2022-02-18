@@ -5,7 +5,65 @@
 
 	<div class="header-content-wrapper">
 		<div class="control-block">
-			
+			<div class="header-content-wrapper">
+
+
+
+
+				<div class="control-block">
+
+
+
+
+					<div class="control-icon more has-items">
+						<svg class="olymp-thunder-icon">
+							<use xlink:href="#olymp-thunder-icon"></use>
+						</svg>
+
+						<div class="label-avatar bg-primary">8</div>
+
+						<div class="more-dropdown more-with-triangle triangle-top-center">
+							<div class="ui-block-title ui-block-title-small">
+								<h6 class="title">Notifications</h6>
+								<a href="#">Mark all as read</a>
+								<a href="#">Settings</a>
+							</div>
+
+							<div class="mCustomScrollbar" data-mcs-theme="dark">
+								<ul class="notification-list">
+									<li>
+										<div class="author-thumb">
+											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
+										</div>
+										<div class="notification-event">
+											<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
+											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+										</div>
+										<span class="notification-icon">
+											<svg class="olymp-comments-post-icon">
+												<use xlink:href="#olymp-comments-post-icon"></use>
+											</svg>
+										</span>
+										<div class="more">
+											<svg class="olymp-three-dots-icon">
+												<use xlink:href="#olymp-three-dots-icon"></use>
+											</svg>
+											<svg class="olymp-little-delete">
+												<use xlink:href="#olymp-little-delete"></use>
+											</svg>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+							<a href="#" class="view-all bg-primary">View All Notifications</a>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
@@ -30,18 +88,17 @@
 								</li>
 
 								<li>
-									<a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                     <svg class="olymp-logout-icon">
+										<svg class="olymp-logout-icon">
 											<use xlink:href="#olymp-logout-icon"></use>
 										</svg>
-                                        {{ __('Logout') }}
-                                    </a>
+										{{ __('Logout') }}
+									</a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+										@csrf
+									</form>
 								</li>
 							</ul>
 						</div>
@@ -70,10 +127,10 @@
 
 <header class="header header-responsive" id="site-header-responsive">
 
-	
+
 
 	<!-- Tab panes -->
-	
+
 	<!-- ... end  Tab panes -->
 
 </header>

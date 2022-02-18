@@ -9,4 +9,5 @@ class agentController extends Controller
     public function update_information(Request $request){
         dd($request);
     }
+    
 }
