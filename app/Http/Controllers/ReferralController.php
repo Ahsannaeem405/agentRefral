@@ -86,5 +86,14 @@ class ReferralController extends Controller
         return view('backend.agent.network',compact('send','reciver'));
     }
 
+    public function notification_detail($id)
+    {
+        // dd($id);
+        $send=referral::where('id',$id)->get();
+        dd($send);
+        $reciver=referral::where('reciver_id',Auth::user()->id)->get();
+        return view('backend.agent.notification-detail_page',compact('send'));
+    }
    
 }
+

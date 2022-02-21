@@ -60,13 +60,15 @@ class agentController extends Controller
 
     public function accept_or_reject($id, $status)
     {
-        dd($id);
+        $noti = Notification::all();
+     
 
         $data = referral::find($id);
         $data->status = $status;
         $data->save();
 
         $noti = Notification::where('referral_id', $id)->first();
+       
       
         if( $status == 'rejected')
         {
@@ -78,6 +80,7 @@ class agentController extends Controller
             $noti->status = 2;
 
         }
+        
        
         $noti->save();
         return back()->with('success', 'Updated Sucessfully');

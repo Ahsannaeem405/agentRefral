@@ -35,22 +35,19 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 									@foreach($notifications as $notification)
 									<li>
 										<div class="author-thumb">
-											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
+											
+											@if(Auth()->user()->profile_image)
+											<img loading="lazy" src="{{asset('dashboard/img/agent/'.auth()->user()->profile_image)}}" width="34" height="34" alt="author">
+											@else
+											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											@endif
 										</div>
 										<div class="notification-event">
-											<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a>
-												<!-- @if($notification->status == 0) -->
+											<div><a href="{{ url('user/notification-detail', $notification->id) }}" class="h6 notification-friend">{{$notification->user->first_name}}</a>
 												has Sent you a referral .
-												<!-- @elseif($notification->status == 1)
-									has Rejected your  referral .
-
-									@else
-									has Accepted your  referral . -->
-												<!-- @endif -->
-
 											</div>
 
-											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+											<!-- <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">{{Carbon\Carbon::parse($notification->user->created_at)->format('H:i:s') }}</time></span> -->
 										</div>
 										<span class="notification-icon">
 											<svg class="olymp-comments-post-icon">
@@ -70,7 +67,11 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 									@foreach($notifications2 as $notification1)
 									<li>
 										<div class="author-thumb">
-											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
+											@if(Auth()->user()->profile_image)
+											<img loading="lazy" src="{{asset('dashboard/img/agent/'.auth()->user()->profile_image)}}" width="34" height="34" alt="author">
+											@else
+											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											@endif
 										</div>
 										<div class="notification-event">
 											<div><a href="#" class="h6 notification-friend">{{$notification1->user2->first_name}}</a>
@@ -82,7 +83,7 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 
 											</div>
 
-											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+											<!-- <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">{{Carbon\Carbon::parse($notification1->user2->created_at)->format('H:i:s') }}</time></span> -->
 										</div>
 										<span class="notification-icon">
 											<svg class="olymp-comments-post-icon">
@@ -114,7 +115,11 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="{{asset('dashboard/img/user.jpg')}}" width="36" height="36" class="avatar">
+					@if(Auth()->user()->profile_image)
+					<img loading="lazy" src="{{asset('dashboard/img/agent/'.auth()->user()->profile_image)}}" width="34" height="34" alt="author">
+					@else
+					<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+					@endif
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">

@@ -83,6 +83,8 @@ Route::post('add/referral', [ReferralController::class, 'add_referral']);
 Route::view('/settings1', 'backend.agent.profile-settings')->name('settings1');
 Route::view('/change-password1', 'backend.agent.change-password')->name('changepassword1');
 Route::get('/network', [ReferralController::class, 'network'])->name('network');
+// Route::get('/notification-detail_page', 'notification-detail_page')->name('notification_detail_page');
+Route::get('/notification-detail/{id}', [ReferralController::class, 'notification_detail'])->name('user.notification_detail');
 
 Route::post('/personal-information', [agentController::class, 'update_information']);
 Route::post('/change-password', [agentController::class, 'change_password']);
