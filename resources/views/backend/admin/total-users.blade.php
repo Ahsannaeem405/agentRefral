@@ -21,125 +21,98 @@
 
 <div class="container">
     <div class="">
-        <!-- <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3"> -->
+        
         <div class="col">
-            <div class="ui-block">
+            <div class="ui-block ui-block2">
                 <div class="ui-block-title">
-                    <h6 class="title">Users Detail</h6>
+                    <h6 class="title">Referrals </h6>
                     <!-- <a href="#" class="more"><svg class="olymp-three-dots-icon"> -->
                     <use xlink:href="#olymp-three-dots-icon"></use>
                     </svg></a>
                 </div>
                 <!-- W-Action -->
+                <div class="ui-block">
+
+
+                    <table class="event-item-table event-item-table-fixed-width">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="author">
+                                    Name
+                                </th>
+                                <th class="author">
+                                    Email
+                                </th>
+
+                                <th class="location">
+                                    Phone
+                                </th>
+                                <th class="add-event">
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php $l=0; @endphp
+                            @foreach($user as $row_user)
+
+                            @php $l++ @endphp
+                            <tr class="event-item">
+                                <td class="author">
+                                    <div class="event-author inline-items">
+                                        <div class="author-thumb">
+                                            <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
+                                        </div>
+                                        <div class="author-date">
+                                            {{$row_user->first_name}}</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="location">
+                                    <div class="place inline-items">
+
+                                        {{$row_user->email}}
+                                    </div>
+                                </td>
+                                <td class="location">
+                                    <div class="place inline-items">
+                                        <svg class="olymp-add-a-place-icon">
+                                            <use xlink:href="#olymp-add-a-place-icon"></use>
+                                        </svg>
+                                     
+                                        <span>Lahore </span>
+                                       
+                                    </div>
+                                </td>
+
+
+
+                                <td class="add-event">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
+                                </td>
+                            </tr>
+                           
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                </div>
                 <div class="widget w-friend-pages-added notification-list friend-requests">
                     <div class="container">
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-                                <div class="author-thumb" style="">
-                                    <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
-                                </div>
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend"></a> -->
-                                    <span class="chat-message-item ">Khurram Abbas </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">khuram001@gmail.com</span>
-                            </div>
-                          
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">Lahore </span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                            <!-- <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-success">Send Referrals</button>
-                            </div> -->
-                        </div>
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-                                <div class="author-thumb" style="">
-                                    <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
-                                </div>
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend"></a> -->
-                                    <span class="chat-message-item ">Khurram Abbas </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">khuram001@gmail.com</span>
-                            </div>
-                          
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">Lahore </span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                        
-                        </div>
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-                                <div class="author-thumb" style="">
-                                    <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
-                                </div>
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend"></a> -->
-                                    <span class="chat-message-item ">Khurram Abbas </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">khuram001@gmail.com</span>
-                            </div>
-                          
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">Lahore </span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                            <!-- <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-success">Send Referrals</button>
-                            </div> -->
-                        </div>
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
-                                <div class="author-thumb" style="">
-                                    <img loading="lazy" src="{{asset('dashboard/img/avatar38-sm.html')}}" alt="author" width="36" height="36">
-                                </div>
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend"></a> -->
-                                    <span class="chat-message-item ">Khurram Abbas </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">khuram001@gmail.com</span>
-                            </div>
-                          
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">Lahore </span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </div>
-                            <!-- <div class="notification-event d-flex align-items-center" style="">
-                                <button type="button" class="btn btn-success">Send Referrals</button>
-                            </div> -->
-                        </div>
-                   
-                       
-                       
+
+
+
+
                     </div>
                 </div>
-                <!-- ... end W-Action -->
             </div>
+            <!-- ... end W-Action -->
         </div>
     </div>
+
     <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		var webpMachine = new webpHero.WebpMachine()

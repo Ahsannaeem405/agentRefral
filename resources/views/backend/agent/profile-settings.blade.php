@@ -41,7 +41,7 @@
 					
 					<!-- Personal Information Form  -->
 					
-					<form method="post" action="{{ url('user/personal-information')}}">
+					<form method="post" action="{{ url('user/personal-information')}}" enctype='multipart/form-data'>
 						@csrf
 						<input class="form-control" placeholder="" name="agent_id" type="hidden" value="{{Auth()->user()->id}}">
 						<div class="row">
@@ -97,7 +97,7 @@
 
 								
 								<div class="form-group label-floating is-select">
-									<input class="form-control" placeholder="" type="file" name="profile_image">
+									<input class="form-control" placeholder="" type="file" name="file">
 									
 									
 								</div>
