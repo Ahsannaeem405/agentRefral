@@ -232,8 +232,8 @@
             <div class="row">
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="progress-box-layout1">
-                        <h2 class="counting-text counter" data-num="845">
-                            845
+                        <h2 class="counting-text counter" data-num="{{$agent}}">
+                            {{$agent}}
                         </h2>
                         <div class="item-label">
                             Agents
@@ -242,8 +242,8 @@
                 </div>
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="progress-box-layout1">
-                        <h2 class="counting-text counter" data-num="1240">
-                            1240
+                        <h2 class="counting-text counter" data-num="{{$refreal}}">
+                            {{$refreal}}
                         </h2>
                         <div class="item-label">
                             Referrals
@@ -252,18 +252,18 @@
                 </div>
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="progress-box-layout1">
-                        <h2 class="counting-text counter" data-num="15420">
-                            420
+                        <h2 class="counting-text counter" data-num=" {{$cities}}">
+                            {{$cities}}
                         </h2>
                         <div class="item-label">
-                            Gold Agents
+                            Cities
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 col-12">
                     <div class="progress-box-layout1">
-                        <h2 class="counting-text counter" data-num="67">
-                            67
+                        <h2 class="counting-text counter" data-num="{{$user}}">
+                            {{$user}}
                         </h2>
                         <div class="item-label">
                             Clients

@@ -6,6 +6,11 @@ use App\Models\Notification;
 use App\Models\referral;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\cites;
+use App\Models\referral_user;
+
+
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -65,7 +70,11 @@ class agentController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'desc')->take(3)->get();
-        return view("frontend.index", compact('users'));
+        $cities=cites::count();
+        $agent=User::where('role',2)->count();
+        $user=referral_user::count();
+        $refreal=referral::count();
+        return view("frontend.index", compact('users','cities','agent','user','refreal'));
     }
 
     public function accept_or_reject($id, $status)

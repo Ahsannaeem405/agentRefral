@@ -304,7 +304,9 @@
                                 <div class="mb-3">
                                     <p class="m-0">
                                         <b>
+                                            @if($row_sender->clint_user!=null)
                                             {{$row_sender->clint_user->name}}
+                                            @endif
                                         </b>
                                     </p>
                                     <p class="m-0">
@@ -318,7 +320,10 @@
                                         </b>
                                     </p>
                                     <p class="m-0">
-                                        {{$row_sender->clint_user->phone}}
+                                        @if($row_sender->clint_user!=null)
+                                            {{$row_sender->clint_user->phone}}
+                                            @endif
+                                        
                                     </p>
                                 </div>
                                 <div class="mb-3">
@@ -328,7 +333,9 @@
                                         </b>
                                     </p>
                                     <p class="m-0">
+                                        @if($row_sender->clint_user!=null)
                                         {{$row_sender->clint_user->email}}
+                                        @endif
                                     </p>
                                 </div>
                             </div>

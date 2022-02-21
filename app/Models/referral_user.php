@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class referral_user extends Model
 {
     use HasFactory;
+    public function refer_user()
+    {
+        return $this->belongsTo('App\Models\User','add_by','id');
+    }
 }

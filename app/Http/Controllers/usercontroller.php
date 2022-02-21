@@ -14,24 +14,116 @@ class usercontroller extends Controller
     {
       
        
-        $user= User::where('role','2')->where('id','!=',Auth::user()->id)->whereNotNull('status')->get();
+        $user= User::where('role','2')
+               ->where('id','!=',Auth::user()->id)
+               ->whereNotNull('status')
+               ->withCount('get_refrral')
+               ->get();
+        $usery=User::where('role','2')
+               ->whereNotNull('status')
+
+               ->withCount('get_refrral')
+               ->get(); 
+                $ordersy =collect($usery);
+                                          
+
+                $myuser = $ordersy->groupBy('city');
+                foreach ($myuser as $key => $value_k) 
+                {  
+                               
+                    $orders2=collect($value_k);
+                    $max_gold_id = $orders2->max('get_refrral_count');
+                    $gold=$orders2->where('get_refrral_count','=',$max_gold_id);
+                    foreach ($gold as $key => $row_user) {
+                        
+                        if($row_user->city==Auth::user()->city)
+                        {
+                            if($row_user->id==Auth::user()->id)
+                            {
+                                $my_badge=1;
+                            }
+                            else{
+                                $my_badge=2;
+
+                            }
+                        }
+
+                    }
+                }
+               
+               
+            
+                $orders =collect($user);
+                                          
+
+                $user = $orders->groupBy('city');
+
+               
+               
         $ref_user= referral_user::where('add_by',Auth::user()->id)->get();
         
         $citiy = cites::all();
 
-       return view('backend.agent.referrals' ,compact('user','citiy','ref_user'));
+       return view('backend.agent.referrals' ,compact('user','citiy','ref_user','my_badge'));
 
     }
     public function loc_referrals(Request $request)
     {
       
        
-        $user= User::where('role','2')->where('city',$request->id)->where('id','!=',Auth::user()->id)->whereNotNull('status')->get();
+        $user= User::where('role','2')
+               ->where('id','!=',Auth::user()->id)
+               ->whereNotNull('status')
+               ->withCount('get_refrral')
+               ->get();
+        $usery=User::where('role','2')
+               ->whereNotNull('status')
+
+               ->withCount('get_refrral')
+               ->get(); 
+                $ordersy =collect($usery);
+                                          
+
+                $myuser = $ordersy->groupBy('city');
+                foreach ($myuser as $key => $value_k) 
+                {  
+                               
+                    $orders2=collect($value_k);
+                    $max_gold_id = $orders2->max('get_refrral_count');
+                    $gold=$orders2->where('get_refrral_count','=',$max_gold_id);
+                    foreach ($gold as $key => $row_user) {
+                        
+                        if($row_user->city==Auth::user()->city)
+                        {
+                            if($row_user->id==Auth::user()->id)
+                            {
+                                $my_badge=1;
+                            }
+                            else{
+                                $my_badge=2;
+
+                            }
+                        }
+
+                    }
+                }
+               
+               
+            
+                $orders =collect($user);
+                                          
+
+                $user = $orders->groupBy('city');
+
+               
+               
         $ref_user= referral_user::where('add_by',Auth::user()->id)->get();
         
         $citiy = cites::all();
 
-       return view('backend.agent.loc_referrals' ,compact('user','citiy','ref_user'));
+        return view('backend.agent.loc_referrals' ,compact('user','citiy','ref_user','my_badge'));
+
+     
 
     }
     
