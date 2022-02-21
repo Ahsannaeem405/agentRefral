@@ -62,6 +62,9 @@ class ReferralController extends Controller
             $notification->sender_id=$sender_id;
             $notification->reciver_id=$reciver_id;
             $notification->referral_id=$refral->id;
+            
+            $notification->type=1;
+            
             $notification->status=$status;
             // $notification->referal_id= $refral->id;
 
@@ -86,5 +89,15 @@ class ReferralController extends Controller
         return view('backend.agent.network',compact('send','reciver'));
     }
 
+    public function notification_detail($id)
+    {
+        // dd($id);
+        $reciver=referral::where('id',$id)->get();
+      
+        // dd($send);
+        // $reciver=referral::where('reciver_id',Auth::user()->id)->get();
+        return view('backend.agent.notification_detail_page',compact('reciver'));
+    }
    
 }
+

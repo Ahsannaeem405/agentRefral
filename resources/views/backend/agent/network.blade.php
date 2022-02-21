@@ -51,8 +51,9 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-
+                            @if($row_sender->user!=null)	
                                 {{$row_sender->refer_user->get_city->name}}
+                                @endif
                             </p>
                         </div>
                         <div>
@@ -75,7 +76,9 @@
                             <img loading="lazy" class="" src="{{asset('dashboard/img/user.jpg')}}" alt="friends" width="1087" height="148" style="height:34px;width:34px;border-radius:15px">
                             </div>
                            <div style="margin-left:10px">
+                           @if($row_sender->user!=null)	
                            <p class="m-0"><b> {{$row_sender->refer_user->first_name}}</b></p>
+                           @endif
                             <p class="m-0">
                                 Referral Partner
                             </p>
@@ -219,8 +222,9 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-
+                            @if($row_sender->user!=null)	
                                 {{$row_sender->refer_user2->get_city->name}}
+                                @endif
                             </p>
                         </div>
                         <div>
@@ -243,7 +247,10 @@
                             <img loading="lazy" class="" src="{{asset('dashboard/img/user.jpg')}}" alt="friends" width="1087" height="148" style="height:34px;width:34px;border-radius:15px">
                             </div>
                            <div style="margin-left:10px">
-                           <p class="m-0"><b> {{$row_sender->refer_user2->first_name}}</b></p>
+                           @if($row_sender->user!=null)	
+                           <p class="m-0"><b> 
+                               {{$row_sender->refer_user2->first_name}}</b></p>
+                               @endif
                             <p class="m-0">
                                 Referral Partner
                             </p>

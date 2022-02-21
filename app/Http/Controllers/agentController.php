@@ -79,26 +79,43 @@ class agentController extends Controller
 
     public function accept_or_reject($id, $status)
     {
-        dd($id);
+        $noti = Notification::all();
+    
 
-        $data = referral::find($id);
+        $data =referral::find($id);
         $data->status = $status;
         $data->save();
 
-        $noti = Notification::where('referral_id', $id)->first();
-      
+       
+        
+
+        $notification= new Notification();
+        $notification->sender_id=Auth::user()->id;
+        $notification->reciver_id=$data->sender_id;
+        $notification->referral_id=$data->id;
+        
+        $notification->type=2;
+        
         if( $status == 'rejected')
         {
         //    dd($id);
-            $noti->status = 1;
+            $notification->status = 1;
         }
         else
         {  
-            $noti->status = 2;
+            $notification->status = 2;
 
         }
+        $notification->type=2;
+        // $notification->referal_id= $refral->id;
+
        
-        $noti->save();
+        $notification->save();
+     // dd($notification);
+        
+        
+       
+       
         return back()->with('success', 'Updated Sucessfully');
         // dd($data);
         // dd($id);

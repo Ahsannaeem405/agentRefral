@@ -1,7 +1,9 @@
 @php
 $user=Auth()->user()->id;
 $notifications=App\Models\Notification::where('reciver_id',$user)->get();
-$notifications2=App\Models\Notification::where('sender_id',$user)->get();
+
+//dd($notifications,$user);
+$total_notifications=$notifications->count();
 
 @endphp
 
@@ -21,7 +23,7 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
 
-						<div class="label-avatar bg-primary">8</div>
+						<div class="label-avatar bg-primary">{{$total_notifications}}</div>
 
 						<div class="more-dropdown more-with-triangle triangle-top-center">
 							<div class="ui-block-title ui-block-title-small">
@@ -34,23 +36,22 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 								<ul class="notification-list">
 									@foreach($notifications as $notification)
 									<li>
+										@if($notification->type==1)
 										<div class="author-thumb">
-											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
-										</div>
+											
+											@if($notification->user!=null)
+											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+											<@else
+											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											@endif
+										</div>	
 										<div class="notification-event">
-											<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a>
-												<!-- @if($notification->status == 0) -->
+											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
+											@if($notification->user!=null)	
+											{{$notification->user->first_name}}</a>
 												has Sent you a referral .
-												<!-- @elseif($notification->status == 1)
-									has Rejected your  referral .
-
-									@else
-									has Accepted your  referral . -->
-												<!-- @endif -->
-
+												@endif
 											</div>
-
-											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 										</div>
 										<span class="notification-icon">
 											<svg class="olymp-comments-post-icon">
@@ -65,24 +66,30 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 												<use xlink:href="#olymp-little-delete"></use>
 											</svg>
 										</div>
-									</li>
-									@endforeach
-									@foreach($notifications2 as $notification1)
-									<li>
+										@else
 										<div class="author-thumb">
-											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
-										</div>
+											
+											@if($notification->user!=null)
+											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+											@else
+											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											@endif
+										</div>	
 										<div class="notification-event">
-											<div><a href="#" class="h6 notification-friend">{{$notification1->user2->first_name}}</a>
-												@if($notification1->status == 1)
-												has Rejected your referral .
+											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
+											@if($notification->user!=null)	
+											{{$notification->user->first_name}}
+											@endif
+											@if($notification->status == 1)
+												has Rejected your referral.
 												@else
 												has Accepted your referral.
+												
+												
 												@endif
-
+												</a>
+										     @endif
 											</div>
-
-											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 										</div>
 										<span class="notification-icon">
 											<svg class="olymp-comments-post-icon">
@@ -97,8 +104,10 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 												<use xlink:href="#olymp-little-delete"></use>
 											</svg>
 										</div>
+										
 									</li>
 									@endforeach
+									<!--  -->
 
 								</ul>
 							</div>
@@ -114,7 +123,11 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="{{asset('dashboard/img/user.jpg')}}" width="36" height="36" class="avatar">
+					@if(Auth()->user()->profile_image)
+					<img loading="lazy" src="{{asset('upload/images/'.auth()->user()->profile_image)}}" width="34" height="34" alt="author">
+					@else
+					<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+					@endif
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
