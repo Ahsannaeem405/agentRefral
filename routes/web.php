@@ -52,11 +52,11 @@ Route::get('/get/register', function() {
 Route::prefix('/admins')->middleware(['auth','admin'])->group(function (){
 
 // admin panel routes 
-Route::view('/index', 'backend.admin.index')->name('index');
+Route::get('/index', [admin::class, 'index'] )->name('index');
 Route::view('/referrals', 'backend.admin.sent-refferals')->name('referrals');
 Route::view('/settings', 'backend.admin.profile-settings')->name('settings');
 Route::view('/change-password', 'backend.admin.change-password')->name('changepassword');
-Route::view('/users', 'backend.admin.total-users')->name('users');
+Route::get('/users', [admin::class, 'users'] )->name('users');
 Route::get('/agents', [admin::class, 'agents'])->name('agents');
 Route::get('/cities', [admin::class, 'cities'])->name('cities');
 Route::post('/add/cities', [admin::class, 'add_city']);

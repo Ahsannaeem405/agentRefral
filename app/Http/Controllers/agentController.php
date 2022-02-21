@@ -27,8 +27,18 @@ class agentController extends Controller
         $user->phone_number = $request->input('phone_number');
         $user->city = $request->input('city');
         $user->gender = $request->input('gender');
-        $user->profile_image = $request->input('profile_image');
+        if($request->hasFile('file'))
+        {
+
+          $file=$request->file('file');
+          $extension=$request->file->extension();
+          $fileName=time()."_.".$extension;
+          $request->file->move('upload/images/',$fileName);
+          $user->profile_image =$fileName;
+        }
         $user->save();
+
+       
         return back()->with('success', 'Profile Information Updated  Successfully.');
     }
 

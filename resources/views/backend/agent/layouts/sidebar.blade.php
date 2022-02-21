@@ -18,14 +18,21 @@
 				</li>
 				<li>
 					<a href="{{route('index1')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
 							<use xlink:href="#olymp-newsfeed-icon"></use>
 						</svg>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('referrals1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Referrals">
+							<use xlink:href="#olymp-happy-faces-icon"></use>
+						</svg>
+					</a>
+				</li>
+				<li>
+					<a href="{{route('network')}}">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="My Network">
 							<use xlink:href="#olymp-happy-faces-icon"></use>
 						</svg>
 					</a>
@@ -63,7 +70,7 @@
 				</li>
 				<li>
 					<a href="{{route('index1')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
 							<use xlink:href="#olymp-newsfeed-icon"></use>
 						</svg>
 						<span class="left-menu-title">Dashboard</span>
@@ -71,7 +78,7 @@
 				</li>
 				<li>
 					<a href="{{route('referrals1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Referrals">
 							<use xlink:href="#olymp-happy-faces-icon"></use>
 						</svg>
 						<span class="left-menu-title">Referrals</span>
@@ -79,7 +86,7 @@
 				</li>
 				<li>
 					<a href="{{route('network')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="My Network">
 							<use xlink:href="#olymp-happy-faces-icon"></use>
 						</svg>
 						<span class="left-menu-title">My Network</span>
@@ -132,11 +139,12 @@
 					</div>
 					<a href="" class="author-name fn">
 						<div class="author-title">
-							John Doe <svg class="olymp-dropdown-arrow-icon">
+						<span class="author-subtitle">{{Auth::user()->first_name}}</span>
+							 <svg class="olymp-dropdown-arrow-icon">
 								<use xlink:href="#olymp-dropdown-arrow-icon"></use>
 							</svg>
 						</div>
-						<span class="author-subtitle">Admin</span>
+						
 					</a>
 				</div>
 			</div>
@@ -153,19 +161,35 @@
 					</a>
 				</li>
 				<li>
-					<a href="{{route('index')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+					<a href="{{route('index1')}}">
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
 							<use xlink:href="#olymp-newsfeed-icon"></use>
 						</svg>
 						<span class="left-menu-title">Dashboard</span>
 					</a>
 				</li>
 				<li>
-					<a href="{{route('agents')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
+					<a href="{{route('referrals1')}}">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Referrals">
+							<use xlink:href="#olymp-happy-faces-icon"></use>
 						</svg>
-						<span class="left-menu-title">Agents</span>
+						<span class="left-menu-title">Referrals</span>
+					</a>
+				</li>
+				<li>
+					<a href="{{route('network')}}">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="My Network">
+							<use xlink:href="#olymp-happy-faces-icon"></use>
+						</svg>
+						<span class="left-menu-title">My Network</span>
+					</a>
+				</li>
+				<li>
+					<a href="{{route('settings1')}}">
+						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
+							<use xlink:href="#olymp-happy-faces-icon"></use>
+						</svg>
+						<span class="left-menu-title">Settings</span>
 					</a>
 				</li>
 			

@@ -16,8 +16,9 @@
                                     Total Agents
                                 </span>
                             </div>
-                            <div class="count-stat">2028
+                            <div class="count-stat">{{$agent}}
                                 <!-- <span class="indicator positive"></span> -->
+                            
                             </div>
                         </li>
                     </ul>
@@ -34,8 +35,9 @@
                                     Total Referral Users
                                 </span>
                             </div>
-                            <div class="count-stat">11450
+                            <div class="count-stat">{{$user}}
                                 <!-- <span class="indicator negative"> - 12.352</span> -->
+                           
                             </div>
                         </li>
                     </ul>
@@ -52,8 +54,9 @@
                                     Total Cities
                                 </span>
                             </div>
-                            <div class="count-stat">2400
+                            <div class="count-stat">{{$cities}}
                                 <!-- <span class="indicator positive"> </span> -->
+                           
                             </div>
                         </li>
                     </ul>
@@ -67,10 +70,10 @@
                         <li>
                             <div class="points">
                                 <span>
-                                    Gold Agents
+                                    Total Referrals
                                 </span>
                             </div>
-                            <div class="count-stat">996
+                            <div class="count-stat">{{$refreal}}
                                 <!-- <span class="indicator positive"> + 2.847</span> -->
                             </div>
                         </li>

@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\cites;
 use App\Models\User;
+use App\Models\referral_user;
+use App\Models\referral;
+
+
+
 
 
 class admin extends Controller
@@ -25,6 +30,31 @@ class admin extends Controller
         }
 
     }
+    
+    public function index()
+    {
+
+        
+
+        $cities=cites::count();
+        $agent=User::where('role',2)->count();
+        $user=referral_user::count();
+        $refreal=referral::count();
+        //dd($user);
+       return view('backend.admin.index' ,compact('cities','agent','user','refreal'));
+
+    }
+    public function users()
+    {
+
+        
+
+        $user=referral_user::all();
+       
+       return view('backend.admin.total-users' ,compact('user'));
+
+    }
+    
     public function cities()
     {
 
@@ -104,6 +134,7 @@ class admin extends Controller
         return back()->with('success', 'City Delete Successfully.');
 
     }
+
     
     
     
