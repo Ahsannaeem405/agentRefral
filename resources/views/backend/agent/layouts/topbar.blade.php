@@ -38,18 +38,18 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
 										</div>
 										<div class="notification-event">
-									<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a>
-									<!-- @if($notification->status == 0) -->
-									has Sent you a referral .
-									<!-- @elseif($notification->status == 1)
+											<div><a href="#" class="h6 notification-friend">{{$notification->user->first_name}}</a>
+												<!-- @if($notification->status == 0) -->
+												has Sent you a referral .
+												<!-- @elseif($notification->status == 1)
 									has Rejected your  referral .
 
 									@else
 									has Accepted your  referral . -->
-									@endif
-								
-								</div>
-								
+												<!-- @endif -->
+
+											</div>
+
 											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 										</div>
 										<span class="notification-icon">
@@ -67,7 +67,39 @@ $notifications2=App\Models\Notification::where('sender_id',$user)->get();
 										</div>
 									</li>
 									@endforeach
-								
+									@foreach($notifications2 as $notification1)
+									<li>
+										<div class="author-thumb">
+											<img loading="lazy" src="img/avatar62-sm.html" width="34" height="34" alt="author">
+										</div>
+										<div class="notification-event">
+											<div><a href="#" class="h6 notification-friend">{{$notification1->user2->first_name}}</a>
+												@if($notification1->status == 1)
+												has Rejected your referral .
+												@else
+												has Accepted your referral.
+												@endif
+
+											</div>
+
+											<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+										</div>
+										<span class="notification-icon">
+											<svg class="olymp-comments-post-icon">
+												<use xlink:href="#olymp-comments-post-icon"></use>
+											</svg>
+										</span>
+										<div class="more">
+											<svg class="olymp-three-dots-icon">
+												<use xlink:href="#olymp-three-dots-icon"></use>
+											</svg>
+											<svg class="olymp-little-delete">
+												<use xlink:href="#olymp-little-delete"></use>
+											</svg>
+										</div>
+									</li>
+									@endforeach
+
 								</ul>
 							</div>
 
