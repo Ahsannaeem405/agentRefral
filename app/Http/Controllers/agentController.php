@@ -55,11 +55,12 @@ class agentController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'desc')->take(3)->get();
-        return view("frontend.index", compact('users', ''));
+        return view("frontend.index", compact('users'));
     }
 
     public function accept_or_reject($id, $status)
     {
+        dd($id);
 
         $data = referral::find($id);
         $data->status = $status;
