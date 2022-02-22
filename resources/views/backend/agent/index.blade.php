@@ -1,3 +1,4 @@
+
 @extends('backend.agent.main')
 @section('content')
 @include('backend.agent.include.main-header')
@@ -13,7 +14,7 @@
                                   Pending Invites 
                                 </span>
                             </div>
-                            <div class="count-stat">2028
+                            <div class="count-stat">{{$pending}}
                                 <!-- <span class="indicator positive"></span> -->
                             </div>
                         </li>
@@ -28,10 +29,10 @@
                         <li>
                             <div class="points">
                                 <span>
-                                Pending Referrals 
+                                Accepted 
                                 </span>
                             </div>
-                            <div class="count-stat">11450
+                            <div class="count-stat">{{$accepted}}
                                 <!-- <span class="indicator negative"> - 12.352</span> -->
                             </div>
                         </li>
@@ -49,7 +50,7 @@
                                   Recived 
                                 </span>
                             </div>
-                            <div class="count-stat">2400
+                            <div class="count-stat">{{$recieved}}
                                 <!-- <span class="indicator positive"> </span> -->
                             </div>
                         </li>
@@ -67,7 +68,7 @@
                                Sent
                                 </span>
                             </div>
-                            <div class="count-stat">996
+                            <div class="count-stat">{{$sent}}
                                 <!-- <span class="indicator positive"> + 2.847</span> -->
                             </div>
                         </li>

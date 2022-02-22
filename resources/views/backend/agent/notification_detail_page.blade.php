@@ -1,4 +1,4 @@
-{{dd($reciver)}}
+
 @extends('backend.agent.main')
 @section('content')
 <div class="main-header">
@@ -26,6 +26,7 @@
             <div class="container bg-white mt-3">
                 <div class="row">
                     @foreach($reciver as $row_sender)
+                    
 
                     <div class="d-flex justify-content-between pt-5">
                         <div>
@@ -57,7 +58,12 @@
 
                         <div class="d-flex mt-4">
                             <div>
-                                <img loading="lazy" class="" src="{{asset('dashboard/img/user.jpg')}}" alt="friends" width="1087" height="148" style="height:34px;width:34px;border-radius:15px">
+                            @if($row_sender->refer_user2!=null)
+                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
+                                @else
+                                <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+                                @endif
+                               
                             </div>
                             <div style="margin-left:10px">
                                 <p class="m-0"><b> {{$row_sender->refer_user2->first_name}}</b></p>
@@ -151,9 +157,7 @@
                             </div>
 
                         </div>
-                        @if($row_sender->status="accepted")
-
-
+                        @if($row_sender->status=="accepted")
                         <div class="row">
                             <div class="col col-md-6">
 
@@ -168,9 +172,8 @@
 
                                 <p class="m-0"><i class="fa fa-check"></i> Yes</p>
                             </div>
-
                         </div>
-                        @elseif($row_sender->status="rejected")
+                        @elseif($row_sender->status=="rejected")
                         <div class="row">
                             <div class="col col-md-6">
                             </div>

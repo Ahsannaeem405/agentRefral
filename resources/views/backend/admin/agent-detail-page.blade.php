@@ -1,4 +1,7 @@
-@extends('backend.agent.main')
+@extends('backend.admin.main')
+@include('backend.admin.layouts.head')
+@include('backend.admin.layouts.topbar')
+@include('backend.admin.layouts.sidebar')
 @section('content')
 <div class="main-header">
     <div class="content-bg-wrap bg-group"></div>
@@ -418,25 +421,15 @@
                             @else
                             <div class="row">
                                 <div class="col col-md-6">
-                                    <p class="m-0">
-                                        <b>
-                                            <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}">Reject</a>
-                                        </b>
-                                    </p>
-
-                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
                                 </div>
                                 <div class="col col-md-6">
                                     <p class="m-0">
                                         <b>
-
-                                            <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'accepted'])}}">Accept</a>
+                                            <a href="">Pending</a>
                                         </b>
                                     </p>
-
-                                    <p class="m-0"><i class="fa fa-check"></i> Yes</p>
+                                    <p class="m-0"><i class="fas fa-times-circle"></i> No</p>
                                 </div>
-
                             </div>
                             @endif
                         </div>

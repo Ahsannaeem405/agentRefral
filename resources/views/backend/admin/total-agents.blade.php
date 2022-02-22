@@ -122,8 +122,9 @@
                                 @endif
                             </div>
                             <div class="notification-event d-flex align-items-center" style="">
-
-                                
+                            <a href="{{url('admins/agent-details/' .$row_user->id)}}">
+                            <button  class="btn btn-primary" data-toggle="" data-target="" style="margin-right: 5px;">Details</button>
+                            </a>
                                 <button  class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$n}}" style="margin-right: 5px;">Edit</button>
                                 <a href="{{url('admins/reject/agents/' .$row_user->id)}}">
                                 <button type="button" class="btn btn-danger">Delete</button></a>

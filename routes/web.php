@@ -65,6 +65,7 @@ Route::get('/cities/delete/{id}', [admin::class, 'delete_city']);
 Route::get('/approve/agents/{id}', [admin::class, 'approve']);
 Route::get('/reject/agents/{id}', [admin::class, 'reject']);
 Route::post('/update/{id}', [admin::class, 'update']);
+Route::get('/agent-details/{agent_id}', [admin::class, 'agent_details'])->name('admins.agent-details');
 
 });
 
@@ -77,7 +78,9 @@ Route::post('/update/{id}', [admin::class, 'update']);
 Route::prefix('/user')->middleware(['auth','user'])->group(function (){
 
 
-Route::view('/index', 'backend.agent.index')->name('index1');
+// Route::view('/index', 'backend.agent.index')->name('index1');
+Route::get('/index', [usercontroller::class, 'dashboard_index'])->name('index1');
+
 // Route::view('/index',[usercontroller::class, 'notifications'])->name('index1');
 Route::get('/referrals1', [usercontroller::class, 'referrals'])->name('referrals1');
 Route::post('add/referral', [ReferralController::class, 'add_referral']);
@@ -88,7 +91,7 @@ Route::view('/settings1', 'backend.agent.profile-settings')->name('settings1');
 Route::view('/change-password1', 'backend.agent.change-password')->name('changepassword1');
 Route::get('/network', [ReferralController::class, 'network'])->name('network');
 // Route::get('/notification-detail_page', 'notification-detail_page')->name('notification_detail_page');
-Route::get('/notification-detail/{id}', [ReferralController::class, 'notification_detail'])->name('user.notification_detail');
+Route::get('/notification-detail/{id}/{notification_id}', [ReferralController::class, 'notification_detail'])->name('user.notification_detail');
 
 Route::post('/personal-information', [agentController::class, 'update_information']);
 Route::post('/change-password', [agentController::class, 'change_password']);

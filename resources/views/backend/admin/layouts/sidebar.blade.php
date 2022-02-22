@@ -37,13 +37,7 @@
 						</svg>
 					</a>
 				</li>
-				<li>
-					<a href="{{route('referrals')}}">
-						<svg class="olymp-calendar-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">
-							<use xlink:href="#olymp-calendar-icon"></use>
-						</svg>
-					</a>
-				</li>
+			
 				<li>
 					<a href="{{route('cities')}}">
 						<svg class="olymp-cupcake-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">
@@ -106,14 +100,7 @@
 						<span class="left-menu-title">Users </span>
 					</a>
 				</li>
-				<li>
-					<a href="{{route('referrals')}}">
-						<svg class="olymp-calendar-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">
-							<use xlink:href="#olymp-calendar-icon"></use>
-						</svg>
-						<span class="left-menu-title">Sent Referrals</span>
-					</a>
-				</li>
+			
 				<li>
 					<a href="{{route('cities')}}">
 						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">
@@ -213,14 +200,7 @@
 						<span class="left-menu-title">Users </span>
 					</a>
 				</li>
-				<li>
-					<a href="{{route('referrals')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
-						<span class="left-menu-title">Sent Referrals</span>
-					</a>
-				</li>
+		
 				<li>
 					<a href="{{route('cities')}}">
 						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="FRIEND GROUPS">

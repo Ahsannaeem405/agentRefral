@@ -1,12 +1,9 @@
 @php
 $user=Auth()->user()->id;
 $notifications=App\Models\Notification::where('reciver_id',$user)->get();
-
-//dd($notifications,$user);
-$total_notifications=$notifications->count();
-
+$total_notifications=$notifications->where('read',null)->all();
+$count=count($total_notifications);
 @endphp
-
 <header class="header" id="site-header">
 	<div class="page-title">
 		<h6>Dashboard</h6>
@@ -19,22 +16,32 @@ $total_notifications=$notifications->count();
 						<svg class="olymp-thunder-icon">
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
-						<div class="label-avatar bg-primary">{{$total_notifications}}</div>
+						@if($count>0)
+						<div class="label-avatar bg-primary">
+							{{$count}}
+						</div>
+						@else
+						@endif
 						<div class="more-dropdown more-with-triangle triangle-top-center">
+							<div class="ui-block-title ui-block-title-small">
+
+								<a href="#">Mark all as read</a>
+
+							</div>
 							<div class="mCustomScrollbar" data-mcs-theme="dark">
 								<ul class="notification-list">
 									@foreach($notifications as $notification)
+									@if($notification->read!=1)
 									<li>
 										@if($notification->type==1)
 										<div class="author-thumb">
-
 											@if($notification->user!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
 											@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
-												@endif
+											@endif
 										</div>
 										<div class="notification-event">
-											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
+											<div><a href="{{ url('user/notification-detail', ['id'=>$notification->referral_id,'notification_id'=>$notification->id]) }}	" class="h6 notification-friend">
 													@if($notification->user!=null)
 													{{$notification->user->first_name}}</a>
 												has Sent you a referral .
@@ -64,7 +71,7 @@ $total_notifications=$notifications->count();
 											@endif
 										</div>
 										<div class="notification-event">
-											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
+											<div><a href="{{ url('user/notification-detail', ['id'=>$notification->referral_id,'notification_id'=>$notification->id])}}" class="h6 notification-friend">
 													@if($notification->user!=null)
 													{{$notification->user->first_name}}
 													@endif
@@ -74,7 +81,7 @@ $total_notifications=$notifications->count();
 													has Accepted your referral.
 													@endif
 												</a>
-										     
+
 											</div>
 										</div>
 										<span class="notification-icon">
@@ -91,8 +98,9 @@ $total_notifications=$notifications->count();
 											</svg>
 										</div>
 										@endif
-										
+
 									</li>
+									@endif
 									@endforeach
 								</ul>
 							</div>
@@ -168,8 +176,128 @@ $total_notifications=$notifications->count();
 <header class="header header-responsive" id="site-header-responsive">
 
 
+	<div class="header-content-wrapper">
+		<ul class="nav nav-tabs mobile-notification-tabs" id="mobile-notification-tabs" role="tablist">
 
+			<li class="nav-item" role="presentation">
+				<a class="nav-link" id="notification-tab" data-bs-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
+					<div class="control-icon has-items">
+						<svg class="olymp-thunder-icon">
+							<use xlink:href="#olymp-thunder-icon"></use>
+						</svg>
+
+						@if($count>0)
+						<div class="label-avatar bg-primary">
+							{{$count}}
+						</div>
+						@else
+						@endif
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
 	<!-- Tab panes -->
+	<div class="tab-content tab-content-responsive">
+
+		<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+
+			<div class="mCustomScrollbar" data-mcs-theme="dark">
+				<div class="ui-block-title ui-block-title-small">
+					<a href="#">Mark all as read</a>
+				</div>
+
+				<ul class="notification-list">
+					@foreach($notifications as $notification)
+					@if($notification->read!=1)
+					<li>
+						@if($notification->type==1)
+						<div class="author-thumb">
+							@if($notification->user!=null)
+							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+							@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+							@endif
+						</div>
+						<div class="notification-event">
+							<div><a href="{{ url('user/notification-detail', ['id'=>$notification->referral_id,'notification_id'=>$notification->id]) }}	" class="h6 notification-friend">
+									@if($notification->user!=null)
+									{{$notification->user->first_name}}</a>
+								has Sent you a referral .
+								@endif
+							</div>
+						</div>
+						<span class="notification-icon">
+							<svg class="olymp-comments-post-icon">
+								<use xlink:href="#olymp-comments-post-icon"></use>
+							</svg>
+						</span>
+						<div class="more">
+							<svg class="olymp-three-dots-icon">
+								<use xlink:href="#olymp-three-dots-icon"></use>
+							</svg>
+							<svg class="olymp-little-delete">
+								<use xlink:href="#olymp-little-delete"></use>
+							</svg>
+						</div>
+						@else
+						<div class="author-thumb">
+
+							@if($notification->user!=null)
+							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+							@else
+							<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+							@endif
+						</div>
+						<div class="notification-event">
+							<div><a href="{{ url('user/notification-detail', ['id'=>$notification->referral_id,'notification_id'=>$notification->id])}}" class="h6 notification-friend">
+									@if($notification->user!=null)
+									{{$notification->user->first_name}}
+									@endif
+									@if($notification->status == 1)
+									has Rejected your referral.
+									@else
+									has Accepted your referral.
+									@endif
+								</a>
+
+							</div>
+						</div>
+						<span class="notification-icon">
+							<svg class="olymp-comments-post-icon">
+								<use xlink:href="#olymp-comments-post-icon"></use>
+							</svg>
+						</span>
+						<div class="more">
+							<svg class="olymp-three-dots-icon">
+								<use xlink:href="#olymp-three-dots-icon"></use>
+							</svg>
+							<svg class="olymp-little-delete">
+								<use xlink:href="#olymp-little-delete"></use>
+							</svg>
+						</div>
+						@endif
+
+					</li>
+					@endif
+					@endforeach
+				</ul>
+
+				<a href="#" class="view-all bg-primary">View All Notifications</a>
+			</div>
+
+		</div>
+
+		<div class="tab-pane fade" id="search" role="tabpanel" aria-labelledby="search-tab">
+
+			<form class="search-bar w-search notification-list friend-requests">
+				<div class="form-group with-button">
+					<input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
+				</div>
+			</form>
+
+		</div>
+
+	</div>
 
 	<!-- ... end  Tab panes -->
 
