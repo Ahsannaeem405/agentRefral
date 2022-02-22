@@ -1,5 +1,4 @@
 
-
 @extends('backend.agent.main')
 @section('content')
 <div class="main-header">
@@ -19,19 +18,20 @@
 </div>
 <div class="container">
     <div class="row">
-<h4><b>Referral Notifications </b></h4>
-       
+        <h4><b>Referral Notifications </b></h4>
+
 
         <div class="col-12 col-md-6">
-         
+
             <div class="container bg-white mt-3">
                 <div class="row">
-                @foreach($reciver as $row_sender)
-                
+                    @foreach($reciver as $row_sender)
+                    
+
                     <div class="d-flex justify-content-between pt-5">
                         <div>
                             <p>
-                            <i class="fa fa-upload"></i>
+                                <i class="fa fa-upload"></i>
                                 <b style="margin-left: 20px;">
                                     Referred Location
                                 </b>
@@ -47,7 +47,7 @@
                             </button>
                         </div>
                     </div>
-                    
+
                     <div class="col-6 col-md-6">
 
                         <div style="">
@@ -55,21 +55,26 @@
                                 <b> Personal information</b>
                             </h4>
                         </div>
-                       
+
                         <div class="d-flex mt-4">
                             <div>
-                            <img loading="lazy" class="" src="{{asset('dashboard/img/user.jpg')}}" alt="friends" width="1087" height="148" style="height:34px;width:34px;border-radius:15px">
+                            @if($row_sender->refer_user2!=null)
+                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
+                                @else
+                                <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+                                @endif
+                               
                             </div>
-                           <div style="margin-left:10px">
-                           <p class="m-0"><b> {{$row_sender->refer_user2->first_name}}</b></p>
-                            <p class="m-0">
-                                Referral Partner
-                            </p>
-                           </div>
+                            <div style="margin-left:10px">
+                                <p class="m-0"><b> {{$row_sender->refer_user2->first_name}}</b></p>
+                                <p class="m-0">
+                                    Referral Partner
+                                </p>
+                            </div>
 
                         </div>
                         <div class="container-fluid p-0">
-                            
+
                             <div class="row mt-4 ">
                                 <div class="col-6 col-md-6">
                                     <p class="m-0">
@@ -77,17 +82,17 @@
                                             Referral fee
                                         </b>
                                     </p>
-                                    @php 
-                                         $days=\Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $row_sender->created_at);
-                                  
-                                             $today=\Carbon\Carbon::now();
-                                             $diff_in_days = $today->diffInDays($days);
-                                             // $a=30;
-                                             // $b=39;
-                                             //dd($b%$a);
+                                    @php
+                                    $days=\Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $row_sender->created_at);
+
+                                    $today=\Carbon\Carbon::now();
+                                    $diff_in_days = $today->diffInDays($days);
+                                    // $a=30;
+                                    // $b=39;
+                                    //dd($b%$a);
                                     @endphp
                                     <p class="m-0">
-                                     {{$row_sender->profit}}%
+                                        {{$row_sender->profit}}%
                                     </p>
                                 </div>
                                 <div class="col-6 col-md-6">
@@ -101,10 +106,10 @@
                                         {{$diff_in_days}} days Ago
                                         @else
                                         Today
-                                        @endif 
+                                        @endif
 
 
-                                     
+
                                     </p>
                                 </div>
                             </div>
@@ -150,54 +155,65 @@
                                     </p>
                                 </div>
                             </div>
-                          
-                        </div>
-                        @if($row_sender->status!="accepted")
 
+                        </div>
+                        @if($row_sender->status=="accepted")
                         <div class="row">
-                                <div class="col col-md-6">
-                                    <p class="m-0">
-                                        <b>
+                            <div class="col col-md-6">
+
+                            </div>
+                            <div class="col col-md-6">
+                                <p class="m-0">
+                                    <b>
+
+                                        <a href="">Accepted</a>
+                                    </b>
+                                </p>
+
+                                <p class="m-0"><i class="fa fa-check"></i> Yes</p>
+                            </div>
+                        </div>
+                        @elseif($row_sender->status=="rejected")
+                        <div class="row">
+                            <div class="col col-md-6">
+                            </div>
+                            <div class="col col-md-6">
+                                <p class="m-0">
+                                    <b>
+                                        <a href="">Rejected</a>
+                                    </b>
+                                </p>
+                                <p class="m-0"><i class="fas fa-times-circle"></i> No</p>
+                            </div>
+                        </div>
+                        @else
+                        <div class="row">
+                            <div class="col col-md-6">
+                                <p class="m-0">
+                                    <b>
                                         <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}">Reject</a>
-                                        </b>
-                                    </p>
-                                 
-                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
-                                </div>
-                                <div class="col col-md-6">
-                                    <p class="m-0">
-                                        <b>
-                                        
-                                          <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'accepted'])}}">Accept</a>
-                                        </b>
-                                    </p>
-                                 
-                                    <p class="m-0"><i class="fa fa-check"></i> Yes</p>
-                                </div>
-                               
+                                    </b>
+                                </p>
+
+                                <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
                             </div>
-                            @else
-                            <div class="row">
-                                <div class="col col-md-6">
-                                
-                                </div>
-                                <div class="col col-md-6">
-                                    <p class="m-0">
-                                        <b>
-                                        
-                                          <a href="">Accepted</a>
-                                        </b>
-                                    </p>
-                                 
-                                    <p class="m-0"><i class="fa fa-check"></i> Yes</p>
-                                </div>
-                               
+                            <div class="col col-md-6">
+                                <p class="m-0">
+                                    <b>
+
+                                        <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'accepted'])}}">Accept</a>
+                                    </b>
+                                </p>
+
+                                <p class="m-0"><i class="fa fa-check"></i> Yes</p>
                             </div>
-                            @endif
+
+                        </div>
+                        @endif
                     </div>
 
                     <hr style="margin-top: 20px;">
-                    
+
                     @endforeach
                 </div>
             </div>

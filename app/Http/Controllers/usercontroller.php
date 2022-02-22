@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\cites;
 use App\Models\User;
 use App\Models\referral_user;
+use App\Models\referral;
 use Auth;
 
 class usercontroller extends Controller
@@ -126,6 +127,18 @@ class usercontroller extends Controller
 
      
 
+    }
+    public function dashboard_index(){
+        $id=Auth()->user()->id;
+       
+       $pending=referral::where('sender_id',$id)->where('status',null)->get()->count();
+       $accepted=referral::where('sender_id',$id)->where('status','accepted')->get()->count();
+       $sent=referral::where('sender_id',$id)->get()->count();
+       $recieved=referral::where('reciver_id',$id)->get()->count();
+  
+
+     
+   return view('backend.agent.index',compact('pending','accepted', 'sent', 'recieved'));
     }
     
 }
