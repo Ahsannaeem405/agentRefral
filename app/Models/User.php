@@ -48,4 +48,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\cites','city','id');
     }
+    public function get_refrral()
+    {
+        return $this->hasMany('App\Models\referral','sender_id','id');
+    }
 }

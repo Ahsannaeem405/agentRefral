@@ -25,7 +25,7 @@
         <div class="col">
             <div class="ui-block ui-block2">
                 <div class="ui-block-title">
-                    <h6 class="title">Referrals </h6>
+                    <h6 class="title">User </h6>
                     <!-- <a href="#" class="more"><svg class="olymp-three-dots-icon"> -->
                     <use xlink:href="#olymp-three-dots-icon"></use>
                     </svg></a>
@@ -50,9 +50,10 @@
                                 <th class="location">
                                     Phone
                                 </th>
-                                <th class="add-event">
-
+                                 <th class="location">
+                                    Add By
                                 </th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -67,7 +68,7 @@
                                             <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" alt="author" width="36" height="36">
                                         </div>
                                         <div class="author-date">
-                                            {{$row_user->first_name}}</a>
+                                            {{$row_user->name}}</a>
                                         </div>
                                     </div>
                                 </td>
@@ -79,20 +80,24 @@
                                 </td>
                                 <td class="location">
                                     <div class="place inline-items">
-                                        <svg class="olymp-add-a-place-icon">
-                                            <use xlink:href="#olymp-add-a-place-icon"></use>
-                                        </svg>
+                                        
                                      
-                                        <span>Lahore </span>
+                                        <span>{{$row_user->phone}} </span>
+                                       
+                                    </div>
+                                </td>
+                                  <td class="location">
+                                    <div class="place inline-items">
+                                        
+                                     
+                                       {{--  <span>{{$row_user->refer_user->first_name}} {{$row_user->refer_user->last_name}}</span> --}}
                                        
                                     </div>
                                 </td>
 
 
 
-                                <td class="add-event">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$l}}">Send Referrals</button>
-                                </td>
+                                
                             </tr>
                            
                             @endforeach
