@@ -74,6 +74,7 @@ class usercontroller extends Controller
         $user= User::where('role','2')
                ->where('id','!=',Auth::user()->id)
                ->whereNotNull('status')
+               ->where('city',$request->id)
                ->withCount('get_refrral')
                ->get();
         $usery=User::where('role','2')

@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\referral_user;
 use App\Models\referral;
 
-
+use App\Events\MyEvent;
 
 
 
@@ -28,6 +28,24 @@ class admin extends Controller
         } else {
             return back()->with('error', 'Whoops! some error encountered. Please try again.');
         }
+
+    }
+    public function event()
+    {
+
+        
+        
+        
+        return view('event');
+
+    }
+    public function event2()
+    {
+
+        
+        
+       
+        
 
     }
     

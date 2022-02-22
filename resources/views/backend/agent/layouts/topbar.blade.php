@@ -2,11 +2,73 @@
 $user=Auth()->user()->id;
 $notifications=App\Models\Notification::where('reciver_id',$user)->get();
 
-//dd($notifications,$user);
+//dd($notifications);
 $total_notifications=$notifications->count();
 
 @endphp
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script>
 
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('46cf8e097bc3b9b6141f', {
+      cluster: 'us3'
+    });
+
+    var channel = pusher.subscribe('Agent_noti-development');
+    channel.bind('Notification', function(data) {
+      var id={{ Auth::user()->id }};
+      var datay=JSON.stringify(data);
+      var op=" ";
+     
+    
+      console.log();
+      if(data['id']==id){
+
+
+     
+        op +='<li><div class="author-thumb">'+
+
+											
+				'<img loading="lazy" src="'+data['img']+'"   width="34" height="34" alt="author">'+
+											
+			'</div>'+
+			'<div class="notification-event">'+
+				'<div><a href="	" class="h6 notification-friend">'+
+							data['name']+						
+						'</a>'+
+												
+												
+				'</div>'+
+			'</div>'+
+			'<span class="notification-icon">'+
+				'<svg class="olymp-comments-post-icon">'+
+					'<use xlink:href="#olymp-comments-post-icon"></use>'+
+				'</svg>'+
+			'</span>'+
+			'<div class="more">'+
+				'<svg class="olymp-three-dots-icon">'+
+					'<use xlink:href="#olymp-three-dots-icon"></use>'+
+				'</svg>'+
+				'<svg class="olymp-little-delete">'+
+					'<use xlink:href="#olymp-little-delete"></use>'+
+				'</svg>'+
+			'</div></li>';
+		
+			$(".notification-list").append(op);
+			var curr=$(".notification-list").attr('abc');
+			++curr;
+			$(".notification-list").attr('abc',curr);
+			$(".count_noti").html(curr);
+
+			
+			
+
+		}
+
+    });
+  </script>
 <header class="header" id="site-header">
 	<div class="page-title">
 		<h6>Dashboard</h6>
@@ -19,12 +81,12 @@ $total_notifications=$notifications->count();
 						<svg class="olymp-thunder-icon">
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
-						<div class="label-avatar bg-primary">{{$total_notifications}}</div>
+						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						<div class="more-dropdown more-with-triangle triangle-top-center">
 							<div class="mCustomScrollbar" data-mcs-theme="dark">
-								<ul class="notification-list">
+								<ul class="notification-list" abc="{{$total_notifications}}">
 									@foreach($notifications as $notification)
-									<li>
+									<li class="noti" >
 										@if($notification->type==1)
 										<div class="author-thumb">
 
@@ -36,8 +98,8 @@ $total_notifications=$notifications->count();
 										<div class="notification-event">
 											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
 													@if($notification->user!=null)
-													{{$notification->user->first_name}}</a>
-												has Sent you a referral .
+													{{$notification->user->first_name}}
+												has Sent you a referral .</a>
 												@endif
 											</div>
 										</div>

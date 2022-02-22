@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\referral_user;
 use App\Models\referral;
+use App\Events\MyEvent;
 
-
+use URL;
 
 use Auth;
 
@@ -70,7 +71,26 @@ class ReferralController extends Controller
 
            
             $notification->save();
-        
+
+            
+                                   $id=intval($notification->reciver_id);
+                                   $refer_id=$notification->referral_id;
+                                   $name=$notification->user->first_name.' has Sent you a referral ';
+                                   $base=URL::to("/");
+                                   if($notification->user->profile_image!=null)
+                                   {
+                                   $img=$base.'/upload/images/'.$notification->user->profile_image;
+                                   }
+                                   else
+                                   {
+                                    $img=$base.'/dashboard/img/user.jpg';
+                                   }
+//dd($img,$notification->user->first_name);
+                                 
+                event(new MyEvent($id,$name,$img,$refer_id));
+
+            
+           
 
         
        

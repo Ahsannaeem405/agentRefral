@@ -78,56 +78,93 @@
 
                 <!-- W-Action -->
                 <div class="widget w-friend-pages-added notification-list friend-requests">
-                    <div class="container">
-                    @php $m=0; @endphp
-                    @foreach($user as $row_user)
-                     @php $m++ @endphp
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
+                   
+                    <div class="ui-block">
+                        <table class="event-item-table " id="example">
+                            <thead>
+                                <tr>
+                                    <td class="">
+                                       <strong> Name</strong>
+                                    </td>
+                                    <td class="">
+                                        <strong> Action</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php $m=0; @endphp
+                                @foreach($user as $row_user)
+                                @php $m++ @endphp
+                                                
+                                                    
+                                                       
+                                    <tr class="event-item">
+                                        <td class="author">
+                                            <div class="event-author inline-items">
+                                               
+                                                <div class="author-date">
+                                                    {{$row_user->name}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                    
+                            
+                                        <td class="add-event" style="text-align: left;">
+                                            
+                                            <i class="fa fa-edit" data-target="#exampleModaledit{{$m}}" data-toggle="modal" style="font-size:20px;color:red;"></i>
 
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend">Francine Smith</a> -->
-                                    <span class="chat-message-item" style="margin-right: 5px;font-size:20px;">{{$m}} </span>
-                                    <span class="chat-message-item" style="font-size:20px;">{{$row_user->name}} </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <button data-toggle="modal" data-target="#exampleModaledit{{$m}}" class="btn btn-primary" style="margin-right: 5px;width:80px">Edit</button>
-                                <a href="{{url('admins/cities/delete/' .$row_user->id)}}">
-                                <button type="button" class="btn btn-danger">Delete</button></a>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="exampleModaledit{{$m}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add Ctiy</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <form method="POST" action="{{ url('admins/cities/update/' .$row_user->id) }}">
-                                  @csrf
-            
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">City</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" value="{{$row_user->name}}">
+
+                                            <a href="{{url('admins/cities/delete/' .$row_user->id)}}">
+                                                <i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red;"></i>
+
+                                            </a>
+                                        </td>
+                                    </tr>
+                                        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModaledit{{$m}}" role="dialog" tabindex="-1">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                            Add Ctiy
+                                                        </h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ url('admins/cities/update/' .$row_user->id) }}" method="POST">
+                                                            @csrf
+                                                            <div class="mb-3">
+                                                                <label class="form-label" for="exampleInputEmail1">
+                                                                    City
+                                                                </label>
+                                                                <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" name="city" type="text" value="{{$row_user->name}}">
+                                                                </input>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary" data-dismiss="modal" type="button">
+                                                            Close
+                                                        </button>
+                                                        <button class="btn btn-success" type="submit">
+                                                            Save
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success">Save</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    @endforeach   
                       
                     </div>
-                </div>
+                
                 <!-- ... end W-Action -->
             </div>
         </div>
     </div>
+
+ 
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -136,6 +173,9 @@
             var webpMachine = new webpHero.WebpMachine()
             webpMachine.polyfillDocument()
         });
+        $(document).ready(function() {
+    $('#example').DataTable();
+} );
     </script>
 </div>
 @endsection

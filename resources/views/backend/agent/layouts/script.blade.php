@@ -1,4 +1,5 @@
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		var webpMachine = new webpHero.WebpMachine()
