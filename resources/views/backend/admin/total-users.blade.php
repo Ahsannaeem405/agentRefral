@@ -89,9 +89,9 @@
                                   <td class="location">
                                     <div class="place inline-items">
                                         
-                                       @if($row_user->refer_user!=null)
-                                        <span>{{$row_user->refer_user->first_name}} {{$row_user->refer_user->last_name}}</span>
-                                       @endif
+                                     
+                                       {{--  <span>{{$row_user->refer_user->first_name}} {{$row_user->refer_user->last_name}}</span> --}}
+                                       
                                     </div>
                                 </td>
 

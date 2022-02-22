@@ -73,13 +73,12 @@ class usercontroller extends Controller
        
         $user= User::where('role','2')
                ->where('id','!=',Auth::user()->id)
-               ->where('id','!=',Auth::user()->id)
                ->whereNotNull('status')
                ->withCount('get_refrral')
                ->get();
         $usery=User::where('role','2')
                ->whereNotNull('status')
-               ->where('id','!=',Auth::user()->id)
+
                ->withCount('get_refrral')
                ->get(); 
                 $ordersy =collect($usery);

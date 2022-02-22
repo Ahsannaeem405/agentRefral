@@ -37,58 +37,20 @@ $total_notifications=$notifications->count();
 									@foreach($notifications as $notification)
 									<li>
 										@if($notification->type==1)
-											<div class="author-thumb">
-												
-												@if($notification->user!=null)
-												<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
-												<@else
-												<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
-												@endif
-											</div>	
-											<div class="notification-event">
-												<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
-												@if($notification->user!=null)	
-												{{$notification->user->first_name}}</a>
-													has Sent you a referral .
-													@endif
-												</div>
-											</div>
-											<span class="notification-icon">
-												<svg class="olymp-comments-post-icon">
-													<use xlink:href="#olymp-comments-post-icon"></use>
-												</svg>
-											</span>
-											<div class="more">
-												<svg class="olymp-three-dots-icon">
-													<use xlink:href="#olymp-three-dots-icon"></use>
-												</svg>
-												<svg class="olymp-little-delete">
-													<use xlink:href="#olymp-little-delete"></use>
-												</svg>
-											</div>
-										@else
 										<div class="author-thumb">
 											
 											@if($notification->user!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
-											@else
+											<@else
 											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 											@endif
 										</div>	
 										<div class="notification-event">
 											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
 											@if($notification->user!=null)	
-											{{$notification->user->first_name}}
-											@endif
-											   @if($notification->status == 1)
-												has Rejected your referral.
-												@else
-												has Accepted your referral.
-												
-												
+											{{$notification->user->first_name}}</a>
+												has Sent you a referral .
 												@endif
-												</a>
-										    
 											</div>
 										</div>
 										<span class="notification-icon">
@@ -104,7 +66,44 @@ $total_notifications=$notifications->count();
 												<use xlink:href="#olymp-little-delete"></use>
 											</svg>
 										</div>
-										@endif
+										@else
+										<div class="author-thumb">
+											
+											@if($notification->user!=null)
+											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+											@else
+											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											@endif
+										</div>	
+										<div class="notification-event">
+											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
+											@if($notification->user!=null)	
+											{{$notification->user->first_name}}
+											@endif
+											@if($notification->status == 1)
+												has Rejected your referral.
+												@else
+												has Accepted your referral.
+												
+												
+												@endif
+												</a>
+										     @endif
+											</div>
+										</div>
+										<span class="notification-icon">
+											<svg class="olymp-comments-post-icon">
+												<use xlink:href="#olymp-comments-post-icon"></use>
+											</svg>
+										</span>
+										<div class="more">
+											<svg class="olymp-three-dots-icon">
+												<use xlink:href="#olymp-three-dots-icon"></use>
+											</svg>
+											<svg class="olymp-little-delete">
+												<use xlink:href="#olymp-little-delete"></use>
+											</svg>
+										</div>
 										
 									</li>
 									@endforeach
