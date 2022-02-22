@@ -88,7 +88,7 @@ $total_notifications=$notifications->count();
 												
 												@endif
 												</a>
-										     @endif
+										     
 											</div>
 										</div>
 										<span class="notification-icon">
@@ -104,6 +104,7 @@ $total_notifications=$notifications->count();
 												<use xlink:href="#olymp-little-delete"></use>
 											</svg>
 										</div>
+										@endif
 										
 									</li>
 									@endforeach
