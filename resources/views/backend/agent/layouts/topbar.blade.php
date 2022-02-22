@@ -11,44 +11,32 @@ $total_notifications=$notifications->count();
 	<div class="page-title">
 		<h6>Dashboard</h6>
 	</div>
-
 	<div class="header-content-wrapper">
 		<div class="control-block">
 			<div class="header-content-wrapper">
-
-
 				<div class="control-block">
 					<div class="control-icon more has-items">
 						<svg class="olymp-thunder-icon">
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
-
 						<div class="label-avatar bg-primary">{{$total_notifications}}</div>
-
 						<div class="more-dropdown more-with-triangle triangle-top-center">
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Notifications</h6>
-								<a href="#">Mark all as read</a>
-								<a href="#">Settings</a>
-							</div>
-
 							<div class="mCustomScrollbar" data-mcs-theme="dark">
 								<ul class="notification-list">
 									@foreach($notifications as $notification)
 									<li>
 										@if($notification->type==1)
 										<div class="author-thumb">
-											
+
 											@if($notification->user!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
-											<@else
-											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
-											@endif
-										</div>	
+											@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+												@endif
+										</div>
 										<div class="notification-event">
 											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
-											@if($notification->user!=null)	
-											{{$notification->user->first_name}}</a>
+													@if($notification->user!=null)
+													{{$notification->user->first_name}}</a>
 												has Sent you a referral .
 												@endif
 											</div>
@@ -68,25 +56,23 @@ $total_notifications=$notifications->count();
 										</div>
 										@else
 										<div class="author-thumb">
-											
+
 											@if($notification->user!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
 											@else
 											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 											@endif
-										</div>	
+										</div>
 										<div class="notification-event">
 											<div><a href="{{ url('user/notification-detail', $notification->referral_id) }}	" class="h6 notification-friend">
-											@if($notification->user!=null)	
-											{{$notification->user->first_name}}
-											@endif
-											@if($notification->status == 1)
-												has Rejected your referral.
-												@else
-												has Accepted your referral.
-												
-												
-												@endif
+													@if($notification->user!=null)
+													{{$notification->user->first_name}}
+													@endif
+													@if($notification->status == 1)
+													has Rejected your referral.
+													@else
+													has Accepted your referral.
+													@endif
 												</a>
 										     
 											</div>
@@ -108,20 +94,13 @@ $total_notifications=$notifications->count();
 										
 									</li>
 									@endforeach
-									<!--  -->
-
 								</ul>
 							</div>
-
 							<a href="#" class="view-all bg-primary">View All Notifications</a>
 						</div>
 					</div>
-
-
-
 				</div>
 			</div>
-
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					@if(Auth()->user()->profile_image)
