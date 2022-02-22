@@ -1,4 +1,5 @@
 
+
 @extends('backend.agent.main')
 @section('content')
 <div class="main-header">
@@ -26,6 +27,7 @@
             <div class="container bg-white mt-3">
                 <div class="row">
                 @foreach($reciver as $row_sender)
+                
                     <div class="d-flex justify-content-between pt-5">
                         <div>
                             <p>
@@ -150,6 +152,48 @@
                             </div>
                           
                         </div>
+                        @if($row_sender->status!="accepted")
+
+                        <div class="row">
+                                <div class="col col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                        <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}">Reject</a>
+                                        </b>
+                                    </p>
+                                 
+                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>No</p>
+                                </div>
+                                <div class="col col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                        
+                                          <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'accepted'])}}">Accept</a>
+                                        </b>
+                                    </p>
+                                 
+                                    <p class="m-0"><i class="fa fa-check"></i> Yes</p>
+                                </div>
+                               
+                            </div>
+                            @else
+                            <div class="row">
+                                <div class="col col-md-6">
+                                
+                                </div>
+                                <div class="col col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                        
+                                          <a href="">Accepted</a>
+                                        </b>
+                                    </p>
+                                 
+                                    <p class="m-0"><i class="fa fa-check"></i> Yes</p>
+                                </div>
+                               
+                            </div>
+                            @endif
                     </div>
 
                     <hr style="margin-top: 20px;">
