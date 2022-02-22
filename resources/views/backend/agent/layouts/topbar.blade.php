@@ -30,7 +30,7 @@ $total_notifications=$notifications->count();
 
 											@if($notification->user!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
-											<@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 												@endif
 										</div>
 										<div class="notification-event">
@@ -74,7 +74,7 @@ $total_notifications=$notifications->count();
 													has Accepted your referral.
 													@endif
 												</a>
-												@endif
+										     
 											</div>
 										</div>
 										<span class="notification-icon">
@@ -90,6 +90,8 @@ $total_notifications=$notifications->count();
 												<use xlink:href="#olymp-little-delete"></use>
 											</svg>
 										</div>
+										@endif
+										
 									</li>
 									@endforeach
 								</ul>
