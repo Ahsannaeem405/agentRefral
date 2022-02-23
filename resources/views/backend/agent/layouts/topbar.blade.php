@@ -42,19 +42,7 @@ $total_notifications=$notifications->count();
 												
 				'</div>'+
 			'</div>'+
-			'<span class="notification-icon">'+
-				'<svg class="olymp-comments-post-icon">'+
-					'<use xlink:href="#olymp-comments-post-icon"></use>'+
-				'</svg>'+
-			'</span>'+
-			'<div class="more">'+
-				'<svg class="olymp-three-dots-icon">'+
-					'<use xlink:href="#olymp-three-dots-icon"></use>'+
-				'</svg>'+
-				'<svg class="olymp-little-delete">'+
-					'<use xlink:href="#olymp-little-delete"></use>'+
-				'</svg>'+
-			'</div></li>';
+			'</li>';
 		
 			$(".notification-list").append(op);
 			var curr=$(".notification-list").attr('abc');
@@ -81,7 +69,7 @@ $total_notifications=$notifications->count();
 						<svg class="olymp-thunder-icon">
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
-						
+
 						@if($total_notifications>0)
 						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						@else
@@ -89,17 +77,19 @@ $total_notifications=$notifications->count();
 						<div class="more-dropdown more-with-triangle triangle-top-center">
 							<div class="ui-block-title ui-block-title-small">
 
-								<a href="#">Mark all as read</a>
+								<a >Notification</a>
 
 							</div>
 							<div class="mCustomScrollbar" data-mcs-theme="dark">
 								<ul class="notification-list" abc="{{$total_notifications}}">
+									@php $v=0; @endphp
 									@foreach($notifications as $notification)
+									@php $v++; @endphp
 									@if($notification->read!=1)
 									<li>
 										@if($notification->type==1)
 										<div class="author-thumb">
-											@if($notification->user!=null)
+											@if($notification->user->profile_image!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
 											@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 											@endif
@@ -108,27 +98,15 @@ $total_notifications=$notifications->count();
 											<div><a href="{{ url('user/notification-detail', ['id'=>$notification->referral_id,'notification_id'=>$notification->id]) }}	" class="h6 notification-friend">
 													@if($notification->user!=null)
 													{{$notification->user->first_name}}
-												has Sent you a referral .</a>
+												  has Sent you a referral .</a>
 												@endif
 											</div>
 										</div>
-										<span class="notification-icon">
-											<svg class="olymp-comments-post-icon">
-												<use xlink:href="#olymp-comments-post-icon"></use>
-											</svg>
-										</span>
-										<div class="more">
-											<svg class="olymp-three-dots-icon">
-												<use xlink:href="#olymp-three-dots-icon"></use>
-											</svg>
-											<svg class="olymp-little-delete">
-												<use xlink:href="#olymp-little-delete"></use>
-											</svg>
-										</div>
+										
 										@else
 										<div class="author-thumb">
 
-											@if($notification->user!=null)
+											@if($notification->user->profile_image!=null)
 											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
 											@else
 											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
@@ -148,19 +126,7 @@ $total_notifications=$notifications->count();
 
 											</div>
 										</div>
-										<span class="notification-icon">
-											<svg class="olymp-comments-post-icon">
-												<use xlink:href="#olymp-comments-post-icon"></use>
-											</svg>
-										</span>
-										<div class="more">
-											<svg class="olymp-three-dots-icon">
-												<use xlink:href="#olymp-three-dots-icon"></use>
-											</svg>
-											<svg class="olymp-little-delete">
-												<use xlink:href="#olymp-little-delete"></use>
-											</svg>
-										</div>
+										
 										@endif
 
 									</li>
@@ -168,7 +134,7 @@ $total_notifications=$notifications->count();
 									@endforeach
 								</ul>
 							</div>
-							<a href="#" class="view-all bg-primary">View All Notifications</a>
+							<a href="#" class="view-all bg-primary">Notifications</a>
 						</div>
 					</div>
 				</div>
@@ -266,7 +232,7 @@ $total_notifications=$notifications->count();
 
 			<div class="mCustomScrollbar" data-mcs-theme="dark">
 				<div class="ui-block-title ui-block-title-small">
-					<a href="#">Mark all as read</a>
+					
 				</div>
 
 				<ul class="notification-list">
@@ -275,7 +241,7 @@ $total_notifications=$notifications->count();
 					<li>
 						@if($notification->type==1)
 						<div class="author-thumb">
-							@if($notification->user!=null)
+							@if($notification->user->profile_image!=null)
 							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
 							@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 							@endif
@@ -283,28 +249,16 @@ $total_notifications=$notifications->count();
 						<div class="notification-event">
 							<div><a href="{{ url('user/notification-detail', ['id'=>$notification->referral_id,'notification_id'=>$notification->id]) }}	" class="h6 notification-friend">
 									@if($notification->user!=null)
-									{{$notification->user->first_name}}</a>
-								has Sent you a referral .
+									{{$notification->user->first_name}}
+								has Sent you a referral .</a>
 								@endif
 							</div>
 						</div>
-						<span class="notification-icon">
-							<svg class="olymp-comments-post-icon">
-								<use xlink:href="#olymp-comments-post-icon"></use>
-							</svg>
-						</span>
-						<div class="more">
-							<svg class="olymp-three-dots-icon">
-								<use xlink:href="#olymp-three-dots-icon"></use>
-							</svg>
-							<svg class="olymp-little-delete">
-								<use xlink:href="#olymp-little-delete"></use>
-							</svg>
-						</div>
+						
 						@else
 						<div class="author-thumb">
 
-							@if($notification->user!=null)
+							@if($notification->user->profile_image!=null)
 							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
 							@else
 							<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
@@ -324,19 +278,7 @@ $total_notifications=$notifications->count();
 
 							</div>
 						</div>
-						<span class="notification-icon">
-							<svg class="olymp-comments-post-icon">
-								<use xlink:href="#olymp-comments-post-icon"></use>
-							</svg>
-						</span>
-						<div class="more">
-							<svg class="olymp-three-dots-icon">
-								<use xlink:href="#olymp-three-dots-icon"></use>
-							</svg>
-							<svg class="olymp-little-delete">
-								<use xlink:href="#olymp-little-delete"></use>
-							</svg>
-						</div>
+						
 						@endif
 
 					</li>
