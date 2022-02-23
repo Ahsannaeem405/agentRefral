@@ -52,7 +52,7 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-                                @if($row_sender->refer_user->get_city!=null && $row_sender->refer_user!=null)
+                                @if($row_sender->refer_user->get_city!=null)
                                 {{$row_sender->refer_user->get_city->name}}
                                 @endif
                             </p>

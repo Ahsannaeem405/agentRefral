@@ -1,6 +1,6 @@
 @php
 $user=Auth()->user()->id;
-$notifications=App\Models\Notification::where('reciver_id',$user)->get();
+$notifications=App\Models\Notification::where('reciver_id',$user)->whereNull('read')->get();
 
 //dd($notifications);
 $total_notifications=$notifications->count();
