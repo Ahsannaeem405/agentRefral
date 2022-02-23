@@ -92,22 +92,33 @@ class usercontroller extends Controller
                                
                     $orders2=collect($value_k);
                     $max_gold_id = $orders2->max('get_refrral_count');
+
+
                     $gold=$orders2->where('get_refrral_count','=',$max_gold_id);
-                    foreach ($gold as $key => $row_user) {
-                        
-                        if($row_user->city==Auth::user()->city)
-                        {
-                            if($row_user->id==Auth::user()->id)
+                    if($max_gold_id!=0)
+                    {
+
+
+                        foreach ($gold as $key => $row_user) {
+                            
+                            if($row_user->city==Auth::user()->city)
                             {
-                                $my_badge=1;
-                            }
-                            else{
-                                $my_badge=2;
+                                if($row_user->id==Auth::user()->id)
+                                {
+                                    $my_badge=1;
+                                }
+                                else{
+                                    $my_badge=2;
 
+                                }
                             }
+
                         }
-
                     }
+                    else {
+                        $my_badge=1;
+                    }   
+
                 }
                
                
