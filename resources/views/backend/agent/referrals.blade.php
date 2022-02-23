@@ -900,6 +900,9 @@
 
     });
 </script>
+<script>
+    
+</script>
 </div>
 @endsection
 @section('js')
