@@ -83,7 +83,14 @@
         </div>
     </div>
 </div>
-@include('backend.admin.include.monthly-bar')
+
+<div class="container mb-5">
+	<div class="row">
+		<div class="col">
+		<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+		</div>
+	</div>
+</div>
 <div class="container">
     <div class="">
         <!-- <div class="col col-xl-12 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12 pt-3"> -->
@@ -130,5 +137,37 @@
 		webpMachine.polyfillDocument()
 	});
 </script>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "Statistics "
+	},
+	axisY: {
+		title: "Growth Rate ",
+		suffix: ""
+	},
+	axisX: {
+		title: ""
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"\"",
+		dataPoints: [
+			{ label: "Cities", y: <?php echo $cities ?>},	
+			{ label: "Agent", y: <?php echo $agent;?> },	
+			{ label: "Users ", y: <?php echo $user;?> },	
+            { label: "Referrals  ", y: <?php echo $refreal;?> },	
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 @endsection

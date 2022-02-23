@@ -31,33 +31,21 @@ class admin extends Controller
     }
     public function event()
     {
-
-        
-        
-        
         return view('event');
-
     }
     public function event2()
     {
-
-        
-        
-       
-        
-
     }
-    
+
     public function index()
     {
-
-
 
         $cities = cites::count();
         $agent = User::where('role', 2)->count();
         $user = referral_user::count();
         $refreal = referral::count();
-        //dd($user);
+       
+
         return view('backend.admin.index', compact('cities', 'agent', 'user', 'refreal'));
     }
     public function users()
@@ -143,11 +131,12 @@ class admin extends Controller
         return back()->with('success', 'City Delete Successfully.');
     }
 
-    public function agent_details($agent_id){
+    public function agent_details($agent_id)
+    {
 
-$send = referral::where('sender_id', $agent_id)->orderBy('id','desc')->get();
-$reciver = referral::where('reciver_id', $agent_id)->orderBy('id','desc')->get();
+        $send = referral::where('sender_id', $agent_id)->orderBy('id', 'desc')->get();
+        $reciver = referral::where('reciver_id', $agent_id)->orderBy('id', 'desc')->get();
 
-return view('backend.admin.agent-detail-page', compact('send', 'reciver'));
+        return view('backend.admin.agent-detail-page', compact('send', 'reciver'));
     }
 }

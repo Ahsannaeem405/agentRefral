@@ -73,16 +73,19 @@
         <div class="wrap-login100">
      
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="images/img-01.png" alt="IMG">
+                <img src="{{asset('images/img-01.png')}}" alt="IMG">
             </div>
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
                 <span class="login100-form-title">
-                    Login
+                    Reset Password 
                 </span>
                 <div class="wrap-input100">
                     <!-- <input type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Email"> -->
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
+                    <!-- <label>
+                        Enter Your Email
+                    </label> -->
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="example@gmail.com" >
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

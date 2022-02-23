@@ -78,7 +78,46 @@
         </div>
     </div>
 </div>
-@include('backend.admin.include.monthly-bar')
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "Statistics "
+	},
+	axisY: {
+		title: "Growth Rate",
+		suffix: ""
+	},
+	axisX: {
+		title: ""
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints: [
+			{ label: "Accepted ", y: <?php echo $accepted ?>},	
+			{ label: "Recived ", y: <?php echo $recieved;?> },	
+			{ label: "Sent ", y: <?php echo $sent;?> },	
+            { label: "Pending", y: <?php echo $pending;?> },	
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+
+<div class="container mb-5">
+	<div class="row">
+		<div class="col">
+		<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+		</div>
+	</div>
+</div>
+
 <div class="container">
    
     <script>
@@ -87,5 +126,6 @@
 		webpMachine.polyfillDocument()
 	});
 </script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </div>
 @endsection

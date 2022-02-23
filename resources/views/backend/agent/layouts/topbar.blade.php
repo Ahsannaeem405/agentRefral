@@ -1,8 +1,6 @@
 @php
 $user=Auth()->user()->id;
 $notifications=App\Models\Notification::where('reciver_id',$user)->get();
-
-//dd($notifications);
 $total_notifications=$notifications->count();
 
 @endphp
@@ -21,8 +19,6 @@ $total_notifications=$notifications->count();
       var id={{ Auth::user()->id }};
       var datay=JSON.stringify(data);
       var op=" ";
-     
-    
       console.log();
       if(data['id']==id){
 
@@ -102,7 +98,6 @@ $total_notifications=$notifications->count();
 												@endif
 											</div>
 										</div>
-										
 										@else
 										<div class="author-thumb">
 

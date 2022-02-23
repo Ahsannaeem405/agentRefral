@@ -38,59 +38,56 @@ class ReferralController extends Controller
         }
 
 
-            $refral            = new referral;
-            $refral->sender_id = Auth::user()->id;
-            
-            $refral->reciver_id= $request->input('reciver_id');
-            $refral->type= $request->input('type');
-            $refral->profit    = $request->input('profit');
-            $refral->timeout   = $request->input('timeout');
-            $refral->max       = $request->input('max');
-            $refral->min       = $request->input('min');
-            $refral->notes     = $request->input('notes');
-            $refral->referral_user_id     = $referral_user_id;
-            
-            $refral->save();
+        $refral            = new referral;
+        $refral->sender_id = Auth::user()->id;
 
-            $sender_id=$request->input('sender_id');
-            $reciver_id=$request->input('reciver_id');
-            $status=0;
+        $refral->reciver_id = $request->input('reciver_id');
+        $refral->type = $request->input('type');
+        $refral->profit    = $request->input('profit');
+        $refral->timeout   = $request->input('timeout');
+        $refral->max       = $request->input('max');
+        $refral->min       = $request->input('min');
+        $refral->notes     = $request->input('notes');
+        $refral->referral_user_id     = $referral_user_id;
 
-            $notification= new Notification();
-            $notification->sender_id=$sender_id;
-            $notification->reciver_id=$reciver_id;
-            $notification->referral_id=$refral->id;
-            
-            $notification->type=1;
-            
-            $notification->status=$status;
-            // $notification->referal_id= $refral->id;
+        $refral->save();
 
-           
-            $notification->save();
+        $sender_id = $request->input('sender_id');
+        $reciver_id = $request->input('reciver_id');
+        $status = 0;
 
-            
-                                   $id=intval($notification->reciver_id);
-                                   $refer_id=$notification->referral_id;
-                                   $name=$notification->user->first_name.' has Sent you a referral ';
-                                   $base=URL::to("/");
-                                   if($notification->user->profile_image!=null)
-                                   {
-                                   $img=$base.'/upload/images/'.$notification->user->profile_image;
-                                   }
-                                   else
-                                   {
-                                    $img=$base.'/dashboard/img/user.jpg';
-                                   }
-//dd($img,$notification->user->first_name);
-                                 
-                event(new MyEvent($id,$name,$img,$refer_id));
+        $notification = new Notification();
+        $notification->sender_id = $sender_id;
+        $notification->reciver_id = $reciver_id;
+        $notification->referral_id = $refral->id;
 
-            
-           
+        $notification->type = 1;
 
-        
-       
+        $notification->status = $status;
+        // $notification->referal_id= $refral->id;
+
+
+        $notification->save();
+
+
+        $id = intval($notification->reciver_id);
+        $refer_id = $notification->referral_id;
+        $name = $notification->user->first_name . ' has Sent you a referral ';
+        $base = URL::to("/");
+        if ($notification->user->profile_image != null) {
+            $img = $base . '/upload/images/' . $notification->user->profile_image;
+        } else {
+            $img = $base . '/dashboard/img/user.jpg';
+        }
+        //dd($img,$notification->user->first_name);
+
+        event(new MyEvent($id, $name, $img, $refer_id));
+
+
+
+
+
+
         if (!is_null($refral)) {
             return back()->with('success', 'City Successfully Add.');
         } else {
@@ -100,8 +97,8 @@ class ReferralController extends Controller
 
     public function network()
     {
-        $send = referral::where('sender_id', Auth::user()->id)->orderBy('id','desc')->get();
-        $reciver = referral::where('reciver_id', Auth::user()->id)->orderBy('id','desc')->get();
+        $send = referral::where('sender_id', Auth::user()->id)->orderBy('id', 'desc')->get();
+        $reciver = referral::where('reciver_id', Auth::user()->id)->orderBy('id', 'desc')->get();
         return view('backend.agent.network', compact('send', 'reciver'));
     }
 
