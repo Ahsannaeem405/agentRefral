@@ -81,10 +81,9 @@ $total_notifications=$notifications->count();
 						<svg class="olymp-thunder-icon">
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
-						@if($count>0)
-						<div class="label-avatar bg-primary">
-							{{$count}}
-						</div>
+						
+						@if($total_notifications>0)
+						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						@else
 						@endif
 						<div class="more-dropdown more-with-triangle triangle-top-center">
