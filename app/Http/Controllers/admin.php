@@ -24,7 +24,7 @@ class admin extends Controller
 
         $user->save();
         if (!is_null($user)) {
-            return back()->with('success', 'City Successfully Add.');
+            return back()->with('success', 'City Added Successfully.');
         } else {
             return back()->with('error', 'Whoops! some error encountered. Please try again.');
         }
@@ -93,7 +93,7 @@ class admin extends Controller
 
         $user = User::find($id);
         $user->delete();
-        return back()->with('success', 'Agent Reject Successfully.');
+        return back()->with('success', 'Agent Deleted Successfully.');
     }
 
     public function update(Request $request, $id)
@@ -106,18 +106,16 @@ class admin extends Controller
         $user->last_name = $request->input('last_name');
         $user->city = $request->input('city');
         $user->save();
-        return back()->with('success', 'Agent Update Successfully.');
+        return back()->with('success', 'Agent Updated Successfully.');
     }
     public function update_city(Request $request, $id)
     {
-
-
 
         $user = cites::find($id);
         $user->name = $request->input('city');
 
         $user->save();
-        return back()->with('success', 'City Update Successfully.');
+        return back()->with('success', 'City Updated Successfully.');
     }
     public function delete_city(Request $request, $id)
     {
@@ -128,7 +126,7 @@ class admin extends Controller
 
 
         $user->delete();
-        return back()->with('success', 'City Delete Successfully.');
+        return back()->with('success', 'City Deleted Successfully.');
     }
 
     public function agent_details($agent_id)
@@ -139,4 +137,35 @@ class admin extends Controller
 
         return view('backend.admin.agent-detail-page', compact('send', 'reciver'));
     }
+    public function update_information(Request $request)
+    {
+        if ($request->hasFile('profile_image')) {
+            $file = $request->profile_image;
+            $imageName =  time() . '.' . $file->getClientOriginalExtension();
+            $imagePath = $file->move(public_path('dashboard/img/agent'), $imageName);
+        }
+
+        $agent_id = $request->agent_id;
+        $user = User::find($agent_id);
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->phone_number = $request->input('phone_number');
+        $user->city = $request->input('city');
+        $user->gender = $request->input('gender');
+        if($request->hasFile('file'))
+        {
+
+          $file=$request->file('file');
+          $extension=$request->file->extension();
+          $fileName=time()."_.".$extension;
+          $request->file->move('upload/images/',$fileName);
+          $user->profile_image =$fileName;
+        }
+        $user->save();
+
+       
+        return back()->with('success', 'Profile Information Updated Successfully.');
+    }
+
 }

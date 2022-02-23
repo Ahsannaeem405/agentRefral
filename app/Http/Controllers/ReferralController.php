@@ -83,11 +83,6 @@ class ReferralController extends Controller
 
         event(new MyEvent($id, $name, $img, $refer_id));
 
-
-
-
-
-
         if (!is_null($refral)) {
             return back()->with('success', 'City Successfully Add.');
         } else {

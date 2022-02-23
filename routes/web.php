@@ -78,6 +78,7 @@ Route::get('/approve/agents/{id}', [admin::class, 'approve']);
 Route::get('/reject/agents/{id}', [admin::class, 'reject']);
 Route::post('/update/{id}', [admin::class, 'update']);
 Route::get('/agent-details/{agent_id}', [admin::class, 'agent_details'])->name('admins.agent-details');
+Route::post('/personal-information', [admin::class, 'update_information']);
 
 });
 

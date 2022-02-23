@@ -69,7 +69,7 @@
             
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">City</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="city" placeholder="ex. Washington">
                                         </div>
                                 </div>
                                 <div class="modal-footer">
@@ -132,11 +132,12 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">
-                                                            Add Ctiy
+                                                            Update City
                                                         </h5>
+                                                      \
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="{{ url('admins/cities/update/' .$row_user->id) }}" method="POST">
+                                                        <form action="{{ url('admins/cities/update/'.$row_user->id) }}" method="POST">
                                                             @csrf
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="exampleInputEmail1">
@@ -145,15 +146,16 @@
                                                                 <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" name="city" type="text" value="{{$row_user->name}}">
                                                                 </input>
                                                             </div>
-                                                        </form>
+                              
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button class="btn btn-secondary" data-dismiss="modal" type="button">
                                                             Close
                                                         </button>
-                                                        <button class="btn btn-success" type="submit">
-                                                            Save
+                                                        <button type="submit" class="btn btn-success" type="submit">
+                                                            Update 
                                                         </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

@@ -1,3 +1,4 @@
+
 @extends('backend.admin.main')
 @include('backend.admin.layouts.head')
 @include('backend.admin.layouts.topbar')
@@ -161,7 +162,7 @@
                                 <div class="mb-3">
                                     <p class="m-0">
                                         <b>
-                                            Phoen Number
+                                            Phone Number
                                         </b>
                                     </p>
                                     <p class="m-0">
@@ -288,7 +289,7 @@
                         <div class="d-flex mt-4">
                             <div>
 
-                                @if($row_sender->refer_user2->profile_image!=null)
+                                @if($row_sender->refer_user2!=null)
                                 <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
                                 @else
                                 <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">

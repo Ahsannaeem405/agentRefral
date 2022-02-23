@@ -154,7 +154,7 @@
                                 <div class="mb-3">
                                     <p class="m-0">
                                         <b>
-                                            Phoen Number
+                                            Phone Number
                                         </b>
                                     </p>
                                     <p class="m-0">
