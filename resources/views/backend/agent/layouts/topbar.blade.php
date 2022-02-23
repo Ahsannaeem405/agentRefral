@@ -118,9 +118,9 @@ $total_notifications=$notifications->count();
 													{{$notification->user->first_name}}
 													@endif
 													@if($notification->status == 1)
-													has Rejected your referral.
+													Rejected your referral.
 													@else
-													has Accepted your referral.
+													Accepted your referral.
 													@endif
 												</a>
 
