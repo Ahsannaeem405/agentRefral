@@ -45,7 +45,7 @@
             <div class="container bg-white mt-3">
                 <div class="row">
                     @foreach($send as $row_sender)
-
+ 
                     <div class="d-flex justify-content-between pt-5">
                         <div>
                             <p>
@@ -77,11 +77,15 @@
 
                         <div class="d-flex mt-4">
                             <div>
+
+
                                 @if($row_sender->refer_user!=null)
-                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user->profile_image)}}" width="34" height="34" alt="author">
-                                @else
-                                <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
-                                @endif
+                                    @if($row_sender->refer_user->profile_image!=null) 
+                                    <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user->profile_image)}}" width="34" height="34" alt="author">
+                                    @else
+                                    <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+                                    @endif
+                                @endif     
                             </div>
                             <div style="margin-left:10px">
                                 @if($row_sender->refer_user!=null)
@@ -251,6 +255,7 @@
             <div class="container bg-white mt-3">
                 <div class="row">
                     @foreach($reciver as $row_sender)
+                    
                     <div class="d-flex justify-content-between pt-5">
                         <div>
                             <p>
@@ -283,7 +288,7 @@
                         <div class="d-flex mt-4">
                             <div>
 
-                                @if($row_sender->refer_user2!=null)
+                                @if($row_sender->refer_user2->profile_image!=null)
                                 <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
                                 @else
                                 <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">

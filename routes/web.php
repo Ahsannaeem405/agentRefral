@@ -27,8 +27,20 @@ use App\Http\Controllers\ReferralController;
 |
 */
 
+  Route::get('/cls', function() {
+        $run = Artisan::call('config:clear');
+        $run = Artisan::call('cache:clear');
+        $run = Artisan::call('config:cache');
+       
+        return 'FINISHED';
+    });
+
 //user site 
 Route::view('/error', 'error');
+
+Route::get('/event', [admin::class, 'event'] );
+Route::get('/event2', [admin::class, 'event2'] );
+
 
 
 Route::get('/', [agentController::class, 'index'])->name('index2');

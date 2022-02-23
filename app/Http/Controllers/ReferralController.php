@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\referral_user;
 use App\Models\referral;
+use App\Events\MyEvent;
 
-
+use URL;
 
 use Auth;
 
@@ -37,40 +38,59 @@ class ReferralController extends Controller
         }
 
 
-        $refral            = new referral;
-        $refral->sender_id = Auth::user()->id;
+            $refral            = new referral;
+            $refral->sender_id = Auth::user()->id;
+            
+            $refral->reciver_id= $request->input('reciver_id');
+            $refral->type= $request->input('type');
+            $refral->profit    = $request->input('profit');
+            $refral->timeout   = $request->input('timeout');
+            $refral->max       = $request->input('max');
+            $refral->min       = $request->input('min');
+            $refral->notes     = $request->input('notes');
+            $refral->referral_user_id     = $referral_user_id;
+            
+            $refral->save();
 
-        $refral->reciver_id = $request->input('reciver_id');
-        $refral->type = $request->input('type');
-        $refral->profit    = $request->input('profit');
-        $refral->timeout   = $request->input('timeout');
-        $refral->max       = $request->input('max');
-        $refral->min       = $request->input('min');
-        $refral->notes     = $request->input('notes');
-        $refral->referral_user_id     = $referral_user_id;
+            $sender_id=$request->input('sender_id');
+            $reciver_id=$request->input('reciver_id');
+            $status=0;
 
-        $refral->save();
+            $notification= new Notification();
+            $notification->sender_id=$sender_id;
+            $notification->reciver_id=$reciver_id;
+            $notification->referral_id=$refral->id;
+            
+            $notification->type=1;
+            
+            $notification->status=$status;
+            // $notification->referal_id= $refral->id;
 
-        $sender_id = $request->input('sender_id');
-        $reciver_id = $request->input('reciver_id');
-        $status = 0;
+           
+            $notification->save();
 
-        $notification = new Notification();
-        $notification->sender_id = $sender_id;
-        $notification->reciver_id = $reciver_id;
-        $notification->referral_id = $refral->id;
+            
+                                   $id=intval($notification->reciver_id);
+                                   $refer_id=$notification->referral_id;
+                                   $name=$notification->user->first_name.' has Sent you a referral ';
+                                   $base=URL::to("/");
+                                   if($notification->user->profile_image!=null)
+                                   {
+                                   $img=$base.'/upload/images/'.$notification->user->profile_image;
+                                   }
+                                   else
+                                   {
+                                    $img=$base.'/dashboard/img/user.jpg';
+                                   }
+//dd($img,$notification->user->first_name);
+                                 
+                event(new MyEvent($id,$name,$img,$refer_id));
 
-        $notification->type = 1;
+            
+           
 
-        $notification->status = $status;
-        // $notification->referal_id= $refral->id;
-
-
-        $notification->save();
-
-
-
-
+        
+       
         if (!is_null($refral)) {
             return back()->with('success', 'City Successfully Add.');
         } else {
