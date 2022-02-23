@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\cites;
 use App\Models\referral_user;
-
+use URL;
+use App\Events\MyEvent;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -100,10 +101,13 @@ class agentController extends Controller
         {
         //    dd($id);
             $notification->status = 1;
+            $noti_staus = 'Rejected';
+
         }
         else
         {  
             $notification->status = 2;
+            $noti_staus ='Accepted';
 
         }
         $notification->type=2;
@@ -112,6 +116,22 @@ class agentController extends Controller
        
         $notification->save();
      // dd($notification);
+           $id=intval($notification->reciver_id);
+           $refer_id=$notification->referral_id;
+           $name=$notification->user->first_name.' '.$noti_staus.' your referral ';
+           $base=URL::to("/");
+           if($notification->user->profile_image!=null)
+           {
+           $img=$base.'/upload/images/'.$notification->user->profile_image;
+           }
+           else
+           {
+            $img=$base.'/dashboard/img/user.jpg';
+           }
+//dd($name,$notification->user->first_name);
+                                 
+                event(new MyEvent($id,$name,$img,$refer_id));
+
         
         
        

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+    @yield('css')
     <div id="preloader" class="tlp-preloader">
         <div class="animation-preloader">
             <div class="tlp-spinner"></div>
@@ -19,4 +20,5 @@
     </div>
     @include('frontend.layouts.script')
 </body>
+@yield('js')
 </html>

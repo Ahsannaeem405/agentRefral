@@ -1,5 +1,10 @@
 @extends('backend.agent.main')
+@section('css')
 
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+@endsection
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -27,7 +32,7 @@
         <div class="col">
             <div class="ui-block">
                 <div class="m-3">
-                    <select class="loction" name="refer_id" class="js-example-basic-single" style="width: 200px; margin-top: 7px;">
+                    <select class="loction js-example-basic-single" name="refer_id" style="width: 200px; margin-top: 7px;">
                         @foreach($citiy as $row_citiy)
                         <option value="{{$row_citiy->id}}">{{$row_citiy->name}} </option>
                         @endforeach
@@ -49,7 +54,7 @@
                 <div class="ui-block">
 
 
-                    <table class="event-item-table event-item-table-fixed-width">
+                    <table class="event-item-table event-item-table-fixed-width " id="">
 
                         <thead>
 
@@ -902,4 +907,15 @@
     });
 </script>
 </div>
+@endsection
+@section('js')
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 @endsection

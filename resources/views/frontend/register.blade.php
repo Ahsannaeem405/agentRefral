@@ -1,5 +1,33 @@
 @extends('frontend.main')
 @include('frontend.layouts.navbar')
+@section('css')
+<style type="text/css">
+	.select2-container--default .select2-selection--single {
+		border: none!important;
+        background-color: #ecf5ff!important;
+     }
+     .select2-selection__rendered{
+     	font-family: Poppins-Medium!important;
+	    font-size: 15px!important;
+	    line-height: 1.5!important;
+	    color: #666666!important;
+	    display: block!important;
+	    width: 100%!important;
+	    background: #e6e6e6!important;
+	    height: 50px!important;
+	    border-radius: 25px!important;
+	    padding: 0 30px 0 68px!important;
+	    padding-top: 14px!important;
+     }
+    .select2-selection__arrow{
+     	padding-top: 47px!important;
+     }
+</style>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+@endsection
 @section('content')
 <section id="page-banner" class="page-banner bg-gradient-layout6 has-animation">
 	<ul class="shape-holder">
@@ -133,14 +161,14 @@
 
 				<div class="wrap-input100">
 					
-					<select name="city" class="input100"  required>
+					<select name="city" class="input100 js-example-basic-single"  required>
 					  <option value="">Select City</option>
 					  @foreach($citiy as $citiy)
 					  <option value="{{$citiy->id}}">{{$citiy->name}}</option>
 					  @endforeach
 					</select>
 					<span class="focus-input100"></span>
-					<span class="symbol-input100">
+					<span class="symbol-input100" style="padding-top: 17px!important;">
                     <i class="fa fa-city" aria-hidden="true"></i>
 					</span>
 				</div>
@@ -170,5 +198,17 @@
 	$('.js-tilt').tilt({
 		scale: 1.1
 	})
+</script>
+@endsection
+
+@section('js')
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
 </script>
 @endsection

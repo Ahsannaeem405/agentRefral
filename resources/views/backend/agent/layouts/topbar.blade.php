@@ -1,6 +1,8 @@
 @php
 $user=Auth()->user()->id;
-$notifications=App\Models\Notification::where('reciver_id',$user)->get();
+$notifications=App\Models\Notification::where('reciver_id',$user)->whereNull('read')->get();
+
+//dd($notifications);
 $total_notifications=$notifications->count();
 
 @endphp
@@ -113,9 +115,9 @@ $total_notifications=$notifications->count();
 													{{$notification->user->first_name}}
 													@endif
 													@if($notification->status == 1)
-													has Rejected your referral.
+													Rejected your referral.
 													@else
-													has Accepted your referral.
+													Accepted your referral.
 													@endif
 												</a>
 
