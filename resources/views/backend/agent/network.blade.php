@@ -52,7 +52,7 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-                                @if($row_sender->refer_user!=null)
+                                @if($row_sender->refer_user->get_city!=null)
                                 {{$row_sender->refer_user->get_city->name}}
                                 @endif
                             </p>
@@ -74,7 +74,7 @@
 
                         <div class="d-flex mt-4">
                             <div>
-                                @if($row_sender->refer_user!=null)
+                                @if($row_sender->refer_user->profile_image!=null)
                                 <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user->profile_image)}}" width="34" height="34" alt="author">
                                 @else
                                 <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
@@ -257,7 +257,7 @@
                                 </b>
                             </p>
                             <p style="margin-left: 40px; margin-top:-7px">
-                                @if($row_sender->refer_user2!=null)
+                                @if($row_sender->refer_user2->get_city!=null)
                                 {{$row_sender->refer_user2->get_city->name}}
                                 @endif
                             </p>
@@ -280,7 +280,7 @@
                         <div class="d-flex mt-4">
                             <div>
 
-                                @if($row_sender->refer_user2!=null)
+                                @if($row_sender->refer_user2->profile_image!=null)
                                 <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
                                 @else
                                 <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
