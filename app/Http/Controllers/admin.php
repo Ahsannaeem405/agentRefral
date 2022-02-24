@@ -7,6 +7,7 @@ use App\Models\cites;
 use App\Models\User;
 use App\Models\referral_user;
 use App\Models\referral;
+use Illuminate\Support\Facades\Hash;
 
 use App\Events\MyEvent;
 
@@ -166,6 +167,27 @@ class admin extends Controller
 
        
         return back()->with('success', 'Profile Information Updated Successfully.');
+    }
+
+
+    public function change_password(Request $request)
+    {
+
+        $user = User::find($request->agent_id);
+       
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->with('error', 'Current password does not match!');
+        }
+        else{
+            $validator=$this->validate($request, [
+
+                'password' => 'required|confirmed|min:6',
+            ]);
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            return back()->with('success', 'Password successfully changed!');
+        }
     }
 
 }

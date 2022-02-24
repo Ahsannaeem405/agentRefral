@@ -104,6 +104,11 @@
 									<label class="control-label">Your New Password</label>
 									<input class="form-control" placeholder="" id="password" type="password" name="password" onkeyup='check();' Required>
 								</div>
+								@error('password')
+								<span class="invalid-feedback"  role="alert" style="display: block;margin-top: -12px;margin-left: 5%;">
+									<strong>{{ $message }}</strong>
+								</span>
+							@enderror
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">

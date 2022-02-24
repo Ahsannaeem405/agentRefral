@@ -80,16 +80,8 @@
 
 
 
-							<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-								<div class="form-group label-floating is-select">
-									<label class="control-label">Your City</label>
-									<select class="form-select" name="city">
-										<option value="{{Auth()->user()->city}}">{{Auth()->user()->city}}</option>
-
-									</select>
-								</div>
-							</div>
-							<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
+							
+							<div class="col col-lg-6 col-md-3 col-sm-12 col-12">
 
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Gender</label>
@@ -152,11 +144,11 @@
 								<div class="accordion-body">
 									<ul class="your-profile-menu">
 										<li>
-											<a href="{{route('settings1')}}">Personal Information</a>
+											<a href="{{route('settings')}}">Personal Information</a>
 										</li>
 
 										<li>
-											<a href="{{route('changepassword1')}}">Change Password</a>
+											<a href="{{route('changepassword')}}">Change Password</a>
 										</li>
 
 									</ul>

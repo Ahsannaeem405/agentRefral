@@ -51,21 +51,26 @@ class agentController extends Controller
     public function change_password(Request $request)
     {
 
-        // $validator=$this->validate($request, [
-
-        //     'password' => 'required|confirmed|min:6',
-        // ]);
+        
 
 
         $user = User::find($request->agent_id);
+       
         if (!Hash::check($request->current_password, $user->password)) {
             return back()->with('error', 'Current password does not match!');
         }
+        else{
+            $validator=$this->validate($request, [
 
-        $user->password = Hash::make($request->password);
-        $user->save();
+                'password' => 'required|confirmed|min:6',
+            ]);
+            $user->password = Hash::make($request->password);
+            $user->save();
 
-        return back()->with('success', 'Password successfully changed!');
+            return back()->with('success', 'Password successfully changed!');
+        }
+
+        
     }
 
     public function index()

@@ -13,5 +13,9 @@ protected $fillable = [
     'name',
 
 ];
+public function user()
+{
+    return $this->hasOne('App\Models\User','city','id');
+}
     use HasFactory;
 }

@@ -362,7 +362,10 @@
                                                             <div class="mt-3">
                                                                 <select class="database" name="refer_id" style=" margin-top: 7px;
                                                                 
-                                                                 display:none">
+                                                                 display:none" required>
+                                                                 <option value="">
+                                                                    Please Select a User
+                                                                </option>
                                                                     @foreach($ref_user as $row_ref_user)
                                                                     <option value="{{$row_ref_user->id}}">{{$row_ref_user->name}} </option>
                                                                     @endforeach
@@ -373,15 +376,15 @@
                                                                 <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                     <div class="mt-3">
                                                                         <label for="">Name</label>
-                                                                        <input type="text" placeholder="Write a Name" name="name">
+                                                                        <input type="text" placeholder="Write a Name" name="name" class="name" required>
                                                                     </div>
                                                                     <div class="mt-3">
                                                                         <label for="">Email</label>
-                                                                        <input type="text" placeholder="Write a Email" name="email">
+                                                                        <input type="text" placeholder="Write a Email" name="email" class="email" required>
                                                                     </div>
                                                                     <div class="mt-3">
                                                                         <label for="">Phone</label>
-                                                                        <input type="text" placeholder="Write a Phone" name="phone">
+                                                                        <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
                                                                     </div>
 
 

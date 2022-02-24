@@ -1,3 +1,4 @@
+
 @extends('backend.agent.main')
 @section('content')
 <div class="main-header">
@@ -80,8 +81,10 @@
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your City</label>
 									<select class="form-select" name="city">
-										<option value="{{Auth()->user()->city}}">{{Auth()->user()->city}}</option>
-
+									<option value="{{$data->get_city->id}}" checked>{{$data->get_city->name}}</option>
+										@foreach($all_cities as $city)
+										<option value="{{$city->id}}">{{$city->name}}</option>
+                                         @endforeach
 									</select>
 								</div>
 							</div>
