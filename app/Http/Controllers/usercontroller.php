@@ -103,7 +103,7 @@ class usercontroller extends Controller
 
 
                     $gold=$orders2->where('get_refrral_count','=',$max_gold_id);
-                    dd($max_gold_id);
+                   
                     if($max_gold_id!=0)
                     {
 
