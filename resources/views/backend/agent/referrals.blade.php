@@ -251,15 +251,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name" required>
+                                                                    <input type="text" placeholder="Write a Name" name="name" class="name" required>
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email" required>
+                                                                    <input type="text" placeholder="Write a Email" name="email" class="email" required>
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone" required>
+                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
                                                                 </div>
 
 
@@ -809,15 +809,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name">
+                                                                    <input type="text" placeholder="Write a Name" name="name" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email">
+                                                                    <input type="text" placeholder="Write a Email" name="email" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone">
+                                                                    <input type="text" placeholder="Write a Phone" name="phone" >
                                                                 </div>
 
 
@@ -856,14 +856,26 @@
 <script>
     $(document).ready(function() {
 
+
         $(".from-database").click(function() {
 
             $('.database').show();
             $('.contact').addClass("d-none");
+            $(".from-database").attr("required", true);
+            $(".new-contact").attr("required", false);
+            $(".name").attr("required", false);
+            $(".email").attr("required", false);
+            $(".phone").attr("required", false);
+            
         });
         $(".new-contact").click(function() {
             $('.database').hide();
             $('.contact').removeClass("d-none");
+            $(".new-contact").attr("required", true);
+            $(".from-database").attr("required", false);
+ 
+         
+
         });
         $(".btyn").click(function() {
 
@@ -906,15 +918,6 @@
 </div>
 @endsection
 @section('js')
-
-
-
-
-
-
-
-
-
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
