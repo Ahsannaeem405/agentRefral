@@ -260,7 +260,7 @@ $total_notifications=$notifications->count();
 						<div class="author-thumb">
 
 							@if($notification->user->profile_image!=null)
-							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author" >
 							@else
 							<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
 							@endif
