@@ -72,7 +72,7 @@
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>You simply go the main page of the website and get your self registerd by entring your some bsic information</p>
+									<p>You simply go the main page of the website and get your self registerd by entring your some basic information</p>
 								</div>
 							</div>
 						</div>
@@ -205,7 +205,7 @@
 
 							<li><a id="question" href="#">How to Create an Account</a></li>
 							<li><a id="question2" href="#">How Our tier Plan Works ?</a></li>
-							<li><a id="question3" href="#">How reffered client get in touch with agent?</a></li>
+							<li><a id="question3" href="#">How referred client get in touch with agent?</a></li>
 							<li><a id="question4" href="#">How many tiers?</a></li>
 
 						</ul>

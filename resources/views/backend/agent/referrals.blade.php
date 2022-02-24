@@ -67,11 +67,11 @@
                                     Email
                                 </th>
                                 <th class="location">
-                                    Badge
+                                    City
                                 </th>
 
                                 <th class="location">
-                                    PLACE
+                                    Tier
                                 </th>
                                 <th class="add-event">
 
@@ -689,7 +689,7 @@
                                         <td class="location">
                                             <div class="place inline-items">
 
-                                                Golds
+                                                Gold
                                             </div>
                                         </td>
 
@@ -793,7 +793,7 @@
                                                             <label for="">Notes</label>
                                                             <input type="text" placeholder="Write a Message" name="notes">
                                                         </div>
-                                                        <p>0/3000</p>
+                                                     
                                                         <div class="row">
                                                             <p>Select a client From Your Database or Create a new client</p>
                                                             <div class="col d-flex align-items-center">

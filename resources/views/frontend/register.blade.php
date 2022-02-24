@@ -186,7 +186,7 @@
 						You are already member?
 					</span>
 					<span>
-                       <a> Login</a>
+                       <a href="{{url('log_in')}}"> Login</a>
                     </span>
 </div>
 			</form>

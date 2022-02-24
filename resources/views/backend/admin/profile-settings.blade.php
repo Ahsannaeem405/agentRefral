@@ -72,22 +72,24 @@
 									<label class="control-label">Last Name</label>
 									<input class="form-control" placeholder="" name="last_name" type="text" value="{{Auth()->user()->last_name}}">
 								</div>
-								<div class="form-group label-floating is-empty">
+								<div class="form-group label-floating">
 									<label class="control-label">Your Phone Number</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" placeholder="" type="text" name="phone_number" value="{{Auth()->user()->phone_number}}">
 								</div>
+
 							</div>
 
 
 
-							
+
 							<div class="col col-lg-6 col-md-3 col-sm-12 col-12">
 
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Gender</label>
 									<select class="form-select" name="gender">
-										<option value="MA">Male</option>
-										<option value="FE">Female</option>
+										<option value="{{auth()->user()->gender}}">{{Auth()->user()->gender}}</option>
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
 									</select>
 								</div>
 

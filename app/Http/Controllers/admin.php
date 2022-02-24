@@ -154,6 +154,7 @@ class admin extends Controller
         $user->phone_number = $request->input('phone_number');
         $user->city = $request->input('city');
         $user->gender = $request->input('gender');
+        $user->phone_number = $request->input('phone_number');
         if($request->hasFile('file'))
         {
 

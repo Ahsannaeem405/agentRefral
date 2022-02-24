@@ -134,7 +134,7 @@
                                                         <h5 class="modal-title" id="exampleModalLabel">
                                                             Update City
                                                         </h5>
-                                                      \
+                                                      
                                                     </div>
                                                     <div class="modal-body">
                                                         <form action="{{ url('admins/cities/update/'.$row_user->id) }}" method="POST">

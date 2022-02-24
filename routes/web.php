@@ -10,12 +10,6 @@ use App\Models\cites;
 use App\Http\Controllers\ReferralController;
 
 
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,16 +35,14 @@ Route::view('/error', 'error');
 Route::get('/event', [admin::class, 'event'] );
 Route::get('/event2', [admin::class, 'event2'] );
 
-
-
 Route::get('/', [agentController::class, 'index'])->name('index2');
 // Route::view('/', 'frontend.index')->name('index2');
 Route::view('/about', 'frontend.about')->name('about-us');
 Route::view('/contact', 'frontend.contact')->name('contact-us');
 Route::view('/faq', 'frontend.faq')->name('faqs');
 Route::view('/faqs', 'frontend.faqs')->name('faqs1');
-Route::view('/log_in', 'frontend.login')->name('login');
 
+Route::view('/log_in', 'frontend.login')->name('login')->middleware('auth');
 
 Route::get('/get/register', function() {
 
@@ -106,14 +98,8 @@ Route::post('/personal-information', [agentController::class, 'update_informatio
 Route::post('/change-password', [agentController::class, 'change_password']);
 Route::get('/acceptorreject/{id}/{status}', [agentController::class, 'accept_or_reject'])->name('user.status');
 
-
-
 });
 
-
-
-
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

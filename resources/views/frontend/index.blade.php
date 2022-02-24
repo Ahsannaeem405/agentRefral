@@ -310,32 +310,7 @@
                                 <img src="media/team/team12.jpg" alt="Team">
                                 @endif
                             </div>
-                            <ul class="social-items">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-instagram">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-pinterest-p">
-                                        </i>
-                                    </a>
-                                </li>
-                            </ul>
+                          
                         </div>
                         <div class="item-content">
                              <h3 class="item-title"><a href="#">{{$user->first_name}} {{$user->last_name}}</a></h3>

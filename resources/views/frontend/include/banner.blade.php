@@ -104,7 +104,9 @@ body{
                         <div class="search translate-bottom-75 opacity-animation transition-150 transition-delay-1500">
                             <input type="text" class="searchTerm" placeholder="What are you looking for?">
                             <button type="submit" class="searchButton">
-                                <i class="fa fa-search"></i>
+                               <a href="{{url('log_in')}}">
+                               <i class="fa fa-search"></i>
+                               </a>
                             </button>
                         </div>
                     </div>
