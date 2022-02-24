@@ -230,7 +230,7 @@
                                                         <div class="row">
                                                             <p>Select a client From Your Database or Create a new client</p>
                                                             <div class="col d-flex align-items-center">
-                                                                <input type="radio" name="contact" class="w-25 from-database" value="1"><span>Select from database</span>
+                                                                <input type="radio" name="contact" class="w-25 from-database" value="1" checked><span>Select from database</span>
                                                             </div>
                                                             <div class="col d-flex align-items-center">
                                                                 <input type="radio" name="contact" class="w-25 new-contact" value="2"><span>Create a new New Contact</span>
@@ -240,11 +240,13 @@
                                                         <div class="mt-3">
                                                             <select class="database" name="refer_id" style=" margin-top: 7px;
                                                             
-                                                             display:none">
+                                                             display:none" required>
+                                                                <option value="">
+                                                                    Please Select a User
+                                                                </option>
                                                                 @foreach($ref_user as $row_ref_user)
                                                                 <option value="{{$row_ref_user->id}}">{{$row_ref_user->name}} </option>
                                                                 @endforeach
-
                                                             </select>
                                                         </div>
                                                         <div class="container">
@@ -261,8 +263,6 @@
                                                                     <label for="">Phone</label>
                                                                     <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
                                                                 </div>
-
-
                                                             </div>
                                                         </div>
                                                         <div class="mt-5 text-end">
@@ -809,15 +809,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name" >
+                                                                    <input type="text" placeholder="Write a Name" name="name">
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email" >
+                                                                    <input type="text" placeholder="Write a Email" name="email">
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone" >
+                                                                    <input type="text" placeholder="Write a Phone" name="phone">
                                                                 </div>
 
 
@@ -866,17 +866,18 @@
             $(".name").attr("required", false);
             $(".email").attr("required", false);
             $(".phone").attr("required", false);
-            
+
+
         });
         $(".new-contact").click(function() {
             $('.database').hide();
             $('.contact').removeClass("d-none");
             $(".new-contact").attr("required", true);
             $(".from-database").attr("required", false);
- 
-         
-
+            $(".database").attr("required", false);
         });
+       
+
         $(".btyn").click(function() {
 
             var data = $(this).attr('val');
@@ -913,7 +914,7 @@
     });
 </script>
 <script>
-    
+
 </script>
 </div>
 @endsection
