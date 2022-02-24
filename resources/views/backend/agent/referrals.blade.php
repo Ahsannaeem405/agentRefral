@@ -680,7 +680,7 @@
                                         <td class="location">
                                             <div class="place inline-items">
 
-                                                Gold
+                                                Golds
                                             </div>
                                         </td>
 
