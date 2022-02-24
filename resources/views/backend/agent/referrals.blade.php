@@ -80,6 +80,7 @@
                         </thead>
                         <tbody>
                             @php $l=0; @endphp
+                            @php $q=0; @endphp
                             @foreach ($user as $key => $value_k)
 
                             @php
@@ -89,7 +90,9 @@
 
                             $silver_gold=$orders2->where('get_refrral_count','<',$max_gold_id); $silver_gold=collect($silver_gold); $silver_gold_id=$silver_gold->max('get_refrral_count');
                                 $silver=$orders2->where('get_refrral_count','=',$silver_gold_id);
-                                $bronze=$orders2->where('get_refrral_count','<',$silver_gold_id); @endphp @if($max_gold_id!=0) @foreach ($gold as $key=> $row_user)
+                                $bronze=$orders2->where('get_refrral_count','<',$silver_gold_id); @endphp
+                                @if($max_gold_id!=0)
+                                    @foreach ($gold as $key=> $row_user)
                                     @php $l++ @endphp
                                     <tr class="event-item">
                                         <td class="author">
@@ -274,9 +277,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
-                                    @php $k=0; @endphp
-                                    @foreach ($silver as $key => $row_user)
+                                   @endforeach
+                                   @php $k=0; @endphp
+                                   @foreach ($silver as $key => $row_user)
                                     @php $k++ @endphp
                                     <tr class="event-item">
                                         <td class="author">
@@ -644,8 +647,8 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                    @else
-                                    @php $q=0; @endphp
+                                @else
+                                    
                                     @foreach ($value_k as $key => $row_user)
                                     @php $q++ @endphp
                                     <tr class="event-item">
