@@ -897,7 +897,7 @@
             $.ajax({
 
                 type: 'post',
-                url: '{{URL::to(' / user / loc_referrals ')}}',
+                url: '{{URL::to('/user/loc_referrals ')}}',
                 data: {
                     'id': id,
                     '_token': csrf
