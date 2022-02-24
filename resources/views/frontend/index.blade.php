@@ -303,7 +303,9 @@
                             </span>
                             <div class="item-figure">
                                @if($user->profile_image)
-                                <img src="media/team/team1.jpg" alt="Team">
+                             
+                                <img loading="" src="{{asset('upload/images/'.$user->profile_image)}}" alt="">
+                            
                                 @else
                                 <img src="media/team/team12.jpg" alt="Team">
                                 @endif
