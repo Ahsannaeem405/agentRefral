@@ -58,7 +58,7 @@
                             <a href="{{route('index2')}}" class="default-logo">
                                 <img src="{{asset('media/dark.png')}}" alt="logo" class="img-fluid" style="height:80px!important">
                             </a>
-                            <a href="index.html" class="sticky-logo">
+                            <a href="{{route('index2')}}" class="sticky-logo">
                                 <img src="{{asset('media/light.png')}}" alt="logo" class="img-fluid" style="height:80px!important">
                             </a>
                         </div>

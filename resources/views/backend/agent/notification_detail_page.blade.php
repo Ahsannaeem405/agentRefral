@@ -59,7 +59,7 @@
                         <div class="d-flex mt-4">
                             <div>
                             @if($row_sender->refer_user2!=null)
-                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
+                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" style="border-radius: 100%;width: 30px;height: 30px;" alt="author" alt="author">
                                 @else
                                 <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
                                 @endif
@@ -221,7 +221,7 @@
                             <div class="col col-md-6">
                                 <p class="m-0">
                                     <b>
-                                        <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}">Reject</a>
+                                        <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}" onclick="return confirm('Are You Sure?');">Reject</a>
                                     </b>
                                 </p>
 

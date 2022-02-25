@@ -119,7 +119,7 @@
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">Confirm New Password</label>
-									<input class="form-control" placeholder="" id="new-password" type="password" name="new-password" onkeyup='check();' Required>
+									<input class="form-control" placeholder="" id="new-password" type="password" name="password_confirmation" onkeyup='check();' Required>
 								</div>
 							</div>
 					

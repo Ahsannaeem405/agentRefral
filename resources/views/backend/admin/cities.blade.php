@@ -121,7 +121,7 @@
                                             <i class="fa fa-edit" data-target="#exampleModaledit{{$m}}" data-toggle="modal" style="font-size:20px;color:red;"></i>
 
 
-                                            <a href="{{url('admins/cities/delete/' .$row_user->id)}}">
+                                            <a href="{{url('admins/cities/delete/' .$row_user->id)}}" onclick="return confirm('Are You Sure?');">
                                                 <i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red;"></i>
 
                                             </a>

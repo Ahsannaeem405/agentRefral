@@ -480,7 +480,7 @@
                                 <div class="col col-md-6">
                                     <p class="m-0">
                                         <b>
-                                            <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}">Reject</a>
+                                            <a href="{{route('user.status',['id'=>$row_sender->id,'status'=>'rejected'])}}"  onclick="return confirm('Are You Sure?');">Reject</a>
                                         </b>
                                     </p>
 

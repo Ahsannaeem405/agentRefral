@@ -68,9 +68,10 @@ $total_notifications=$notifications->count();
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
 
-						@if($total_notifications>0)
-						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
+						@if($total_notifications==0)
+						<div class="label-avatar bg-primary count_noti d-none">{{$total_notifications}}</div>
 						@else
+						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						@endif
 						<div class="more-dropdown more-with-triangle triangle-top-center">
 							<div class="ui-block-title ui-block-title-small">
@@ -215,9 +216,10 @@ $total_notifications=$notifications->count();
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
 
-						@if($total_notifications>0)
-						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
+						@if($total_notifications==0)
+						<div class="label-avatar bg-primary count_noti d-none">{{$total_notifications}}</div>
 						@else
+						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						@endif
 					</div>
 				</a>

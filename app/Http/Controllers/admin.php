@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\referral_user;
 use App\Models\referral;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 use App\Events\MyEvent;
 
@@ -180,15 +181,32 @@ class admin extends Controller
             return back()->with('error', 'Current password does not match!');
         }
         else{
-            $validator=$this->validate($request, [
-
-                'password' => 'required|confirmed|min:6',
-            ]);
-            $user->password = Hash::make($request->password);
-            $user->save();
+           
+            $validated = $request->validate([
+                'password' => 'required|confirmed|min:6'
+               
+                ]);
+            
+            $users = User::find($request->agent_id);
+            $users->password = Hash::make($request->password);
+            $users->save();
+           
 
             return back()->with('success', 'Password successfully changed!');
         }
     }
+    public function contact_saved(Request $request)
+    {
+
+        $validated = $request->validate([
+        'Name' => 'required',
+        'Email' => 'required|email',
+        'Message' => 'required',
+        ]);
+        return back()->with('success', 'Your Message is successfully Delivered to Us!');
+
+    }
+    
+    
 
 }

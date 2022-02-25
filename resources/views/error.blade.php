@@ -31,8 +31,8 @@
 			
 			
 			
-			<h2>Page not found</h2>
-			<p style="color: red;"><b>Your Account Waiting For Admin Approval</b></p>
+			
+			<h2 style="color: red;"><b>Your Account Waiting For Admin Approval</b></h2>
 			<a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
