@@ -46,7 +46,11 @@ $total_notifications=$notifications->count();
 			var curr=$(".notification-list").attr('abc');
 			++curr;
 			$(".notification-list").attr('abc',curr);
-			$(".count_noti").html(curr);
+			 $(".count_noti").html(curr);
+			 
+			
+			  $(".count_noti").removeClass("d-none");
+
 
 			
 			

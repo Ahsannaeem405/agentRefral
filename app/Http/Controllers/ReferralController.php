@@ -68,7 +68,6 @@ class ReferralController extends Controller
 
         $notification->save();
 
-
         $id = intval($notification->reciver_id);
         $refer_id = $notification->referral_id;
         $name = $notification->user->first_name . ' has Sent you a referral ';
