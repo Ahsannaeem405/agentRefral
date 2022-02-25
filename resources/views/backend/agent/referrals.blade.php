@@ -386,11 +386,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="">Min </label>
-                                <input type="number" name="min" placeholder="Min Range">
+                                <input type="number" name="min" placeholder="Min Range" required>
                             </div>
                             <div class="col">
                                 <label for="">Max </label>
-                                <input type="number" name="max" placeholder="Max Range">
+                                <input type="number" name="max" placeholder="Max Range" required>
                             </div>
                         </div>
                     </div>
