@@ -105,7 +105,7 @@ body{
                             <input type="text" class="searchTerm" placeholder="What are you looking for?">
                             <button type="submit" class="searchButton">
                                <a href="{{url('log_in')}}">
-                               <i class="fa fa-search"></i>
+                               <i class="fa fa-search" style="color:white;"></i>
                                </a>
                             </button>
                         </div>
