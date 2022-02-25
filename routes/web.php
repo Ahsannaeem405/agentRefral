@@ -42,7 +42,7 @@ Route::view('/contact', 'frontend.contact')->name('contact-us');
 Route::view('/faq', 'frontend.faq')->name('faqs');
 Route::view('/faqs', 'frontend.faqs')->name('faqs1');
 
-Route::view('/log_in', 'frontend.login')->name('login')->middleware('auth');
+Route::view('/log_in', 'frontend.login')->name('login');
 
 Route::get('/get/register', function() {
 

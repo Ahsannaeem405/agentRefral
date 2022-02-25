@@ -96,7 +96,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	},
 	data: [{
 		type: "column",
-		yValueFormatString: "#,##0.0#\"%\"",
+		yValueFormatString: "#,##0.0#\"\"",
 		dataPoints: [
 			{ label: "Accepted ", y: <?php echo $accepted ?>},	
 			{ label: "Recived ", y: <?php echo $recieved;?> },	

@@ -20,7 +20,6 @@ class ReferralController extends Controller
 
     public function add_referral(Request $request)
     {
-
         $notifications = Notification::all();
         //   dd($notifications);
 

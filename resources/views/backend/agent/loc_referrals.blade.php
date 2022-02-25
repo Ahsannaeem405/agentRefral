@@ -360,9 +360,7 @@
 
                                                             </div>
                                                             <div class="mt-3">
-                                                                <select class="database" name="refer_id" style=" margin-top: 7px;
-                                                                
-                                                                 display:none" required>
+                                                                <select class="database selectdatabase" name="refer_id" style=" margin-top: 7px;" required>
                                                                  <option value="">
                                                                     Please Select a User
                                                                 </option>
@@ -376,15 +374,15 @@
                                                                 <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                     <div class="mt-3">
                                                                         <label for="">Name</label>
-                                                                        <input type="text" placeholder="Write a Name" name="name" class="name" required>
+                                                                        <input type="text" placeholder="Write a Name" name="name" class="name new_contact">
                                                                     </div>
                                                                     <div class="mt-3">
                                                                         <label for="">Email</label>
-                                                                        <input type="text" placeholder="Write a Email" name="email" class="email" required>
+                                                                        <input type="text" placeholder="Write a Email" name="email" class="email new_contact">
                                                                     </div>
                                                                     <div class="mt-3">
                                                                         <label for="">Phone</label>
-                                                                        <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
+                                                                        <input type="text" placeholder="Write a Phone" name="phone" class="phone new_contact" >
                                                                     </div>
 
 
@@ -407,14 +405,22 @@
     $(document).ready(function() {
 
 
-        $(".from-database").click(function() {
+        
 
+        $(".from-database").click(function() {
             $('.database').show();
             $('.contact').addClass("d-none");
+            $(".selectdatabase").attr("required", true);
+            $(".new_contact").attr("required", false);
+           
+
+
         });
         $(".new-contact").click(function() {
             $('.database').hide();
             $('.contact').removeClass("d-none");
+            $(".selectdatabase").attr("required", false);
+            $(".new_contact").attr("required",true );
         });
         $(".btyn").click(function() {
 

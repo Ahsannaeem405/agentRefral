@@ -72,52 +72,102 @@ class usercontroller extends Controller
     {
 
 
-        $user = User::where('role', '2')
+        if($request->id=='all'){
+            $user = User::where('role', '2')
             ->where('id', '!=', Auth::user()->id)
             ->whereNotNull('status')
-            ->where('city', $request->id)
             ->withCount('get_refrral')
             ->get();
-        $usery = User::where('role', '2')
-            ->whereNotNull('status')
+            $usery = User::where('role', '2')
+                ->whereNotNull('status')
 
-            ->withCount('get_refrral')
-            ->get();
-        $ordersy = collect($usery);
-
-
-        $myuser = $ordersy->groupBy('city');
-        foreach ($myuser as $key => $value_k) {
-
-            $orders2 = collect($value_k);
-            $max_gold_id = $orders2->max('get_refrral_count');
+                ->withCount('get_refrral')
+                ->get();
+            $ordersy = collect($usery);
 
 
-            $gold = $orders2->where('get_refrral_count', '=', $max_gold_id);
+            $myuser = $ordersy->groupBy('city');
+            foreach ($myuser as $key => $value_k) {
 
-            if ($max_gold_id != 0) {
+                $orders2 = collect($value_k);
+                $max_gold_id = $orders2->max('get_refrral_count');
 
 
-                foreach ($gold as $key => $row_user) {
+                $gold = $orders2->where('get_refrral_count', '=', $max_gold_id);
 
-                    if ($row_user->city == Auth::user()->city) {
-                        if ($row_user->id == Auth::user()->id) {
-                            $my_badge = 1;
-                        } else {
-                            $my_badge = 2;
+                if ($max_gold_id != 0) {
+
+
+                    foreach ($gold as $key => $row_user) {
+
+                        if ($row_user->city == Auth::user()->city) {
+                            if ($row_user->id == Auth::user()->id) {
+                                $my_badge = 1;
+                            } else {
+                                $my_badge = 2;
+                            }
                         }
                     }
+                } else {
+                    $my_badge = 1;
                 }
-            } else {
-                $my_badge = 1;
             }
-        }
 
-        $orders = collect($user);
-        $user = $orders->groupBy('city');
-        $ref_user = referral_user::where('add_by', Auth::user()->id)->get();
-        $citiy = cites::all();
-        return view('backend.agent.loc_referrals', compact('user', 'citiy', 'ref_user', 'my_badge'));
+            $orders = collect($user);
+            $user = $orders->groupBy('city');
+            $ref_user = referral_user::where('add_by', Auth::user()->id)->get();
+            $citiy = cites::all();
+            return view('backend.agent.loc_referrals', compact('user', 'citiy', 'ref_user', 'my_badge'));
+
+        }
+        else{
+            $user = User::where('role', '2')
+                ->where('id', '!=', Auth::user()->id)
+                ->whereNotNull('status')
+                ->where('city', $request->id)
+                ->withCount('get_refrral')
+                ->get();
+            $usery = User::where('role', '2')
+                ->whereNotNull('status')
+
+                ->withCount('get_refrral')
+                ->get();
+            $ordersy = collect($usery);
+
+
+            $myuser = $ordersy->groupBy('city');
+            foreach ($myuser as $key => $value_k) {
+
+                $orders2 = collect($value_k);
+                $max_gold_id = $orders2->max('get_refrral_count');
+
+
+                $gold = $orders2->where('get_refrral_count', '=', $max_gold_id);
+
+                if ($max_gold_id != 0) {
+
+
+                    foreach ($gold as $key => $row_user) {
+
+                        if ($row_user->city == Auth::user()->city) {
+                            if ($row_user->id == Auth::user()->id) {
+                                $my_badge = 1;
+                            } else {
+                                $my_badge = 2;
+                            }
+                        }
+                    }
+                } else {
+                    $my_badge = 1;
+                }
+            }
+
+            $orders = collect($user);
+            $user = $orders->groupBy('city');
+            $ref_user = referral_user::where('add_by', Auth::user()->id)->get();
+            $citiy = cites::all();
+            return view('backend.agent.loc_referrals', compact('user', 'citiy', 'ref_user', 'my_badge'));
+        }
     }
     public function dashboard_index()
     {

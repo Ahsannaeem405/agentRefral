@@ -32,11 +32,11 @@
                         <div>
                             <p>
                                 <i class="fa fa-upload"></i>
-                                <b style="margin-left: 20px;">
+                                <b style="">
                                     Referred Location
                                 </b>
                             </p>
-                            <p style="margin-left: 40px; margin-top:-7px">
+                            <p style=" margin-top:-7px">
 
                                 {{$row_sender->refer_user2->get_city->name}}
                             </p>
@@ -51,7 +51,7 @@
                     <div class="col-6 col-md-6">
 
                         <div style="">
-                            <h4 class="text-center">
+                            <h4 class="">
                                 <b> Personal information</b>
                             </h4>
                         </div>
@@ -113,12 +113,42 @@
                                     </p>
                                 </div>
                             </div>
+                             <div class="row mt-4 ">
+                                <div class="col-6 col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Min
+                                        </b>
+                                    </p>
+                                    @php
+                                    
+                                    @endphp
+                                    <p class="m-0">
+                                        {{$row_sender->min}}
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Max
+                                        </b>
+                                    </p>
+                                    <p class="m-0">
+                                        
+                                        {{$row_sender->max}}
+                                       
+
+
+
+                                    </p>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div style="">
-                            <h4 class="text-center">
+                            <h4 class="">
                                 <b> Notes and Updates</b>
                             </h4>
                         </div>
@@ -164,9 +194,9 @@
                             </div>
                             <div class="col col-md-6">
                                 <p class="m-0">
-                                    <b>
+                                    <b style="color: #ff5e3a;">
 
-                                        <a href="">Accepted</a>
+                                       Accepted
                                     </b>
                                 </p>
 
@@ -179,8 +209,8 @@
                             </div>
                             <div class="col col-md-6">
                                 <p class="m-0">
-                                    <b>
-                                        <a href="">Rejected</a>
+                                    <b style="color: #ff5e3a;">
+                                        Rejected
                                     </b>
                                 </p>
                                 <p class="m-0"><i class="fas fa-times-circle"></i> No</p>

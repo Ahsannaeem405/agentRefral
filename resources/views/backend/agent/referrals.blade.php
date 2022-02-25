@@ -33,6 +33,7 @@
             <div class="ui-block">
                 <div class="m-3">
                     <select class="loction js-example-basic-single" name="refer_id" style="width: 200px; margin-top: 7px;">
+                        <option value="all">All </option>
                         @foreach($citiy as $row_citiy)
                         <option value="{{$row_citiy->id}}">{{$row_citiy->name}} </option>
                         @endforeach
@@ -241,9 +242,7 @@
 
                                                         </div>
                                                         <div class="mt-3">
-                                                            <select class="database" name="refer_id" style=" margin-top: 7px;
-                                                            
-                                                             display:none" required>
+                                                            <select class="database selectdatabase" name="refer_id" style=" margin-top: 7px;" required>
                                                                 <option value="">
                                                                     Please Select a User
                                                                 </option>
@@ -256,15 +255,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name" class="name" required>
+                                                                    <input type="text" placeholder="Write a Name" name="name" class="name new_contact" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email" class="email" required>
+                                                                    <input type="text" placeholder="Write a Email" name="email" class="email new_contact" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
+                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone new_contact" >
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -425,9 +424,7 @@
 
                                                         </div>
                                                         <div class="mt-3">
-                                                            <select class="database" name="refer_id" style=" margin-top: 7px;
-                                                            
-                                                             display:none" required>
+                                                            <select class="database selectdatabase" name="refer_id" style=" margin-top: 7px;" required>
                                                                <option value="">
                                                                     Please Select a User
                                                                 </option>
@@ -441,15 +438,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name" class="name" required>
+                                                                    <input type="text" placeholder="Write a Name" name="name" class="name new_contact" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email" class="email" required>
+                                                                    <input type="text" placeholder="Write a Email" name="email" class="email new_contact">
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
+                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone new_contact">
                                                                 </div>
 
 
@@ -613,9 +610,7 @@
 
                                                         </div>
                                                         <div class="mt-3">
-                                                            <select class="database" name="refer_id" style=" margin-top: 7px;
-                                                                
-                                                                 display:none" required>
+                                                            <select class="database selectdatabase" name="refer_id" style=" margin-top: 7px;" required>
                                                                    <option value="">
                                                                     Please Select a User
                                                                 </option>
@@ -629,15 +624,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name" class="name" required>
+                                                                    <input type="text" placeholder="Write a Name" name="name" class="name new_contact" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email" class="email" required>
+                                                                    <input type="text" placeholder="Write a Email" name="email" class="email new_contact" >
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
+                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone new_contact" >
                                                                 </div>
 
 
@@ -805,9 +800,7 @@
 
                                                         </div>
                                                         <div class="mt-3">
-                                                            <select class="database" name="refer_id" style=" margin-top: 7px;
-                                                                
-                                                                 display:none">
+                                                           <select class="database selectdatabase" name="refer_id" style=" margin-top: 7px;" required>
                                                                    <option value="">
                                                                     Please Select a User
                                                                 </option>
@@ -821,15 +814,15 @@
                                                             <div class="row d-flex justify-content-end contact d-none" style="display:none">
                                                                 <div class="mt-3">
                                                                     <label for="">Name</label>
-                                                                    <input type="text" placeholder="Write a Name" name="name" class="name" required>
+                                                                    <input type="text" placeholder="Write a Name" name="name" class="name new_contact">
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Email</label>
-                                                                    <input type="text" placeholder="Write a Email" name="email" class="email" required>
+                                                                    <input type="text" placeholder="Write a Email" name="email" class="email new_contact">
                                                                 </div>
                                                                 <div class="mt-3">
                                                                     <label for="">Phone</label>
-                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone" required>
+                                                                    <input type="text" placeholder="Write a Phone" name="phone" class="phone new_contact">
                                                                 </div>
 
 
@@ -870,23 +863,19 @@
 
 
         $(".from-database").click(function() {
-
             $('.database').show();
             $('.contact').addClass("d-none");
-            $(".from-database").attr("required", true);
-            $(".new-contact").attr("required", false);
-            $(".name").attr("required", false);
-            $(".email").attr("required", false);
-            $(".phone").attr("required", false);
+            $(".selectdatabase").attr("required", true);
+            $(".new_contact").attr("required", false);
+           
 
 
         });
         $(".new-contact").click(function() {
             $('.database').hide();
             $('.contact').removeClass("d-none");
-            $(".new-contact").attr("required", true);
-            $(".from-database").attr("required", false);
-            $(".database").attr("required", false);
+            $(".selectdatabase").attr("required", false);
+            $(".new_contact").attr("required",true );
         });
        
 

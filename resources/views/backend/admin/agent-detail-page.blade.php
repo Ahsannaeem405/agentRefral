@@ -51,11 +51,11 @@
                         <div>
                             <p>
                                 <i class="fa fa-upload"></i>
-                                <b style="margin-left: 20px;">
+                                <b style="">
                                     Referred Location
                                 </b>
                             </p>
-                            <p style="margin-left: 40px; margin-top:-7px">
+                            <p style=" margin-top:-7px">
                                 @if($row_sender->refer_user!=null)
                                 {{$row_sender->refer_user->get_city->name}}
                                 @endif
@@ -71,7 +71,7 @@
                     <div class="col-6 col-md-6">
 
                         <div style="">
-                            <h4 class="text-center">
+                            <h4 class="">
                                 <b> Personal information</b>
                             </h4>
                         </div>
@@ -82,7 +82,7 @@
 
                                 @if($row_sender->refer_user!=null)
                                     @if($row_sender->refer_user->profile_image!=null) 
-                                    <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user->profile_image)}}" width="34" height="34" alt="author">
+                                    <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user->profile_image)}}" style="border-radius: 100%;width: 30px;height: 30px;" alt="author">
                                     @else
                                     <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
                                     @endif
@@ -143,7 +143,7 @@
                     </div>
                     <div class="col-md-6">
                         <div style="">
-                            <h4 class="text-center">
+                            <h4 >
                                 <b> Notes and Updates</b>
                             </h4>
                         </div>
@@ -189,7 +189,7 @@
                                         </b>
                                     </p>
 
-                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-check"></i>Accepted</p>
+                                    <p class="m-0">Accepted</p>
                                 </div>
 
 
@@ -203,7 +203,7 @@
                                         </b>
                                     </p>
 
-                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>Rejected</p>
+                                    <p class="m-0">Rejected</p>
                                 </div>
 
 
@@ -217,7 +217,7 @@
                                         </b>
                                     </p>
 
-                                    <p class="m-0"><i style="margin-right:10px" class="fas fa-times-circle"></i>Pending</p>
+                                    <p class="m-0"></i>Pending</p>
                                 </div>
 
 
@@ -261,11 +261,11 @@
                         <div>
                             <p>
                                 <i class="fa fa-upload"></i>
-                                <b style="margin-left: 20px;">
+                                <b style="">
                                     Referred Location
                                 </b>
                             </p>
-                            <p style="margin-left: 40px; margin-top:-7px">
+                            <p style=" margin-top:-7px">
                                 @if($row_sender->refer_user2!=null)
                                 {{$row_sender->refer_user2->get_city->name}}
                                 @endif
@@ -281,7 +281,7 @@
                     <div class="col-6 col-md-6">
 
                         <div style="">
-                            <h4 class="text-center">
+                            <h4 class="">
                                 <b> Personal information</b>
                             </h4>
                         </div>
@@ -290,7 +290,7 @@
                             <div>
 
                                 @if($row_sender->refer_user2!=null)
-                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" width="34" height="34" alt="author">
+                                <img loading="lazy" src="{{asset('upload/images/'.$row_sender->refer_user2->profile_image)}}" style="border-radius: 100%;width: 30px;height: 30px;" alt="author">
                                 @else
                                 <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
                                 @endif
@@ -346,12 +346,42 @@
                                     </p>
                                 </div>
                             </div>
+                             <div class="row mt-4 ">
+                                <div class="col-6 col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Min
+                                        </b>
+                                    </p>
+                                    @php
+                                    
+                                    @endphp
+                                    <p class="m-0">
+                                        {{$row_sender->min}}
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <p class="m-0">
+                                        <b>
+                                            Max
+                                        </b>
+                                    </p>
+                                    <p class="m-0">
+                                        
+                                        {{$row_sender->max}}
+                                       
+
+
+
+                                    </p>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div style="">
-                            <h4 class="text-center">
+                            <h4 class="">
                                 <b> Notes and Updates</b>
                             </h4>
                         </div>
@@ -402,9 +432,9 @@
                                 </div>
                                 <div class="col col-md-6">
                                     <p class="m-0">
-                                        <b>
+                                        <b style="color: #ff5e3a;">
 
-                                            <a href="">Accepted</a>
+                                            Accepted
                                         </b>
                                     </p>
 
@@ -417,8 +447,8 @@
                                 </div>
                                 <div class="col col-md-6">
                                     <p class="m-0">
-                                        <b>
-                                            <a href="">Rejected</a>
+                                        <b style="color: #ff5e3a;">
+                                            Rejected
                                         </b>
                                     </p>
                                     <p class="m-0"><i class="fas fa-times-circle"></i> No</p>
