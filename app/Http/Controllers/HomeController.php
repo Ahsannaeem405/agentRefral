@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -24,6 +25,19 @@ class HomeController extends Controller
     public function index()
     {
         
-        return view('home');
+         if(Auth::user()->role=='1')
+        {
+            return 'admins/index';
+        }
+        else if(Auth::user()->role=='2' && Auth::user()->status=='approve')
+        {
+            return 'user/index';
+        }
+        else{
+
+
+            return '/error';
+
+        }
     }
 }
