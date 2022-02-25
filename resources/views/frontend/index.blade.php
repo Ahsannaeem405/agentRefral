@@ -31,7 +31,7 @@
                             </svg>
                         </li>
                         <li class="animated-figure">
-                            <img alt="Process" src="media/building.gif">
+                            <img alt="Process" src="{{asset('media/building.gif')}}">
                             </img>
                         </li>
                     </ul>
@@ -45,7 +45,7 @@
                                 <div class="d-flex align-items-sm-center">
                                     <div class="item-icon dodger-blue">
                                         <!-- <i class="flaticon-envelope"></i> -->
-                                        <img alt="Process" src="media/premium.png">
+                                        <img alt="Process" src="{{asset('media/premium.png')}}">
                                         </img>
                                     </div>
                                     <div class="item-content">
@@ -70,7 +70,7 @@
                                 <div class="d-flex align-items-sm-center flex-xl-row-reverse">
                                     <div class="item-icon sunset-orange">
                                         <!-- <i class="flaticon-research"></i> -->
-                                        <img alt="Process" src="media/target.png">
+                                        <img alt="Process" src="{{asset('media/target.png')}}">
                                         </img>
                                     </div>
                                     <div class="item-content">
@@ -95,7 +95,7 @@
                                 <div class="d-flex align-items-sm-center">
                                     <div class="item-icon california">
                                         <!-- <i class="flaticon-list"></i> -->
-                                        <img alt="Process" src="media/agent.png">
+                                        <img alt="Process" src="{{asset('media/agent.png')}}">
                                         </img>
                                     </div>
                                     <div class="item-content">
@@ -139,7 +139,7 @@
                             </svg>
                         </li>
                         <li class="animated-figure">
-                            <img alt="Process" src="media/process/process1.png">
+                            <img alt="Process" src="{{asset('media/process/process1.png')}}">
                             </img>
                         </li>
                     </ul>
@@ -227,7 +227,7 @@
 <!--=   Progress Section Area Start     =-->
 <!--=====================================-->
 <section class="progress-wrap-layout1 bg-gradient-layout2">
-    <div class="progress-inner-wrap bg-position-center bg-no-repeat bg-size-cover parallaxie bg-size-cover bg-no-repeat bg-position-center" data-bg-image="media/element/element1.png">
+    <div class="progress-inner-wrap bg-position-center bg-no-repeat bg-size-cover parallaxie bg-size-cover bg-no-repeat bg-position-center" data-bg-image="{{asset('media/element/element1.png')}}">
         <div class="container zindex-level-2">
             <div class="row">
                 <div class="col-xl-3 col-sm-6 col-12">
@@ -292,8 +292,7 @@
             </p>
         </div>
         <div class="row has-animation rc-carousel nav-control-layout4 col-full-width" data-autoplay="false" data-autoplay-timeout="5000" data-dots="false" data-items="30" data-loop="true" data-margin="10" data-nav="true" data-nav-speed="false" 
-        data-options='{"
-                                                                                                        trigger_start" : 991,"trigger_end" : 0}' data-r-extra-large="3" data-r-extra-large-dots="false" data-r-extra-large-nav="true" data-r-large="3" data-r-large-dots="false" data-r-large-nav="true" data-r-medium="2" data-r-medium-dots="false" data-r-medium-nav="true" data-r-small="2" data-r-small-dots="false" data-r-small-nav="true" data-r-x-medium="1" data-r-x-medium-dots="false" data-r-x-medium-nav="true" data-r-x-small="1" data-r-x-small-dots="false" data-r-x-small-nav="true" data-smart-speed="700">
+        data-options='{"trigger_start" : 991,"trigger_end" : 0}' data-r-extra-large="3" data-r-extra-large-dots="false" data-r-extra-large-nav="true" data-r-large="3" data-r-large-dots="false" data-r-large-nav="true" data-r-medium="2" data-r-medium-dots="false" data-r-medium-nav="true" data-r-small="2" data-r-small-dots="false" data-r-small-nav="true" data-r-x-medium="1" data-r-x-medium-dots="false" data-r-x-medium-nav="true" data-r-x-small="1" data-r-x-small-dots="false" data-r-x-small-nav="true" data-smart-speed="700">
             @foreach ($users as $user)
             <div class="col-md-4">
                 <div class="translate-bottom-75 opacity-animation transition-150 transition-delay-100">
@@ -307,7 +306,7 @@
                                 <img loading="" src="{{asset('upload/images/'.$user->profile_image)}}" alt="">
                             
                                 @else
-                                <img src="media/team/team12.jpg" alt="Team">
+                                <img src="{{asset('media/team/team12.jpg')}}" alt="Team">
                                 @endif
                             </div>
                           
