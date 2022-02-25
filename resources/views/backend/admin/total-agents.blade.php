@@ -62,7 +62,7 @@
                                 <a href="{{url('admins/approve/agents/' .$row_waiting_user->id)}}">
                                 <button type="button" class="btn btn-success" style="margin-right: 5px;">Approve</button></a>
                                 <a href="{{url('admins/reject/agents/' .$row_waiting_user->id)}}">
-                                <button type="button" class="btn btn-danger">Reject</button></a>
+                                <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure?')">Reject</button></a>
                             </div>
                         </div>
                         @endforeach
@@ -127,7 +127,7 @@
                             </a>
                                 <button  class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$n}}" style="margin-right: 5px;">Edit</button>
                                 <a href="{{url('admins/reject/agents/' .$row_user->id)}}">
-                                <button type="button" class="btn btn-danger">Delete</button></a>
+                                <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button></a>
                             </div>
                         </div>
 

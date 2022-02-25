@@ -301,7 +301,7 @@
                         <div class="maks-item animted-bg-wrap">
                             <span class="animted-bg">
                             </span>
-                            <div class="item-figure">
+                            <div class="item-figure" style="height: 383px;">
                                @if($user->profile_image)
                              
                                 <img loading="" src="{{asset('upload/images/'.$user->profile_image)}}" alt="">
