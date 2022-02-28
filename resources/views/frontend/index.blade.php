@@ -15,7 +15,7 @@
     <div class="container">
         <div class="section-heading heading-dark heading-layout1 has-animation">
             <h2 class="heading-main-title">
-                Why Chose Us
+                Why Choose Us
             </h2>
         </div>
     </div>
@@ -160,7 +160,7 @@
                                             Register Yourself
                                         </h3>
                                         <p>
-                                            You need some basic information. you have to register your self as a agent.
+                                            You need some basic information to register your self as a agent. All set to Goo!
                                         </p>
                                     </div>
                                 </div>

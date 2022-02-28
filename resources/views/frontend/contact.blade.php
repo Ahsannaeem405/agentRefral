@@ -133,7 +133,7 @@
 							<div class="col-md-6 form-group">
 								<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1200">
 									<label for="exampleInputEmail1">Name</label>
-									<input type="text" placeholder="Name" class="form-control" name="Name" >
+									<input type="text" placeholder="John" class="form-control" name="Name" >
 
 								</div>
 							</div>
@@ -141,7 +141,7 @@
 
 								<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1400">
 									<label for="exampleInputEmail1">Email</label>
-									<input type="email" placeholder="Email" class="form-control" name="Email"  >
+									<input type="email" placeholder="example@gmail.com" class="form-control" name="Email"  >
 
 								</div>
 							</div>
