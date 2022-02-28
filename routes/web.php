@@ -32,6 +32,8 @@ use App\Http\Controllers\ReferralController;
 //user site 
 Route::view('/error', 'error');
 
+Route::get('/contact_saved', [admin::class, 'contact_saved'] );
+
 Route::get('/event', [admin::class, 'event'] );
 Route::get('/event2', [admin::class, 'event2'] );
 
@@ -42,14 +44,14 @@ Route::view('/contact', 'frontend.contact')->name('contact-us');
 Route::view('/faq', 'frontend.faq')->name('faqs');
 Route::view('/faqs', 'frontend.faqs')->name('faqs1');
 
-Route::view('/log_in', 'frontend.login')->name('login')->middleware('auth');
+Route::view('/log_in', 'frontend.login')->middleware('Checklogin')->name('login');
 
 Route::get('/get/register', function() {
 
     return view('frontend.register', [
             'citiy' =>cites::all()
         ]);
-});
+})->middleware('Checklogin');
 
 
 

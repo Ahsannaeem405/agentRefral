@@ -5,7 +5,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-12">
                     <div class="footer-widgets">
                         <div class="footer-logo">
-                            <a href="index.html"> <img src="{{asset('media/light.png')}}" alt="logo" class="img-fluid" style="height:80px!important"></a>
+                            <a href="{{route('index2')}}"> <img src="{{asset('media/light.png')}}" alt="logo" class="img-fluid" style="height:80px!important"></a>
                         </div>
                         <p class="about-paragraph">We approve of every single agent on our platform so you can be assured to not have any issues down the road.</p>
                         <ul class="footer-social">

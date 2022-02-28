@@ -111,17 +111,29 @@
 			</div>
 			<div class="col-lg-8 has-animation">
 				<div class="contact-box-layout3">
-					<form class="contact-form-box" id="contact-form">
-						<div class="alert alert-success message d-none" role="alert">
-							Your Message is successfully Delivered to Us!
-						</div>
+					<form class="contact-form-box"  action="{{url('contact_saved')}}">
+						@csrf
+						    @if ($errors->any())
+							    <div class="alert alert-danger">
+							        <ul>
+							            @foreach ($errors->all() as $error)
+							                <li>{{ $error }}</li>
+							            @endforeach
+							        </ul>
+							    </div>
+							@endif
+							@if(session()->has('success'))
+						        <div class="alert alert-success">
+						            {{ session()->get('success') }}
+						        </div>
+						    @endif
 
 						<div class="row">
 
 							<div class="col-md-6 form-group">
 								<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1200">
 									<label for="exampleInputEmail1">Name</label>
-									<input type="text" placeholder="Name" class="form-control" name="name" >
+									<input type="text" placeholder="Name" class="form-control" name="Name" >
 
 								</div>
 							</div>
@@ -129,7 +141,7 @@
 
 								<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1400">
 									<label for="exampleInputEmail1">Email</label>
-									<input type="email" placeholder="Email" class="form-control" name="email" >
+									<input type="email" placeholder="Email" class="form-control" name="Email"  >
 
 								</div>
 							</div>
@@ -144,7 +156,7 @@
 							<div class="col-12 form-group">
 								<div class="translate-bottom-50 opacity-animation transition-100 transition-delay-1800">
 									<label for="exampleInputEmail1">Comment</label>
-									<textarea placeholder="Comment" class="textarea form-control" name="message" id="form-message" rows="7" cols="20"></textarea>
+									<textarea placeholder="Comment" class="textarea form-control" name="Message" id="form-message" rows="7" cols="20"></textarea>
 
 								</div>
 							</div>
@@ -169,9 +181,9 @@
 </section>
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <script>
-	$(".send-message").click(function(){
-     $(".message").removeClass('d-none');
-	});
+	// $(".send-message").click(function(){
+ //     $(".message").removeClass('d-none');
+	// });
 </script>
 
 

@@ -20,7 +20,6 @@ class ReferralController extends Controller
 
     public function add_referral(Request $request)
     {
-
         $notifications = Notification::all();
         //   dd($notifications);
 
@@ -68,7 +67,6 @@ class ReferralController extends Controller
 
 
         $notification->save();
-
 
         $id = intval($notification->reciver_id);
         $refer_id = $notification->referral_id;

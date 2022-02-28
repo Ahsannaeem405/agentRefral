@@ -40,32 +40,81 @@
                 <!-- W-Action -->
                 <div class="widget w-friend-pages-added notification-list friend-requests">
                     <div class="container">
-                        @foreach($waiting_user as $row_waiting_user)
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
+                        <table class="event-item-table event-item-table-fixed-width">
 
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend">Francine Smith</a> -->
-                                    <span class="chat-message-item">{{$row_waiting_user->first_name}} </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">{{$row_waiting_user->email}}</span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                @if($row_waiting_user->get_city !=null)
-                                <span class="chat-message-item">{{$row_waiting_user->get_city->name}} </span>
-                                @endif
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
+                            <thead>
 
-                                <a href="{{url('admins/approve/agents/' .$row_waiting_user->id)}}">
-                                <button type="button" class="btn btn-success" style="margin-right: 5px;">Approve</button></a>
-                                <a href="{{url('admins/reject/agents/' .$row_waiting_user->id)}}">
-                                <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure?')">Reject</button></a>
-                            </div>
-                        </div>
-                        @endforeach
+                                <tr>
+
+                                    <th class="author">
+                                        Name
+                                    </th>
+                                    <th class="author">
+                                        Email
+                                    </th>
+
+                                    <th class="location">
+                                        Location
+                                    </th>
+                                     <th class="location">
+                                        Action
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 
+                                @foreach($waiting_user as $row_waiting_user)
+
+                                 
+                                <tr class="event-item">
+                                    <td class="author">
+                                        <div class="event-author inline-items">
+                                           
+                                            <div class="author-date">
+                                                {{$row_waiting_user->first_name}} {{$row_waiting_user->last_name}}</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="location">
+                                        <div class="place inline-items">
+
+                                            {{$row_waiting_user->email}}
+                                        </div>
+                                    </td>
+                                    <td class="location">
+                                        <div class="place inline-items">
+                                            
+                                         
+                                            @if($row_waiting_user->get_city !=null)
+                                                <span class="chat-message-item">{{$row_waiting_user->get_city->name}} </span>
+                                            @endif
+                                           
+                                        </div>
+                                    </td>
+                                    <td class="location">
+                                        <div class="d-flex">
+                                            
+                                         
+                                           {{--  <span>{{$row_user->refer_user->first_name}} {{$row_user->refer_user->last_name}}</span> --}}
+                                            <a href="{{url('admins/approve/agents/' .$row_waiting_user->id)}}">
+                                            <button type="button" class="btn btn-success" style="margin-right: 5px;">Approve</button></a>
+                                            <a href="{{url('admins/reject/agents/' .$row_waiting_user->id)}}">
+                                            <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure?')">Reject</button></a>
+                                                       
+                                        </div>
+                                    </td>
+
+
+
+                                    
+                                </tr>
+                                
+                               
+                                @endforeach
+                            </tbody>
+                        </table>
+                        
                         
                         
                     </div>
@@ -101,76 +150,120 @@
                 <!-- W-Action -->
                 <div class="widget w-friend-pages-added notification-list friend-requests">
                     <div class="container">
-                        @php $n=0; @endphp
-                         @foreach($user as $row_user)
+                        <table class="event-item-table event-item-table-fixed-width">
 
-                         @php $n++; @endphp
-                        <div class="inline-items p-0 d-flex justify-content-between mt-3">
-                            <div class="d-flex">
+                            <thead>
 
-                                <div class="notification-event d-flex align-items-center">
-                                    <!-- <a href="#" class="h6 notification-friend">Francine Smith</a> -->
-                                    <span class="chat-message-item">{{$row_user->first_name}} {{$row_user->last_name}} </span>
-                                </div>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                                <span class="chat-message-item">{{$row_user->email}}</span>
-                            </div>
-                            <div class="notification-event d-flex align-items-center" >
-                            @if($row_user->get_city !=null)
-                            <span class="chat-message-item">{{$row_user->get_city->name}} </span>
-                                @endif
-                            </div>
-                            <div class="notification-event d-flex align-items-center" style="">
-                            <a href="{{url('admins/agent-details/' .$row_user->id)}}">
-                            <button  class="btn btn-primary" data-toggle="" data-target="" style="margin-right: 5px;">Details</button>
-                            </a>
-                                <button  class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$n}}" style="margin-right: 5px;">Edit</button>
-                                <a href="{{url('admins/reject/agents/' .$row_user->id)}}">
-                                <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button></a>
-                            </div>
-                        </div>
+                                <tr>
 
-                         <div class="modal fade" id="exampleModal{{$n}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Update Agent</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <form method="POST" action="{{ url('admins/update/' .$row_user->id) }}">
-                                    @csrf
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">First Name</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{$row_user->first_name}}">
-                                        </div>
-                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{$row_user->last_name}}">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">City</label>
+                                    <th class="author">
+                                        Name
+                                    </th>
+                                    <th class="author">
+                                        Email
+                                    </th>
+
+                                    <th class="location">
+                                        Location
+                                    </th>
+                                     <th class="location">
+                                        Action
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 @php $n=0; @endphp
+                                 @foreach($user as $row_user)
+
+                                 @php $n++; @endphp
+                                <tr class="event-item">
+                                    <td class="author">
+                                        <div class="event-author inline-items">
                                            
-
-                                            <select name="city" class="form-control"  required>
-                                              <option value="">Select City</option>
-                                              @foreach($citiy as $get_citiy)
-                                              <option value="{{$get_citiy->id}}" @if($row_user->city==$get_citiy->id) selected @endif>{{$get_citiy->name}}</option>
-                                              @endforeach
-                                            </select>
+                                            <div class="author-date">
+                                                {{$row_user->first_name}} {{$row_user->last_name}}</a>
+                                            </div>
                                         </div>
-                                       
+                                    </td>
+                                    <td class="location">
+                                        <div class="place inline-items">
+
+                                            {{$row_user->email}}
+                                        </div>
+                                    </td>
+                                    <td class="location">
+                                        <div class="place inline-items">
+                                            
+                                         
+                                            @if($row_user->get_city !=null)
+                                               {{$row_user->get_city->name}}
+                                            @endif
+                                           
+                                        </div>
+                                    </td>
+                                    <td class="location">
+                                        <div class="d-flex">
+                                            
+                                         
+                                           {{--  <span>{{$row_user->refer_user->first_name}} {{$row_user->refer_user->last_name}}</span> --}}
+                                           <a href="{{url('admins/agent-details/' .$row_user->id)}}">
+                                        <button  class="btn btn-primary" data-toggle="" data-target="" style="margin-right: 5px;">Details</button>
+                                        </a>
+                                        <button  class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{$n}}" style="margin-right: 5px;">Edit</button>
+                                        <a href="{{url('admins/reject/agents/' .$row_user->id)}}">
+                                        <button type="button" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button></a>
+                                           
+                                        </div>
+                                    </td>
+
+
+
+                                    
+                                </tr>
+                                <div class="modal fade" id="exampleModal{{$n}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Update Agent</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="{{ url('admins/update/' .$row_user->id) }}">
+                                                @csrf
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputEmail1" class="form-label">First Name</label>
+                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{$row_user->first_name}}">
+                                                    </div>
+                                                     <div class="mb-3">
+                                                        <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{$row_user->last_name}}">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputPassword1" class="form-label">City</label>
+                                                       
+
+                                                        <select name="city" class="form-control"  required>
+                                                          <option value="">Select City</option>
+                                                          @foreach($citiy as $get_citiy)
+                                                          <option value="{{$get_citiy->id}}" @if($row_user->city==$get_citiy->id) selected @endif>{{$get_citiy->name}}</option>
+                                                          @endforeach
+                                                        </select>
+                                                    </div>
+                                                   
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-success">Update</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success">Update</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        @endforeach
-                        
+                               
+                                @endforeach
+                            </tbody>
+                        </table>
+                       
                     </div>
                 </div>
                 <!-- ... end W-Action -->

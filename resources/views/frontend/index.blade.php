@@ -281,11 +281,11 @@
 <section class="section-padding-md" id="team-wrap-layout1">
     <div class="container">
         <div class="section-heading heading-dark heading-layout1">
-            <div class="heading-sub-title">
+           {{--  <div class="heading-sub-title">
                 OUR BEST
-            </div>
+            </div> --}}
             <h2 class="heading-main-title">
-                Gold Agents
+                Our Agents
             </h2>
             <p class="heading-paragraph">
                 Hard working and progressive people are the honour of our company
@@ -293,8 +293,9 @@
         </div>
         <div class="row has-animation rc-carousel nav-control-layout4 col-full-width" data-autoplay="false" data-autoplay-timeout="5000" data-dots="false" data-items="30" data-loop="true" data-margin="10" data-nav="true" data-nav-speed="false" 
         data-options='{"
-                                                                                                        trigger_start" : 991,"trigger_end" : 0}' data-r-extra-large="3" data-r-extra-large-dots="false" data-r-extra-large-nav="true" data-r-large="3" data-r-large-dots="false" data-r-large-nav="true" data-r-medium="2" data-r-medium-dots="false" data-r-medium-nav="true" data-r-small="2" data-r-small-dots="false" data-r-small-nav="true" data-r-x-medium="1" data-r-x-medium-dots="false" data-r-x-medium-nav="true" data-r-x-small="1" data-r-x-small-dots="false" data-r-x-small-nav="true" data-smart-speed="700">
+                        trigger_start" : 991,"trigger_end" : 0}' data-r-extra-large="3" data-r-extra-large-dots="false" data-r-extra-large-nav="true" data-r-large="3" data-r-large-dots="false" data-r-large-nav="true" data-r-medium="2" data-r-medium-dots="false" data-r-medium-nav="true" data-r-small="2" data-r-small-dots="false" data-r-small-nav="true" data-r-x-medium="1" data-r-x-medium-dots="false" data-r-x-medium-nav="true" data-r-x-small="1" data-r-x-small-dots="false" data-r-x-small-nav="true" data-smart-speed="700">
             @foreach ($users as $user)
+            
             <div class="col-md-4">
                 <div class="translate-bottom-75 opacity-animation transition-150 transition-delay-100">
                     <div class="team-box-layout1">
@@ -302,12 +303,13 @@
                             <span class="animted-bg">
                             </span>
                             <div class="item-figure" style="height: 383px;">
-                               @if($user->profile_image)
-                             
-                                <img loading="" src="{{asset('upload/images/'.$user->profile_image)}}" alt="">
+                               @if($user->profile_image!=null)
+                           
+
+                                <img src="{{asset('upload/images/' .$user->profile_image)  }}" alt="gf" style="height: inherit;">
                             
                                 @else
-                                <img src="media/team/team12.jpg" alt="Team">
+                                <img src="https://www.seekpng.com/png/detail/110-1100707_person-avatar-placeholder.png" alt="Team" style="height: inherit;">
                                 @endif
                             </div>
                           

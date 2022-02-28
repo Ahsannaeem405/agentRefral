@@ -2,6 +2,11 @@
 @extends('backend.agent.main')
 @section('content')
 @include('backend.agent.include.main-header')
+<style type="text/css">
+    .canvasjs-chart-credit{
+        display: none;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
@@ -96,7 +101,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	},
 	data: [{
 		type: "column",
-		yValueFormatString: "#,##0.0#\"%\"",
+		yValueFormatString: "#,##0.0#\"\"",
 		dataPoints: [
 			{ label: "Accepted ", y: <?php echo $accepted ?>},	
 			{ label: "Recived ", y: <?php echo $recieved;?> },	

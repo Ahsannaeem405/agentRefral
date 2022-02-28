@@ -68,7 +68,7 @@
 					<div id="accordion">
 						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Register Yoourself</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Register Yourself</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
@@ -78,7 +78,7 @@
 						</div>
 						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">admin Approval?</a>
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2">Admin Approval?</a>
 							</div>
 							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
@@ -88,7 +88,7 @@
 						</div>
 						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">after verification?</a>
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">After verification?</a>
 							</div>
 							<div id="collapse3" class="collapse item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
@@ -102,7 +102,7 @@
 				<div id="accordion">
 						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How amny Tiers ??</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">How many Tiers ??</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">

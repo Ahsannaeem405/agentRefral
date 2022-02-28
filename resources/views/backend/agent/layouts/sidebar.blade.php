@@ -11,37 +11,30 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-menu-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="OPEN MENU">
-							<use xlink:href="#olymp-menu-icon"></use>
-						</svg>
+						
+						<i class="fa fa-bars" data-toggle="tooltip" title="OPEN MENU" aria-hidden="true" style="font-size: 20px;"></i>
 					</a>
+
+
 				</li>
 				<li>
 					<a href="{{route('index1')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-suitcase" data-toggle="tooltip" title="Dashboard" style="font-size: 20px;" aria-hidden="true"></i>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('referrals1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Referrals">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-share" data-toggle="tooltip" title="Referrals" style="font-size: 20px;" aria-hidden="true"></i>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('network')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="My Network">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-globe" data-toggle="tooltip" title="Network" style="font-size: 20px;" aria-hidden="true"></i>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('settings1')}}">
-						<svg class="olymp-badge-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
-							<use xlink:href="#olymp-badge-icon"></use>
-						</svg>
+						<i class="fa fa-map" data-toggle="tooltip" title="Settings" style="font-size: 20px;" aria-hidden="true"></i>
 					</a>
 				</li>
 			</ul>
@@ -70,33 +63,25 @@
 				</li>
 				<li>
 					<a href="{{route('index1')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-suitcase" data-toggle="tooltip" title="Dashboard" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Dashboard</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('referrals1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-share" data-toggle="tooltip" title="Referrals" style="font-size: 20px;margin-right: 25px;" aria-hidden="true"></i>
 						<span class="left-menu-title">Referrals</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('network')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-globe" data-toggle="tooltip" title="Network" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">My Network</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('settings1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-map" data-toggle="tooltip" title="Settings" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Settings</span>
 					</a>
 				</li>
@@ -162,33 +147,25 @@
 				</li>
 				<li>
 					<a href="{{route('index1')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-suitcase" data-toggle="tooltip" title="Dashboard" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Dashboard</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('referrals1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-share" data-toggle="tooltip" title="Referrals" style="font-size: 20px;margin-right: 25px;" aria-hidden="true"></i>
 						<span class="left-menu-title">Referrals</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('network')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-map" data-toggle="tooltip" title="Network" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">My Network</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('settings1')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-cog" data-toggle="tooltip" title="Settings" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Settings</span>
 					</a>
 				</li>

@@ -64,6 +64,7 @@ class agentController extends Controller
 
                 'password' => 'required|confirmed|min:6',
             ]);
+            
             $user->password = Hash::make($request->password);
             $user->save();
 

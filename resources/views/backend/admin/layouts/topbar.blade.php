@@ -9,7 +9,11 @@
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="{{asset('dashboard/img/user.jpg')}}" width="36" height="36" class="avatar">
+					@if(Auth()->user()->profile_image)
+					<img loading="lazy" src="{{asset('upload/images/'.auth()->user()->profile_image)}}" style="width: 30px;height: 30px;" alt="author">
+					@else
+					<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" style="width: 30px;height: 30px;" alt="author">
+					@endif
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">

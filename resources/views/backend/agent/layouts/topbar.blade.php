@@ -29,7 +29,7 @@ $total_notifications=$notifications->count();
         op +='<li><div class="author-thumb">'+
 
 											
-				'<img loading="lazy" src="'+data['img']+'"   width="34" height="34" alt="author">'+
+				'<img loading="lazy" src="'+data['img']+'"  style="width: 30px;height: 30px;" alt="author" >'+
 											
 			'</div>'+
 			'<div class="notification-event">'+
@@ -46,7 +46,11 @@ $total_notifications=$notifications->count();
 			var curr=$(".notification-list").attr('abc');
 			++curr;
 			$(".notification-list").attr('abc',curr);
-			$(".count_noti").html(curr);
+			 $(".count_noti").html(curr);
+			 
+			
+			  $(".count_noti").removeClass("d-none");
+
 
 			
 			
@@ -68,9 +72,10 @@ $total_notifications=$notifications->count();
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
 
-						@if($total_notifications>0)
-						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
+						@if($total_notifications==0)
+						<div class="label-avatar bg-primary count_noti d-none">{{$total_notifications}}</div>
 						@else
+						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						@endif
 						<div class="more-dropdown more-with-triangle triangle-top-center">
 							<div class="ui-block-title ui-block-title-small">
@@ -89,8 +94,8 @@ $total_notifications=$notifications->count();
 										<div class="author-thumb">
 											@if($notification->user!=null)
 											@if($notification->user->profile_image!=null)
-											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
-											@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" style="width: 30px;height: 30px;" alt="author">
+											@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" style="width: 30px;height: 30px;" alt="author">
 											@endif
 											@endif
 										</div>
@@ -106,9 +111,9 @@ $total_notifications=$notifications->count();
 										<div class="author-thumb">
 
 											@if($notification->user->profile_image!=null)
-											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
+											<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" style="width: 30px;height: 30px;" alt="author">
 											@else
-											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+											<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" style="width: 30px;height: 30px;" alt="author">
 											@endif
 										</div>
 										<div class="notification-event">
@@ -141,9 +146,9 @@ $total_notifications=$notifications->count();
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					@if(Auth()->user()->profile_image)
-					<img loading="lazy" src="{{asset('upload/images/'.auth()->user()->profile_image)}}" width="34" height="34" alt="author">
+					<img loading="lazy" src="{{asset('upload/images/'.auth()->user()->profile_image)}}" style="width: 30px;height: 30px;" alt="author">
 					@else
-					<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+					<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" style="width: 30px;height: 30px;" alt="author">
 					@endif
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
@@ -215,9 +220,10 @@ $total_notifications=$notifications->count();
 							<use xlink:href="#olymp-thunder-icon"></use>
 						</svg>
 
-						@if($total_notifications>0)
-						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
+						@if($total_notifications==0)
+						<div class="label-avatar bg-primary count_noti d-none">{{$total_notifications}}</div>
 						@else
+						<div class="label-avatar bg-primary count_noti">{{$total_notifications}}</div>
 						@endif
 					</div>
 				</a>
@@ -242,8 +248,8 @@ $total_notifications=$notifications->count();
 						<div class="author-thumb">
 						@if($notification->user!=null)
 							@if($notification->user->profile_image!=null)
-							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author">
-							@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" style="width: 30px;height: 30px;" alt="author">
+							@else <img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" style="width: 30px;height: 30px;" alt="author">
 							@endif
 							@endif
 						</div>
@@ -260,9 +266,9 @@ $total_notifications=$notifications->count();
 						<div class="author-thumb">
 
 							@if($notification->user->profile_image!=null)
-							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" width="34" height="34" alt="author" >
+							<img loading="lazy" src="{{asset('upload/images/'.$notification->user->profile_image)}}" style="width: 30px;height: 30px;" alt="author">
 							@else
-							<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" width="34" height="34" alt="author">
+							<img loading="lazy" src="{{asset('dashboard/img/user.jpg')}}" style="width: 30px;height: 30px;" alt="author">
 							@endif
 						</div>
 						<div class="notification-event">

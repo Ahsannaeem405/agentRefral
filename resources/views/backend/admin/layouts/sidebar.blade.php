@@ -18,38 +18,37 @@
 				</li>
 				<li>
 					<a href="{{route('index')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-suitcase" data-toggle="tooltip" title="Dashboard" style="font-size: 20px;" aria-hidden="true"></i>
+
+
 					</a>
 				</li>
 				<li>
 					<a href="{{route('agents')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-user" data-toggle="tooltip" title="Agents" style="font-size: 20px;" aria-hidden="true"></i>
+
 					</a>
 				</li>
 				<li>
 					<a href="{{route('users')}}">
-						<svg class="olymp-weather-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-weather-icon"></use>
-						</svg>
+						<i class="fa fa-user" data-toggle="tooltip" title="User" style="font-size: 20px;" aria-hidden="true"></i>
+
+						
 					</a>
 				</li>
 			
 				<li>
 					<a href="{{route('cities')}}">
-						<svg class="olymp-cupcake-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-cupcake-icon"></use>
-						</svg>
+						
+						<i class="fa fa-globe" data-toggle="tooltip" title="Cites" style="font-size: 20px;" aria-hidden="true"></i>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('settings')}}">
-						<svg class="olymp-badge-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-badge-icon"></use>
-						</svg>
+						
+						<i class="fa fa-cog" data-toggle="tooltip" title="Settings" style="font-size: 20px;" aria-hidden="true"></i>
+
+						
 					</a>
 				</li>
 			</ul>
@@ -78,42 +77,32 @@
 				</li>
 				<li>
 					<a href="{{route('index')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-suitcase" data-toggle="tooltip" title="Dashboard" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Dashboard</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('agents')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-user" data-toggle="tooltip" title="Agents" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Agents</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('users')}}">
-						<svg class="olymp-weather-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-weather-icon"></use>
-						</svg>
+						<i class="fa fa-user" data-toggle="tooltip" title="User" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Users </span>
 					</a>
 				</li>
 			
 				<li>
 					<a href="{{route('cities')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-cupcake-icon"></use>
-						</svg>
+						<i class="fa fa-globe" data-toggle="tooltip" title="Cites" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Cities</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('settings')}}">
-						<svg class="olymp-badge-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-badge-icon"></use>
-						</svg>
+						<i class="fa fa-cog" data-toggle="tooltip" title="Settings" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Settings</span>
 					</a>
 				</li>
@@ -178,34 +167,26 @@
 				</li>
 				<li>
 					<a href="{{route('index')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="NEWSFEED">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-suitcase" data-toggle="tooltip" title="Dashboard" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Dashboard</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('agents')}}">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-newsfeed-icon"></use>
-						</svg>
+						<i class="fa fa-user" data-toggle="tooltip" title="Agents" style="font-size: 20px;margin-right: 25px;" aria-hidden="true"></i>
 						<span class="left-menu-title">Agents</span>
 					</a>
 				</li>
 				<li>
 					<a href="{{route('users')}}">
-						<svg class="olymp-star-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-star-icon"></use>
-						</svg>
+						<i class="fa fa-user" data-toggle="tooltip" title="User" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Users </span>
 					</a>
 				</li>
 		
 				<li>
 					<a href="{{route('cities')}}">
-						<svg class="olymp-happy-faces-icon left-menu-icon" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="">
-							<use xlink:href="#olymp-happy-faces-icon"></use>
-						</svg>
+						<i class="fa fa-globe" data-toggle="tooltip" title="Cites" style="font-size: 20px;margin-right: 25px" aria-hidden="true"></i>
 						<span class="left-menu-title">Cities</span>
 					</a>
 				</li>
