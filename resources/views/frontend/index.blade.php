@@ -15,7 +15,7 @@
     <div class="container">
         <div class="section-heading heading-dark heading-layout1 has-animation">
             <h2 class="heading-main-title">
-                Why Chose Us
+                Why Choose Us
             </h2>
         </div>
     </div>

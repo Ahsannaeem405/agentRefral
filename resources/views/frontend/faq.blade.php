@@ -82,7 +82,7 @@
 							</div>
 							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>After registring yourself as a agent you will be verfied after the admin approval.</p>
+									<p>After registring yourself as a agent you will be verified after the admin approval.</p>
 								</div>
 							</div>
 						</div>
@@ -129,7 +129,7 @@
 				<div id="accordion">
 						<div class="card single-item">
 							<div class="card-header item-nav">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">is it easy to find an agent with help of this site?</a>
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Is it easy to find an agent with help of this site?</a>
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
@@ -153,7 +153,7 @@
 							</div>
 							<div id="collapse3" class="collapse item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>He will be our trusted and verified agent. he will assist you in your real estate matters. </p>
+									<p>He will be our trusted and verified agent. He will assist you in your real estate matters. </p>
 								</div>
 							</div>
 						</div>
@@ -168,7 +168,7 @@
 							</div>
 							<div id="collapse1" class="collapse show item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>There are three tiers , Gold , silver and bronze.</p>
+									<p>There are three tiers , Gold , Silver and Bronze.</p>
 								</div>
 							</div>
 						</div>
