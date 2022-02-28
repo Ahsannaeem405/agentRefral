@@ -221,48 +221,55 @@
 
                                     
                                 </tr>
-                                <div class="modal fade" id="exampleModal{{$n}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Update Agent</h5>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="POST" action="{{ url('admins/update/' .$row_user->id) }}">
-                                                @csrf
-                                                    <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">First Name</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" value="{{$row_user->first_name}}">
-                                                    </div>
-                                                     <div class="mb-3">
-                                                        <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" value="{{$row_user->last_name}}">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="exampleInputPassword1" class="form-label">City</label>
-                                                       
-
-                                                        <select name="city" class="form-control"  required>
-                                                          <option value="">Select City</option>
-                                                          @foreach($citiy as $get_citiy)
-                                                          <option value="{{$get_citiy->id}}" @if($row_user->city==$get_citiy->id) selected @endif>{{$get_citiy->name}}</option>
-                                                          @endforeach
-                                                        </select>
-                                                    </div>
-                                                   
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success">Update</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                
                                 @endforeach
                             </tbody>
                         </table>
+                                @php $m=0; @endphp
+                                @foreach($user as $row_user)
+                                @php $m++; @endphp
+
+                                    <div class="modal fade" id="exampleModal{{$m}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Update Agent</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="POST" action="{{ url('admins/update/' .$row_user->id) }}">
+                                                    @csrf
+                                                        <div class="mb-3">
+                                                            <label for="" class="form-label">First Name</label>
+                                                            <input type="text" class="form-control"  name="first_name" value="{{$row_user->first_name}}">
+                                                        </div>
+                                                         <div class="mb-3">
+                                                            <label for="" class="form-label">Last Name</label>
+                                                            <input type="text" class="form-control"  name="last_name" value="{{$row_user->last_name}}">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="" class="form-label">City</label>
+                                                           
+
+                                                            <select name="city" class="form-control"  required>
+                                                              <option value="">Select City</option>
+                                                              @foreach($citiy as $get_citiy)
+                                                              <option value="{{$get_citiy->id}}" @if($row_user->city==$get_citiy->id) selected @endif>{{$get_citiy->name}}</option>
+                                                              @endforeach
+                                                            </select>
+                                                        </div>
+                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-success">Update</button>
+                                                    </form>
+                                                       
+                                                </div>
+                                                <div class="modal-footer">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                        
                     </div>
                 </div>
