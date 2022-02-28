@@ -160,7 +160,7 @@
                                             Register Yourself
                                         </h3>
                                         <p>
-                                            You need some basic information. you have to register your self as a agent.
+                                            You need some basic information to register your self as a agent. All set to Goo!
                                         </p>
                                     </div>
                                 </div>
