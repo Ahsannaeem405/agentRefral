@@ -110,16 +110,16 @@
                         <div class="translate-bottom-75 opacity-animation
 																					transition-150 transition-delay-1000">
                             <h2 class="item-title">
-Exclusive Real Estate Agency</h2>
+                                Exclusive Real Estate Agency</h2>
                         </div>
                         <div class="translate-bottom-75 opacity-animation
 																					transition-150 transition-delay-1300">
                             <p>If potential sellers or buyers want to work with you,
-                                 you'll need to get their contact information. This can
-                                  be achieved using personal interaction.Then you will be provided with our real estate agent 
-                                  in your own city to get served.  </p>
-                            <p>One of the best platform that is benificial for both agent and client. client will be served 
-                                with our best and top rated agents. 
+                                you'll need to get their contact information. It can
+                                be achieved using personal interaction.Then you will be provided with our real estate agent
+                                in your own city to get served. </p>
+                            <p>One of the best platform that is benificial for both agent and client. Client will be served
+                                with our best and top rated agents.
                             </p>
                         </div>
                         <div class="row mt--50">
@@ -236,15 +236,15 @@ Exclusive Real Estate Agency</h2>
                         </div>
                         <div class="translate-bottom-75 opacity-animation
 																														transition-150 transition-delay-1300">
-                            <p>If we show our clients – investors - the state and the potential of the neighborhood in which 
+                            <p>If we show our clients – investors - the state and the potential of the neighborhood in which
                                 they’d like their property to be located,
-                                 we’re allowing them to gauge the real value of the real estate they’ll be acquiring.</p>
-                                 <p>
-                                 Their clients are upfront, and the video isn’t too serious – there are
-                                  enough funny and lighthearted moments to really give us the impression of our project.
-                                 </p>
+                                we’re allowing them to gauge the real value of the real estate they’ll be acquiring.</p>
+                            <p>
+                                Their clients are upfront, and the video isn’t too serious – there are
+                                enough funny and lighthearted moments to really give us the impression of our project.
+                            </p>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>

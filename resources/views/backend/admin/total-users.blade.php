@@ -10,8 +10,8 @@
             <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
                 <div class="main-header-content mt-5">
                     <h1>Users</h1>
-                    <p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
-                        new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+                    <p>Welcome to your stats and analytics dashboard! Here you’l see all profile stats like: Sent referrals,
+                        recived referrals, approve disapprove users, graphs, and much more!</p>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="col">
             <div class="ui-block ui-block2">
                 <div class="ui-block-title">
-                    <h6 class="title">User </h6>
+                    <h6 class="title">Users </h6>
                     <!-- <a href="#" class="more"><svg class="olymp-three-dots-icon"> -->
                     <use xlink:href="#olymp-three-dots-icon"></use>
                     </svg></a>

@@ -11,8 +11,8 @@
             <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
                 <div class="main-header-content mt-5">
                     <h1>Agents</h1>
-                    <p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
-                        new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+                    <p>Welcome to your stats and analytics dashboard! Here you’l see all profile stats like: Sent referrals,
+                        recived referrals, approve disapprove users, graphs, and much more!</p>
                 </div>
             </div>
         </div>

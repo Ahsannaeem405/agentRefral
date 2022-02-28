@@ -178,7 +178,7 @@
 							</div>
 							<div id="collapse2" class="collapse item-content-wrap" data-parent="#accordion">
 								<div class="card-body item-content">
-									<p>Its all up to your work. it depends how much people do you invite. then you will be awarded on the bassis of your referrals/</p>
+									<p>Its all up to your work. it depends how much people do you invite. then you will be awarded on the bassis of your referrals.</p>
 								</div>
 							</div>
 						</div>
